@@ -1,0 +1,111 @@
+.pawe {
+	color: #666;
+}
+
+.pawe:hover {
+	text-decoration: none;
+	color: #666;
+}
+
+.paws {
+	transition: box-shadow .1s;
+	-moz-transition: box-shadow .1s;
+	-webkit-transition: box-shadow .1s;
+}
+
+.paws:hover {
+	-moz-box-shadow: 0 0 8px #2c2cfd;
+	-webkit-box-shadow: 0 0 8px #2c2cfd;
+	box-shadow: 0 0 8px #2c2cfd;
+}
+
+
+#mainnavbar {
+	margin-bottom: 17px;
+	padding: 10px;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+}
+
+.navbtns > li {
+	transition: all .2s;
+	-moz-transition: all .2s;
+	-webkit-transition: all .2s;
+}
+
+.navbtns > li:hover {
+	background: #5580fe;
+	-moz-box-shadow: 0 0 8px #2c2cfd;
+	-webkit-box-shadow: 0 0 8px #2c2cfd;
+	box-shadow: 0 0 8px #2c2cfd;
+}
+
+.only_footer {
+	/*background: #2f2f2f;*/
+	background: #222;
+	color: #666;
+	border-top: 1px solid #000;
+	padding: 17px 0 18px 0;
+}
+
+.footer_links {
+	list-style: none;
+}
+
+.footer_links > li > a {
+	color: #999;
+	font-size: 13px;
+}
+
+.footer_links > li > a:hover {
+	color: #efefef;
+}
+
+.logospace {
+	text-align: center;
+}
+
+.backg {
+	background: green;
+}
+
+.backw {
+	background: white;
+}
+
+.backt {
+	background: tomato;
+}
+
+.subject-table {
+	margin-top: 15px;
+}
+
+.subject-table > .panel {
+	margin-bottom: 5px;
+}
+
+.top-pad {
+	padding-top: 10px;
+}
+
+.subject-title {
+	margin-top: 0px;
+}
+
+.slug-danger {
+	line-height: 30px;
+	padding-left: 0;
+}
+
+/*
+ * USE WITH SM SIZE BUTTONS
+ */
+.top-link {
+	line-height:30px;
+	margin-bottom:10px;
+}
+
+.top-pad > .badge {
+	float: right;
+}
