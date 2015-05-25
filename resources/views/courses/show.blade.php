@@ -5,12 +5,31 @@
 
 @section('content')	
 <div class="container">
+	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-trash"></span> Confirm Delete</h4>
+				</div>
+				<div class="modal-body">
+					Are you sure you want to delete this course? If you proceed, there is no going back.
+				</div>
+				<div class="modal-footer">
+					{!! Form::open(['method' => 'DELETE', 'route' =>['courses.destroy', $course], 'class' => 'form-inline']) !!}
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						{!! Form::submit('Delete', ['class' => 'btn btn-danger', 'id' => 'courseDelete']) !!}
+					{!! Form::close() !!}
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="top-link">
 		<a href="{{ route('courses.index') }}" class="btn btn-default btn-sm">Back</a>
 		<div class="pull-right btn-group">
 			<a href="{{ route('courses.edit', $course) }}" class="btn btn-primary btn-sm">Edit</a>
 			<a href="{{ route('courses.create') }}" class="btn btn-success btn-sm">Create</a>
-			<a href="{{ Route::delete('courses.destroy', $course) }}" class="btn btn-danger btn-sm">Delete</a>
+			<a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-modal">Delete</a>
 		</div>
 	</div>
 	<div class="row">

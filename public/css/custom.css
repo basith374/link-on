@@ -77,6 +77,10 @@
 	background: tomato;
 }
 
+#subjects-panel {
+	margin-bottom: 0;
+}
+
 .subject-table {
 	margin-top: 15px;
 }
@@ -102,8 +106,8 @@
  * USE WITH SM SIZE BUTTONS
  */
 .top-link {
-	line-height:30px;
-	margin-bottom:10px;
+	line-height: 30px;
+	margin-bottom: 10px;
 }
 
 .top-pad > .badge {

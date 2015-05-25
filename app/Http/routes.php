@@ -20,5 +20,12 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+
 Route::resource('courses', 'CoursesController');
-Route::resource('subjects', 'SubjectsController', ['except' => ['index']]);
+
+// additional routes of resource controllers must be added before it.
+Route::post('subjects/all-subjects', 'SubjectsController@allSubjects');
+Route::post('subjects/subject-details/{subjects}', 'SubjectsController@subjectDetails');
+// Route::resource('subjects', 'SubjectsController', ['except' => ['index']]);
+Route::resource('subjects', 'SubjectsController');
+

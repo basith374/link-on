@@ -3,6 +3,7 @@
 use Input;
 use Redirect;
 use App\Course;
+use App\Subject;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -71,7 +72,9 @@ class CoursesController extends Controller {
 	public function edit($id)
 	{
 		$course = Course::find($id);
-		return view('courses.admin.edit', compact('course'));
+		$subjects = $course->subjects;
+		$subjectnames = DB::table('subjects')->lists('title');
+		return view('courses.admin.edit', ['course' => $course, 'subjects' => $subjects, 'subjectnames' => $subjectnames]);
 	}
 
 	/**
@@ -93,8 +96,8 @@ class CoursesController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		Course::find(1)->delete();
-		
+		Course::find($id)->delete();
+	
 		return Redirect::route('courses.index')->with('success-message', 'Course Deleted');
 	}
 

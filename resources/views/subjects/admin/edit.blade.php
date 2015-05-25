@@ -17,7 +17,12 @@
 				<div class="panel-heading">Edit subject properties</div>
 				<div class="panel-body">
 					{!! Form::open(['method' => 'PATCH', 'route' => ['subjects.update', $course, $subject], 'class' => 'form-horizontal', ]) !!}
-						@include('subjects/admin/partials/_form', ['submit_text' => 'Save Changes', 'edit_mode' => true])
+						@include('subjects/admin/partials/_form', ['edit_mode' => true])						
+						<div class="form-group">
+							<div class="col-md-2 col-md-offset-3">
+								{!! Form::button('<span class="glyphicon glyphicon-save"></span> ' . 'Save Changes', ['class' => 'btn btn-danger', 'type' => 'submit'])!!}
+							</div>
+						</div>
 					{!! Form::close() !!}
 				</div>
 			</div>

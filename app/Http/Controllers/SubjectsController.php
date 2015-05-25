@@ -5,6 +5,7 @@ use Redirect;
 use App\Course;
 use App\Subject;
 use App\Http\Requests;
+use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class SubjectsController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$subjects = Subject::all();
+		return view('subjects.index', compact('subjects'));
 	}
 
 	/**
@@ -94,7 +96,24 @@ class SubjectsController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		// Subject::find($id)->delete();
+		return Redirect::route('courses.index')->with('success-message', 'Subject Deleted');
 	}
-
+	
+	/**
+	 * Fetch all the subjects array as JSON.
+	 *
+	 * @return Response
+	 */
+	public function allSubjects()
+	{
+		$data = Subject::all();
+		return response()->json(['data' => $data]);
+	}
+	
+	public function subjectDetails($id)
+	{
+		$data = Subject::find($id);
+		return response()->json($data);
+	}
 }

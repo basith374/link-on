@@ -9,10 +9,16 @@
 		<div class="top-link">
 			<a href="{{ route('courses.create') }}" class="btn btn-sm btn-primary" >Create Course</a>
 			<a href="{{ route('subjects.create') }}" class="btn btn-sm btn-success" >Create Subject</a>
+			<a href="{{ route('subjects.index') }}" class="btn btn-sm btn-danger" >View Subjects</a>
 		</div>
 		@if(Session::has('success-message'))
 			<div class="alert alert-success alert-dismissable">
-				<p>{{ Session::get('success-message') }}</p>
+				<a href="#" data-dismiss="alert" class="close">&times;</a>{{ Session::get('success-message') }}
+			</div>
+		@endif
+		@if(Session::has('failure-message'))
+			<div class="alert alert-danger alert-dismissable">
+				<a href="#" data-dismiss="alert" class="close">&times;</a>{{ Session::get('failure-message') }}
 			</div>
 		@endif
 		<div class="">{{-- grid box width class here --}}
