@@ -4,16 +4,16 @@
 
 @section('content')
 <div class="container">
-	<div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-new"></span> Create New Subject</h4>
+					<h4 class="modal-title" id="createModalLabel"><span class="glyphicon glyphicon-new"></span> Create New Subject</h4>
 				</div>
 				<div class="modal-body">
 					{!! Form::open(['route' => ['subjects.store'], 'class' => 'form-horizontal', ]) !!}
-						@include('subjects/admin/partials/_form', ['edit_mode' => false])
+						@include('subjects/admin/partials/_form')
 					{!! Form::close() !!}
 				</div>
 				<div class="modal-footer">
@@ -23,21 +23,21 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-edit"></span> Edit Subject</h4>
+					<h4 class="modal-title" id="editModalLabel"><span class="glyphicon glyphicon-edit"></span> Edit Subject</h4>
 				</div>
 				<div class="modal-body">
-					{!! Form::open(['method' => 'PATCH','route' => ['subjects.update'], 'class' => 'form-horizontal', ]) !!}
-						@include('subjects/admin/partials/_form', ['edit_mode' => true])
-					{!! Form::close() !!}
+					{!! Form::open(['method' => 'PATCH','route' => ['subjects.update', ], 'class' => 'form-horizontal', ]) !!}
+						@include('subjects/admin/partials/_form')
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 					<a href="#" class="btn btn-primary" id="subjectEdit">Save changes</a>
+					{!! Form::close() !!}
 				</div>
 			</div>
 		</div>
@@ -142,28 +142,76 @@
 		$("#delete-modal").on('hide.bs.modal',function(){
 			$(".subject-delete-btn").removeClass('disabled'); // enable all delete buttons
 		});
+		
+		var $slug = $("input#slug");
+		var $title = $("input#title");
+		var $acronym = $("input#acronym");
+		var $cost = $("input#cost");
+		var $timeperiod = $("input#timeperiod");
+		var $description = $("textarea#description");
+		
 		// edit button action
 		$(".subject-edit-btn").click(function(e){
 			var id = $(this).attr('subjectid');
 			var url = "{!! URL::to('subjects/subject-details/" + id + "') !!}";
 			$.post(url, function(response) {
-				$("input#slug").val(response.slug);
-				$("input#title").val(response.title);
-				$("input#acronym").val(response.acronym);
-				$("input#cost").val(response.cost);
-				$("input#timeperiod").val(response.timeperiod);
-				$("textarea#description").val(response.description);
+				// console.log($slug.val()); // not needed
+				$slug.prop('value', response.slug);
+				$title.prop('value', response.title);
+				$acronym.prop('value', response.acronym);
+				$cost.prop('value', response.cost);
+				$timeperiod.prop('value', response.timeperiod);
+				$description.prop('value', response.description);
+				// console.log($slug.val()); // no need
+				
+				$('input#slug').trigger('change');
+				$('input#slug').change();
 			});
 		});
 		// reset on create model show
 		$("#show-create").click(function(e){			
-			$("input#slug").val('');
-			$("input#title").val('');
-			$("input#acronym").val('');
-			$("input#cost").val('');
-			$("input#timeperiod").val('');
-			$("textarea#description").val('');
+			$slug.val('');
+			$title.val('');
+			$acronym.val('');
+			$cost.val('');
+			$timeperiod.val('');
+			$description.val('');
+		});
+		// EDIT : send update via ajax
+		$("#subjectEdit").click(function(e){
+			$('input#slug').trigger('change');
+			$('input#slug').change();
+			// console.log('val() : ' + $("input#slug").val());
+			// console.log('value : ' + document.getElementById("slug").value);
+			var $data = {
+				_method : 'PUT',
+				slug : $slug.val(),
+				title : $title.val(),
+				acronym : $acronym.val(),
+				cost : $cost.val(),
+				timeperiod : $timeperiod.val(),
+				description : $description.val()
+			};
+			console.log($data);
+		});
+		$('input#slug').keyup(function(e) {
+			// console.log($(this).val());
+			// $(this).trigger('change');
+			// $(this).change();
 		});
 	});
+	
+	function updateField(id) {
+		var $data = {
+			_method : 'PUT',
+			slug : $("input#slug").val(),
+			title : $("input#title").val(),
+			acronym : $("input#acronym").val(),
+			cost : $("input#cost").val(),
+			timeperiod : $("input#timeperiod").val(),
+			description : $("input#description").val()
+		};
+		console.log($data);
+	}
 </script>
 @endsection

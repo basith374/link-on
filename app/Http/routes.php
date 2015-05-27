@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Str;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -29,3 +30,6 @@ Route::post('subjects/subject-details/{subjects}', 'SubjectsController@subjectDe
 // Route::resource('subjects', 'SubjectsController', ['except' => ['index']]);
 Route::resource('subjects', 'SubjectsController');
 
+Route::post('generate-slug', function(){
+	return Str::slug(Input::get('convert'));
+});

@@ -14,7 +14,7 @@
 				<div class="panel-heading">Create Subject</div>
 				<div class="panel-body">
 					{!! Form::open(['route' => ['subjects.store'], 'class' => 'form-horizontal', ]) !!}
-						@include('subjects/admin/partials/_form', ['edit_mode' => false])						
+						@include('subjects/admin/partials/_form')						
 						<div class="form-group">
 							<div class="col-md-2 col-md-offset-3">
 								{!! Form::button('<span class="glyphicon glyphicon-save"></span> ' . 'Create Subject', ['class' => 'btn btn-danger', 'type' => 'submit'])!!}
@@ -26,4 +26,8 @@
 		</div>
 	</div>
 </div>
+@endsection
+
+@section('jslinks')
+<script type="text/javascript" src="{{ asset('/js/subject-app.js') }}"></script>
 @endsection

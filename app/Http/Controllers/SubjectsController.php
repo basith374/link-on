@@ -85,7 +85,11 @@ class SubjectsController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		var_dump(Input::all());
+		$input = array_only(Input::all(), ['slug', 'title', 'acronym', 'cost', 'timeperiod', 'description']);
+		Subject::find($id)->update($input);
+		
+		return Redirect::route('subjects.index')->with('success-message', 'Changes saved.');
 	}
 
 	/**

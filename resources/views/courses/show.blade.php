@@ -1,4 +1,4 @@
-{{-- /resources/views/app/academy/courses/show.blade.php --}}
+{{-- /resources/views/courses/show.blade.php --}}
 @extends('layouts.master')
 
 @section('title', "$course->title")
