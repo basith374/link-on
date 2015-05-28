@@ -30,4 +30,5 @@
 
 @section('jslinks')
 <script type="text/javascript" src="{{ asset('/js/subject-app.js') }}"></script>
+
 @endsection

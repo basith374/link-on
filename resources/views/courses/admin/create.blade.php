@@ -21,4 +21,11 @@
 		</div>
 	</div>
 </div>
+
+
 @endsection
+
+@section('jslinks')
+<script src="{{asset('/js/course-app.js')}}" type="text/javascript"></script>
+@endsection
+

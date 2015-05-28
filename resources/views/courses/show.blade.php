@@ -5,6 +5,7 @@
 
 @section('content')	
 <div class="container">
+
 	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -32,6 +33,13 @@
 			<a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-modal">Delete</a>
 		</div>
 	</div>
+	@if(Session::has('success-message'))
+		
+		<div class="alert alert-success alert-dismissable" id="mass-error">
+			<a href="#" data-dismiss="alert" class="close">&times;</a>{{Session::get('success-message')}}
+		</div>
+	@endif
+	
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-info">

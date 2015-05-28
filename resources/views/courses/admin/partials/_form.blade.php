@@ -37,13 +37,15 @@
 			</div>
 			<ul class="list-group" id="subjectList">
 				@if($edit_mode)
+					<?php $i = 0; ?>
 					@foreach($subjects as $subject)
 						<li class="list-group-item">
 							<div class="input-group input-group-sm">
-								{!! Form::select('subjects', $subjectnames, array_search($subject->title, $subjectnames), ['class' => 'form-control']) !!}
+								{!! Form::select("subjects[$i]", $subjectnames, array_search($subject->title, $subjectnames), ['class' => 'form-control']) !!}
 								<a class="btn btn-danger input-group-addon subjectRemove"><span class="glyphicon glyphicon-remove"></span></a>
 							</div>
 						</li>
+						<?php $i++; ?>
 					@endforeach
 				@endif
 				<li class="list-group-item">
