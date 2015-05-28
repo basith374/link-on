@@ -12,6 +12,14 @@ use Illuminate\Support\Facades\DB;
 
 class CoursesController extends Controller {
 
+	protected $rules = [
+		'slug' => 'required',
+		'title' => 'required',
+		'acronym' => 'required',
+		'description' => 'required',
+		'subjects' => 'required',
+	];
+	
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -41,12 +49,13 @@ class CoursesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		$input = Input::all();
-		Course::create($input);
+		$this->validate($request, $this->rules);
+		var_dump(Input::all());
+		// Course::create(array_except($request->all(),['_token']));
 		
-		return Redirect::route('courses.index')->with('success-message', 'Course created');
+		// return Redirect::route('courses.index')->with('success-message', 'Course created');
 	}
 
 	/**
@@ -83,9 +92,13 @@ class CoursesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request, $id)
 	{
-		//
+		$this->validate($request, $this->rules);
+		$subjects = $request->get('subjects');
+		Course::find($id)->update(array_except($request->all(), ['_token', '_method', 'subjects']));
+		Course::find($id)->subjects()->attach($subjects);
+		return redirect()->route('courses.show',$id)->with('success-message','Course updated');
 	}
 
 	/**

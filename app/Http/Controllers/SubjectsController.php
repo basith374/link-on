@@ -11,7 +11,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class SubjectsController extends Controller {
-
+	
+	protected $rules = [
+		'slug' => 'required',
+		'title' => 'required',
+		'acronym' => 'required',
+		'cost' => 'required',
+		'timeperiod' => 'required',
+		'description' => 'required',
+	];
+	
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -41,11 +50,11 @@ class SubjectsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		$input = Input::all();
-		Subject::create($input);
-		
+		$this->validate($request, $rules);
+		Subject::create(array_except($request->all(), ['_token']));
+		// var_dump(array_except($request->all(), ['_token']));
 		return Redirect::route('courses.index')->with('success-message', 'Subject created');
 	}
 
@@ -108,7 +117,8 @@ class SubjectsController extends Controller {
 	public function allSubjects()
 	{
 		$data = Subject::all();
-		return response()->json(['data' => $data]);
+		// return response()->json($data);
+		return $data;
 	}
 	
 	public function subjectDetails($id)
