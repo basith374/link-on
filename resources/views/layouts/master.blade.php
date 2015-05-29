@@ -9,6 +9,7 @@
 
 	<link href="{{ asset('/css/app.css') }}" type="text/css" rel="stylesheet">
 	<link href="{{ asset('/css/custom.css') }}" type="text/css" rel="stylesheet"/>
+	<link href="{{ asset('/css/custom-2.css') }}" type="text/css" rel="stylesheet"/>
 	@yield('csslinks')
 
 	<!-- Fonts -->
@@ -22,7 +23,7 @@
 	<![endif]-->
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar  navbar-fixed-top navbar-cust">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -31,14 +32,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">LinkOn</a>
+				<a class="navbar-brand icon-cust" href="#">LinkOn</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav nav-a-cust">
 					<li><a href="{{ asset('home') }}">Home</a></li>
 				</ul>
-
+<!--
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
@@ -52,13 +53,15 @@
 						</li>
 					@endif
 				</ul>
+-->				
 			</div>
 		</div>
 	</nav>
+	<div class="fakeNav"></div>
 
 	@yield('content')
 	
-	<footer class="only_footer">
+	<footer class="only_footer footer-cust">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
@@ -112,6 +115,7 @@
 	<script src="{{ asset('/js/jquery-2.1.4.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('/js/app.js') }}"></script>
+	<script src="{{ asset('/js/script.js') }}"></script>
 	@yield('jslinks')
 </body>
 </html>
