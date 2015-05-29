@@ -22,6 +22,8 @@ Route::controllers([
 ]);
 
 
+Route::post('courses/{id}/subjects', ['uses' => 'CoursesController@subjects', 'as' => 'course.subject']);
+
 Route::resource('courses', 'CoursesController');
 
 // additional routes of resource controllers must be added before it.
@@ -31,5 +33,5 @@ Route::post('subjects/subject-details/{subjects}', 'SubjectsController@subjectDe
 Route::resource('subjects', 'SubjectsController');
 
 Route::post('generate-slug', function(){
-	return Str::slug(Input::get('convert'));
+	return Str::slug(Input::get('target'));
 });

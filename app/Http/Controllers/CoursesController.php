@@ -96,9 +96,24 @@ class CoursesController extends Controller {
 	{
 		$this->validate($request, $this->rules);
 		$subjects = $request->get('subjects');
-		Course::find($id)->update(array_except($request->all(), ['_token', '_method', 'subjects']));
-		Course::find($id)->subjects()->attach($subjects);
-		return redirect()->route('courses.show',$id)->with('success-message','Course updated');
+		
+		// var_dump(DB::table('course_subject')->where('course_id', $id)->whereIn('subject_id', $subjects));
+		$already = DB::table('course_subject')->where('course_id', $id)->lists('subject_id');
+		
+		$toadd = array_diff($subjects, $already);
+		echo 'to add : ';
+		print_r(array_unique($toadd));
+		$torem = array_diff($already, $subjects);
+		echo '<br/> to rem : ';
+		print_r(array_unique($torem));
+		
+		if(count($toadd)>0) {
+			Course::find($id)->subjects()->attach(array_unique($toadd));
+		}
+		if(count($torem)>0) {
+			Course::find($id)->subjects()->detach(array_unique($torem));
+		}
+		// return redirect()->route('courses.show',$id)->with('success-message','Course updated');
 	}
 
 	/**
@@ -112,6 +127,11 @@ class CoursesController extends Controller {
 		Course::find($id)->delete();
 	
 		return Redirect::route('courses.index')->with('success-message', 'Course Deleted');
+	}
+	
+	public function subjects($id)
+	{
+		return Course::find($id)->subjects;
 	}
 
 }

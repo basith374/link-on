@@ -4,11 +4,6 @@ $(document).ready(function(){
 		var row = $(this).parent().parent();
 		row.slideUp('fast', function(){
 			row.remove();
-			// loop through every select fields an update their index
-			$("#subjectList li select").each(function(i){
-				$(this).prop('name', 'subjects[' + i + ']');
-				// console.log($(this).prop('name').match(/\[(.*?)\]/)[1]);
-			});
 		});
 	}
 	// make a varialbe for this button
@@ -21,16 +16,45 @@ $(document).ready(function(){
 		// dataType : 'JSON',
 		success : function(data) {
 			json = data;
-			// console.log(data);
 			$(addBtn).removeClass('disabled');
+			fetchSubjects();
 		}
 	});
+	// console.log(window.location.pathname);
+	var id = $("#courseId").prop('value');
+	var url = "/courses/" + id + "/subjects";
+	console.log(url);
+	function fetchSubjects() {
+		$.ajax({
+			url : url,
+			type : 'POST',
+			success : function(data) {
+				$(data).each(function(index){
+					var li = $('<li></li>').attr('class', 'list-group-item');
+					var div = $('<div></div>').attr('class', 'input-group input-group-sm').appendTo(li); // create input group
+					var select = $('<select></select>').attr('class', 'form-control').attr('name', 'subjects[]').appendTo(div); // add select to input group div
+					var removebtn = $('<a></a>').attr('class', 'subjectRemove input-group-addon btn btn-danger').appendTo(div); // add removebtn to input group div
+					// register event handler for remove button
+					removebtn.click(removeAction);
+					$('<span></span>').attr('class', 'glyphicon glyphicon-remove').appendTo(removebtn); // add cross icon for removebutton
+					// loop through the json and populate the <select> with <option>
+					var title = this.title;
+					$(json).each(function(index) {
+						var option = $('<option>' + this.title + '</option>').prop('value', this.id).appendTo(select);
+						if(title == this.title) {
+							option.attr('selected', 'selected');
+						}
+					});
+					$("#subjectList li:last").before(li); // append <li> to <ul> before the last element(ie. the ADD button DUH!)
+				});
+			}
+		});
+	}
 	$(addBtn).click(function(e){
 		e.preventDefault();
-		var lindex = $("#subjectList li").eq(-2).find("select").prop('name').match(/\[(.*?)\]/)[1]; // last index
 		var li = $('<li></li>').attr('class', 'list-group-item');
 		var div = $('<div></div>').attr('class', 'input-group input-group-sm').appendTo(li); // create input group
-		var select = $('<select></select>').attr('class', 'form-control').attr('name', 'subject[' + ++lindex + ']').appendTo(div); // add select to input group div
+		var select = $('<select></select>').attr('class', 'form-control').attr('name', 'subjects[]').appendTo(div); // add select to input group div
 		var removebtn = $('<a></a>').attr('class', 'subjectRemove input-group-addon btn btn-danger').appendTo(div); // add removebtn to input group div
 		// register event handler for remove button
 		removebtn.click(removeAction);
@@ -47,7 +71,10 @@ $(document).ready(function(){
 	$("#courseDelete").click(function(){
 		$(this).addClass('disabled');
 	});
-	$("#testBtn").click(function(){
-		console.log($("#subjectList li").eq(-2).find("select").prop('name').match(/\[(.*?)\]/)[1]);
+	$("#title-field").blur(function(){
+		var target = $(this).val();
+		$.post('/generate-slug', {'target' : target}, function(response){
+			$("#slug-field").val(response);
+		});
 	});
 });
