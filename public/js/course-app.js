@@ -1,29 +1,35 @@
 $(document).ready(function(){
 	
-	var removeAction = function(){
-		var row = $(this).parent().parent();
-		row.slideUp('fast', function(){
-			row.remove();
-		});
-	}
-	// make a varialbe for this button
-	var addBtn = $("#subjectAdd");
+	/*
+	 * GLOBAL VARS
+	 *
+	 */
+	
 	// the subjects response will be stored in this array
 	var json;
-	$.ajax({
-		url : '/subjects/all-subjects',
-		type : 'POST',
-		// dataType : 'JSON',
-		success : function(data) {
-			json = data;
-			$(addBtn).removeClass('disabled');
-			fetchSubjects();
-		}
-	});
 	// console.log(window.location.pathname);
 	var id = $("#courseId").prop('value');
 	var url = "/courses/" + id + "/subjects";
-	console.log(url);
+	
+	
+	/*
+	 * FUNCTIONS
+	 *
+	 */
+	 
+	function initEdit() {
+		$.ajax({
+			url : '/subjects/all-subjects',
+			type : 'POST',
+			// dataType : 'JSON',
+			success : function(data) {
+				json = data;
+				$("#subjectAdd").removeClass('disabled').click(addAction);
+				$("#title-field").blur(autoSlugAction);
+			}
+		});
+	}
+	
 	function fetchSubjects() {
 		$.ajax({
 			url : url,
@@ -50,7 +56,20 @@ $(document).ready(function(){
 			}
 		});
 	}
-	$(addBtn).click(function(e){
+	
+	/*
+	 * EVENT HANDLER(SAVED)
+	 *
+	 */
+	
+	var removeAction = function(){
+		var row = $(this).parent().parent();
+		row.slideUp('fast', function(){
+			row.remove();
+		});
+	}
+	
+	var addAction = function(e){
 		e.preventDefault();
 		var li = $('<li></li>').attr('class', 'list-group-item');
 		var div = $('<div></div>').attr('class', 'input-group input-group-sm').appendTo(li); // create input group
@@ -65,16 +84,58 @@ $(document).ready(function(){
 		});
 		$("#subjectList li:last").before(li.hide()); // append <li> to <ul> before the last element(ie. the ADD button DUH!)
 		li.slideDown('fast');
-	});
+	}
+	
+	var autoSlugAction = function(){
+		var target = $(this).val();
+		$.post('/generate-slug', {'target' : target}, function(response){
+			$("#slug-field").val(response);
+		});
+	}
+	
+	/*
+	 * EVENT LISTENERS(DIRECT)
+	 *
+	 */
+	
 	// register existing subject remove buttons with event handlers
 	$(".subjectRemove").click(removeAction);
 	$("#courseDelete").click(function(){
 		$(this).addClass('disabled');
 	});
-	$("#title-field").blur(function(){
-		var target = $(this).val();
-		$.post('/generate-slug', {'target' : target}, function(response){
-			$("#slug-field").val(response);
+	
+	// COURSE CREATE AND COURSE EDIT
+	
+	$("#courseCreate").click(function(){
+		console.log('ok');
+		$.get('/courses/create', function(response) {
+			$("#formContainer").html(response);
+			initEdit();
 		});
+	});
+	
+	$("#courseEdit").click(function(e){
+		e.preventDefault();
+		var url = '/courses/' + $("#courseId").prop('value') + '/edit';
+		$.get(url , function(response) {
+			$("#formContainer").html(response);
+			initEdit();
+			fetchSubjects();
+		});
+	});
+	
+	$("#courseDetails").click(function(e){
+		e.preventDefault();
+		var url = '/courses/' + $("#courseId").prop('value') + '/details';
+		$.get(url , function(response) {
+			$("#formContainer").html(response);
+		});
+	});
+	
+	$("#navtabs li a").click(function(e){
+		e.preventDefault();
+		var li=$(this).parent();
+		$("#navtabs li").removeClass('active');
+		li.addClass('active');
 	});
 });

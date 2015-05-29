@@ -5,7 +5,6 @@
 
 @section('content')	
 <div class="container">
-
 	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -25,14 +24,27 @@
 			</div>
 		</div>
 	</div>
+	<!--
 	<div class="top-link">
 		<a href="{{ route('courses.index') }}" class="btn btn-default btn-sm">Back</a>
 		<div class="pull-right btn-group">
-			<a href="{{ route('courses.edit', $course) }}" class="btn btn-primary btn-sm">Edit</a>
-			<a href="{{ route('courses.create') }}" class="btn btn-success btn-sm">Create</a>
+			<a class="btn btn-primary btn-sm" id="courseEdit">Edit</a>
+			<a class="btn btn-success btn-sm" id="courseCreate">Create</a>
 			<a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-modal">Delete</a>
-		</div>
+		</div>-->
+	<div class="panel">
+		<ul class="nav nav-tabs" id="navtabs">
+			<li class="active"><a href="" id="courseDetails">Details</a></li>
+			<li><a href="#" id="courseCreate">Create</a></li>
+			<li><a href="#" id="courseEdit">Edit</a></li>
+			<li><a href="#" data-toggle="modal" data-target="#delete-modal">Delete</a></li>
+			<li><a href="{{ route('courses.index')}}">Back</a></li>
+		</ul>
+		<input type="hidden" id="courseId" value="{{ $course->id }}"/>
 	</div>
+	<!--
+	</div>
+	-->
 	@if(Session::has('success-message'))
 		
 		<div class="alert alert-success alert-dismissable" id="mass-error">
@@ -40,51 +52,12 @@
 		</div>
 	@endif
 	
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					{{ $course->title }} <span class="label label-success pull-right">{{ $course->acronym }}</span>
-				</div>
-
-				<div class="panel-body">
-					{{ $course->description }}
-					<div class="subject-table">
-						@if($subjects)						
-							<div class="panel panel-default">
-								<div class="panel-heading">Subjects</div>
-								<table class="table table-hover">
-									<tr>
-										<th>Subject Name</th>
-										<th>Cost</th>
-									</tr>
-									<?php
-										$total = 0;
-									?>
-									@foreach($subjects as $subject)
-										<tr>
-											<td><a href="{{ route('subjects.show', ['subjects' => $subject, 'course' => $course]) }}">{{ $subject->title }}</a></td>
-											<td>{{ $subject->cost }}</td>
-										</tr>
-										<?php
-											$total = $total + $subject->cost;
-										?>
-									@endforeach
-									<tr class="active">
-										<td>Total</td>
-										<td><span class="label label-default"><span class="glyphicon glyphicon-euro"></span> {{ $total }}</span></td>
-									</tr>
-								</table>
-							</div>
-						@else
-							<div class="well well-sm">
-								No subjects
-							</div>
-						@endif
-					</div>
-				</div>
-			</div>
-		</div>
+	<div class="row" id="formContainer">
+		@include('courses/partials/_details')
 	</div>
 </div>
+@endsection
+
+@section('jslinks')
+<script type="text/javascript" src="{{ asset('/js/course-app.js') }}"></script>
 @endsection

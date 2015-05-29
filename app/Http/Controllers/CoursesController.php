@@ -38,10 +38,7 @@ class CoursesController extends Controller {
 	 */
 	public function create()
 	{
-		$course = Input::get('course');
-		$from = Input::get('from');
-		$data = [$course, $from];
-		return view('courses.admin.create', $data);
+		return view('courses.admin.create');
 	}
 
 	/**
@@ -71,7 +68,16 @@ class CoursesController extends Controller {
 		$data = ['course' => $course, 'subjects' => $subjects];
 		return view('courses.show', $data);
 	}
-
+	
+	public function showPartial($id)
+	{
+		$course = Course::find($id);
+		$subjects = $course->subjects;		
+		$data = ['course' => $course, 'subjects' => $subjects];
+		return view('courses.partials._details', $data);
+	}
+	
+	
 	/**
 	 * Show the form for editing the specified resource.
 	 *

@@ -21,7 +21,7 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-
+Route::get('courses/{id}/details','CoursesController@showPartial');
 Route::post('courses/{id}/subjects', ['uses' => 'CoursesController@subjects', 'as' => 'course.subject']);
 
 Route::resource('courses', 'CoursesController');
@@ -32,6 +32,8 @@ Route::post('subjects/subject-details/{subjects}', 'SubjectsController@subjectDe
 // Route::resource('subjects', 'SubjectsController', ['except' => ['index']]);
 Route::resource('subjects', 'SubjectsController');
 
+
 Route::post('generate-slug', function(){
 	return Str::slug(Input::get('target'));
+	
 });

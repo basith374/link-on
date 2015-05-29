@@ -1,5 +1,7 @@
 {{-- /resources/views/courses/admin/partials/_form.blade.php --}}
-<input type="hidden" id="courseId" value="{{ $course->id }}"/>
+@if(isset($course))
+	<input type="hidden" id="courseId" value="{{ $course->id }}"/>
+@endif
 <div class="form-group">
 	{!! Form::label('slug', 'Slug', ['class' => 'text-danger control-label col-md-3']) !!}
 	<div class="col-md-7">
