@@ -90,6 +90,22 @@ jQuery(document).ready(function() {
 			}else{
 				$('.navbar-cust').css({"height":"120px" , "paddingTop" : "33px"});
 			}
+			
+			if (window.pageYOffset >= 650){
+				$('.navbar-cust').css({"background":"#ed7b6f" });
+				$(".nav-a-cust > li > a").css({"background":"#ed7b6f" });
+				
+				$(".nav-a-cust > li > a").hover(function() {
+				  $(this).css({"background":"#ed7b6f" });
+				});
+			}else{
+				$('.navbar-cust').css({"background":"#373737" })
+				$(".nav-a-cust > li > a").css({"background":"#373737" });
+				
+				$(".nav-a-cust > li > a").hover(function() {
+				  $(this).css({"background":"#373737" });
+				});
+			}
 		
 			/*hb-w-grid*/
 			

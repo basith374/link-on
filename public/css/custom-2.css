@@ -50,7 +50,7 @@
 			padding-top:33px;
 			margin-bottom:0px;
 			border-radius:0px;
-			transition: padding-top .5s ,height 0.5s; 
+			transition: padding-top .5s ,height 0.5s , background 0.3s; 
 		}
 		
 		.icon-cust{
@@ -65,10 +65,9 @@
 			color:#fff;
 		}
 		
-		.nav-a-cust a{
+		.nav-a-cust > li > a{
 			color:rgba(255,255,255,0.6);
-			transition:color .2s;
-			background:#373737;
+			transition:color .2s, background 0.3s;
 		}
 		.nav-a-cust > li > a:hover{
 			color:rgba(255,255,255,.8);
