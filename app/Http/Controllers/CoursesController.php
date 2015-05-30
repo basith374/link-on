@@ -40,6 +40,11 @@ class CoursesController extends Controller {
 	{
 		return view('courses.admin.create');
 	}
+	
+	public function createPartial()
+	{
+		return view('courses.admin.partials.create');
+	}
 
 	/**
 	 * Store a newly created resource in storage.
@@ -90,6 +95,14 @@ class CoursesController extends Controller {
 		$subjects = $course->subjects;
 		$subjectnames = DB::table('subjects')->lists('title');
 		return view('courses.admin.edit', ['course' => $course, 'subjects' => $subjects, 'subjectnames' => $subjectnames]);
+	}
+	
+	public function editPartial($id)
+	{
+		$course = Course::find($id);
+		$subjects = $course->subjects;
+		$subjectnames = DB::table('subjects')->lists('title');
+		return view('courses.admin.partials.edit', ['course' => $course, 'subjects' => $subjects, 'subjectnames' => $subjectnames]);
 	}
 
 	/**

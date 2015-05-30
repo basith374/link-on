@@ -32,13 +32,13 @@
 			<a class="btn btn-success btn-sm" id="courseCreate">Create</a>
 			<a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-modal">Delete</a>
 		</div>-->
-	<div class="panel">
+	<div class="row-space">
 		<ul class="nav nav-tabs" id="navtabs">
-			<li class="active"><a href="" id="courseDetails">Details</a></li>
+			<li class="active"><a href="#" id="courseDetails">Details</a></li>
 			<li><a href="#" id="courseCreate">Create</a></li>
 			<li><a href="#" id="courseEdit">Edit</a></li>
 			<li><a href="#" data-toggle="modal" data-target="#delete-modal">Delete</a></li>
-			<li><a href="{{ route('courses.index')}}">Back</a></li>
+			<li><a href="{{ route('courses.index') }}">Back</a></li>
 		</ul>
 		<input type="hidden" id="courseId" value="{{ $course->id }}"/>
 	</div>

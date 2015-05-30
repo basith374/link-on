@@ -107,9 +107,21 @@
  */
 .top-link {
 	line-height: 30px;
-	margin-bottom: 10px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .top-pad > .badge {
 	float: right;
+}
+
+.row-space {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.row-space-top {
+	margin-top: 15px;
+}
+.row-space-bottom {
+	margin-bottom: 15px;
 }

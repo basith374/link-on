@@ -5,12 +5,14 @@
 
 @section('content')
 <div class="container">
+	<div class="top-link">
+		<a href="{{ route('courses.create') }}" class="btn btn-sm btn-primary" >Create Course</a>
+		<a href="{{ route('subjects.create') }}" class="btn btn-sm btn-success" >Create Subject</a>
+		<a href="{{ route('subjects.index') }}" class="btn btn-sm btn-danger" >View Subjects</a>
+	</div>
+</div>
+<div class="container">
 	<div class="row">
-		<div class="top-link">
-			<a href="{{ route('courses.create') }}" class="btn btn-sm btn-primary" >Create Course</a>
-			<a href="{{ route('subjects.create') }}" class="btn btn-sm btn-success" >Create Subject</a>
-			<a href="{{ route('subjects.index') }}" class="btn btn-sm btn-danger" >View Subjects</a>
-		</div>
 		@if(Session::has('success-message'))
 			<div class="alert alert-success alert-dismissable">
 				<a href="#" data-dismiss="alert" class="close">&times;</a>{{ Session::get('success-message') }}

@@ -13,13 +13,9 @@
 	@endif
 	
 		<div class="container">
-			<div class="row" id="gridset">
-				<?php
-				
-				$ticker=1;
-				while($ticker<=8){
-				?>
-					<div class=" box-cust" id="gbox">
+			<div class="row col-lg-offset-1" id="gridset">
+				@for($ticker=1;$ticker<=8;$ticker++)
+					<div class="box-cust" id="gbox">
 						<a href="{{ route('courses.index') }}" class="pawe">
 							<div class="boxpanel-cust">
 								<div class="boxhead-cust" id="gh">
@@ -36,10 +32,7 @@
 							</div>
 						</a>
 					</div>
-				<?php
-				$ticker++;
-				}	
-				?>
+				@endfor
 			</div>
 		</div>	
 	</div>
@@ -114,8 +107,8 @@
 </div>
 
 <div class="hb-prefooter">
-	
-		<div class="container">
+	<div class="container">
+		<div class="col-lg-offset-1">
 			<div class="pf-d-div" style="margin:100px 0px 0px -550px; opacity:0.4" id="pf-div-1">
 				<div  style="width:50%; height:20px; border-radius:10px; background:#677889;  margin:30px 0px 30px 50px;" ></div>
 				
@@ -158,7 +151,7 @@
 				<div  style="width:56%; height:10px; border-radius:5px; background:#51677c;  margin:20px 0px 10px 50px;" ></div>
 				<div  style="width:65%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
 			</div>
-			
-		</div>	
-	</div>
+		</div>
+	</div>	
+</div>
 @endsection

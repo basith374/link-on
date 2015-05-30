@@ -17,7 +17,12 @@ $(document).ready(function(){
 	 *
 	 */
 	 
-	function initEdit() {
+	function initAll() {
+		initEdit(true);
+		$("#title-field").blur(autoSlugAction); // move back to initEdit
+	}
+	 
+	function initEdit(fetch_sub) {
 		$.ajax({
 			url : '/subjects/all-subjects',
 			type : 'POST',
@@ -25,7 +30,12 @@ $(document).ready(function(){
 			success : function(data) {
 				json = data;
 				$("#subjectAdd").removeClass('disabled').click(addAction);
-				$("#title-field").blur(autoSlugAction);
+				if(fetch_sub) {
+					console.log('fetching subjects');
+					fetchSubjects()}
+				else {
+					console.log('no subjects fetched');
+				}
 			}
 		});
 	}
@@ -86,7 +96,7 @@ $(document).ready(function(){
 		li.slideDown('fast');
 	}
 	
-	var autoSlugAction = function(){
+	var autoSlugAction = function() {
 		var target = $(this).val();
 		$.post('/generate-slug', {'target' : target}, function(response){
 			$("#slug-field").val(response);
@@ -107,20 +117,18 @@ $(document).ready(function(){
 	// COURSE CREATE AND COURSE EDIT
 	
 	$("#courseCreate").click(function(){
-		console.log('ok');
-		$.get('/courses/create', function(response) {
+		$.get('/courses/create-ex', function(response) {
 			$("#formContainer").html(response);
-			initEdit();
+			initEdit(false);
 		});
 	});
 	
 	$("#courseEdit").click(function(e){
 		e.preventDefault();
-		var url = '/courses/' + $("#courseId").prop('value') + '/edit';
+		var url = '/courses/' + $("#courseId").prop('value') + '/edit-ex';
 		$.get(url , function(response) {
 			$("#formContainer").html(response);
-			initEdit();
-			fetchSubjects();
+			initEdit(true);
 		});
 	});
 	
@@ -133,9 +141,12 @@ $(document).ready(function(){
 	});
 	
 	$("#navtabs li a").click(function(e){
-		e.preventDefault();
+		// e.preventDefault();
 		var li=$(this).parent();
 		$("#navtabs li").removeClass('active');
 		li.addClass('active');
 	});
+	
+	initEdit(false);
+	
 });

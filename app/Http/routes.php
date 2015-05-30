@@ -22,6 +22,8 @@ Route::controllers([
 ]);
 
 Route::get('courses/{id}/details','CoursesController@showPartial');
+Route::get('courses/create-ex','CoursesController@createPartial');
+Route::get('courses/{id}/edit-ex','CoursesController@editPartial');
 Route::post('courses/{id}/subjects', ['uses' => 'CoursesController@subjects', 'as' => 'course.subject']);
 
 Route::resource('courses', 'CoursesController');
