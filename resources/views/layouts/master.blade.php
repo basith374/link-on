@@ -57,11 +57,12 @@
 			</div>
 		</div>
 	</nav>
+	
 	<div class="fakeNav"></div>
-
+	
 	@yield('content')
 	
-	<footer class="only_footer footer-cust">
+	<footer class="only_footer footer-cust ">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
@@ -81,9 +82,10 @@
 					</ul>
 				</div>
 				<div class="col-md-4">
-					<div class="logospace">
+					<div class="logospace untouchable">
 						<span>
-							&copy; 2015 LinkOn
+							<div class=" pf-icon-cust" >LinkOn</div>
+							&copy; 2015 LinkOn education
 						</span>
 					</div>
 				</div>
