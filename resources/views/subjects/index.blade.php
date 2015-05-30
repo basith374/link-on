@@ -61,7 +61,7 @@
 	</div>
 	<div class="top-link">
 		<a href="{{ route('courses.index') }}" class="btn btn-default btn-sm">Back</a>
-		<a class="btn btn-success btn-sm pull-right" data-target="#create-modal" data-toggle="modal" id="show-create">Create</a>
+		<a class="btn btn-success btn-sm pull-right" data-target="#create-modal" data-toggle="modal" id="subject-create-btn">Create</a>
 	</div>
 	<div class="panel panel-default">
 		<table class="table table-striped">
@@ -75,9 +75,10 @@
 					<td>{{ $subject->slug }}</td>
 					<td><a href="{{ route('subjects.show', $subject) }}">{{ $subject->title }}</a></td>
 					<td>
+						<input type="hidden" name="subjectId" value="{{ $subject->id }}" />
 						<span class="btn-group btn-group-xs">
-							<button type="button" class="btn btn-primary subject-edit-btn" data-target="#edit-modal" data-toggle="modal" subjectid="{{ $subject->id }}">Edit</button>
-							<a class="btn btn-danger subject-delete-btn" data-target="#delete-modal" data-toggle="modal" subjectid="{{ $subject->id }}">Delete</a>
+							<a class="btn btn-primary subject-edit-btn" data-target="#edit-modal" data-toggle="modal">Edit</button>
+							<a class="btn btn-danger subject-delete-btn" data-target="#delete-modal" data-toggle="modal">Delete</a>
 						</span>
 					</td>
 				</tr>
@@ -86,8 +87,6 @@
 	</div>
 </div>
 @endsection
-
 @section('jslinks')
-
-
+<script type="text/javascript" src="{{ asset('/js/subject-app.js') }}"></script>
 @endsection

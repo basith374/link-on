@@ -1,45 +1,32 @@
-.pawe {
+/*
+ * COURSES GRID
+ */
+
+.grid-link {
 	color: #666;
 }
 
-.pawe:hover {
+.grid-link:hover {
 	text-decoration: none;
 	color: #666;
 }
 
-.paws {
+.grid-btn {
 	transition: box-shadow .1s;
 	-moz-transition: box-shadow .1s;
 	-webkit-transition: box-shadow .1s;
 }
 
-.paws:hover {
+.grid-btn:hover {
 	-moz-box-shadow: 0 0 8px #2c2cfd;
 	-webkit-box-shadow: 0 0 8px #2c2cfd;
 	box-shadow: 0 0 8px #2c2cfd;
 }
 
-
-#mainnavbar {
-	margin-bottom: 17px;
-	padding: 10px;
-	border: 1px solid #cccccc;
-	border-radius: 4px;
-}
-
-.navbtns > li {
-	transition: all .2s;
-	-moz-transition: all .2s;
-	-webkit-transition: all .2s;
-}
-
-.navbtns > li:hover {
-	background: #5580fe;
-	-moz-box-shadow: 0 0 8px #2c2cfd;
-	-webkit-box-shadow: 0 0 8px #2c2cfd;
-	box-shadow: 0 0 8px #2c2cfd;
-}
-
+/*
+ * MAIN FOOTER
+ */
+ 
 .only_footer {
 	/*background: #2f2f2f;*/
 	background: #222;
@@ -65,6 +52,10 @@
 	text-align: center;
 }
 
+/*
+ * SAMPLE COLORS
+ */
+
 .backg {
 	background: green;
 }
@@ -77,9 +68,18 @@
 	background: tomato;
 }
 
-#subjects-panel {
-	margin-bottom: 0;
+/*
+ * FORMS
+ */
+
+.slug-danger {
+	line-height: 30px;
+	padding-left: 0;
 }
+
+/*
+ * SUBJECT
+ */
 
 .subject-table {
 	margin-top: 15px;
@@ -97,31 +97,42 @@
 	margin-top: 0px;
 }
 
-.slug-danger {
-	line-height: 30px;
-	padding-left: 0;
+/*
+ * GENERAL PURPOSE VERTICAL SPACING
+ */
+
+.row-space {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.row-space-top {
+	margin-top: 15px;
+}
+
+.row-space-bottom {
+	margin-bottom: 15px;
 }
 
 /*
- * USE WITH SM SIZE BUTTONS
+ * COURSE PANEL
  */
+
+/* USE WITH SM SIZE BUTTONS */
 .top-link {
 	line-height: 30px;
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
 
-.top-pad > .badge {
-	float: right;
+.course-panel .panel-heading h3 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	float: left;
 }
 
-.row-space {
-	margin-top: 15px;
-	margin-bottom: 15px;
-}
-.row-space-top {
-	margin-top: 15px;
-}
-.row-space-bottom {
-	margin-bottom: 15px;
+.course-panel .panel-heading span {
+	float: right;
+	vertical-align: middle; /* doesnt seem to be working */
+	margin-top: 10px; /* so put an approximate value */
 }

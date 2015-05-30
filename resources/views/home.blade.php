@@ -123,7 +123,7 @@
 			</div>
 			
 			<div class="pf-cont"  id="pf-div-2">
-				<div class="pf-cont-head">What is LINKON</div>
+				<div class="pf-cont-head">What is LINKON?</div>
 				<p>
 					Linkon Education is basically a platform for students. Its is a 100% advertisement free website were
 					students find all about education . The market we are looking forward isIndia only. It must be very mobile friendly

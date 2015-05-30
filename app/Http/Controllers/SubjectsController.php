@@ -10,6 +10,8 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Validator;
+
 class SubjectsController extends Controller {
 	
 	protected $rules = [
@@ -53,9 +55,22 @@ class SubjectsController extends Controller {
 	public function store(Request $request)
 	{
 		$this->validate($request, $rules);
-		Subject::create(array_except($request->all(), ['_token']));
+		// $validator = Validator::make(Input::all(), $this->rules);
+		// if($validator->fails()) {
+			// if($request->ajax()) {
+				// return $validator->failed(); // multidimensinal array of validation rules that failed
+				// return $validator->errors()->all(); // simple array for error strings
+				// return $validator->messages(); // multidimensional array of error strings
+			// }
+			// return redirect()->route('courses.index')->with('failure-message', $validator->errors());
+		// }
+		// if($request->ajax()) {
+			
+		// }
+		// Subject::create(array_except($request->all(), ['_token']));
 		// var_dump(array_except($request->all(), ['_token']));
-		return Redirect::route('courses.index')->with('success-message', 'Subject created');
+		return redirect()->route('courses.index')->with('success-message', 'Subject created');
+		// return 'hello!';
 	}
 
 	/**

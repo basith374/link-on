@@ -23,7 +23,7 @@
 	<![endif]-->
 </head>
 <body>
-	<nav class="navbar  navbar-fixed-top navbar-cust">
+	<nav class="navbar navbar-fixed-top navbar-cust">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -64,7 +64,7 @@
 	<footer class="only_footer footer-cust">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-2 visible-md visible-lg">
 					<ul class="footer_links">
 						<li><a href="#">Services</a></li>
 						<li><a href="#">Community</a></li>
@@ -72,7 +72,7 @@
 						<li><a href="#">Sitemap</a></li>
 					</ul>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2 visible-md visible-lg">
 					<ul class="footer_links">
 						<li><a href="#">Careers</a></li>
 						<li><a href="#">Donate</a></li>
@@ -87,7 +87,7 @@
 						</span>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2 visible-md visible-lg">
 					<ul class="footer_links">
 						<li><a href="#">Sponsors</a></li>
 						<li><a href="#">Terms Of Service</a></li>
@@ -95,7 +95,7 @@
 						<li><a href="#">About</a></li>
 					</ul>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2 visible-md visible-lg">
 					<ul class="footer_links">
 						<li><a href="#">Support</a></li>
 						<li><a href="#">Help</a></li>

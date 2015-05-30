@@ -23,12 +23,12 @@
 				<a href="#" data-dismiss="alert" class="close">&times;</a>{{ Session::get('failure-message') }}
 			</div>
 		@endif
-		<div class="">{{-- grid box width class here --}}
+		<div id="coursesGrid"><!-- gridbox width class here -->
 			@if($courses)
 				@foreach($courses as $course)
-					<div class="col-md-4">
-						<a href="{{ route('courses.show', $course) }}" class="pawe">
-							<div class="panel panel-default paws">
+					<div class="col-sm-6 col-md-4 col-lg-3">
+						<a href="{{ route('courses.show', $course) }}" class="grid-link">
+							<div class="panel panel-default grid-btn">
 								<div class="panel-heading">
 									<h3 class="panel-title"><span class="glyphicon glyphicon-asterisk"></span> {{ $course->title }}</h3>
 								</div>
