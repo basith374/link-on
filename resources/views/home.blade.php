@@ -1,10 +1,17 @@
 {{-- /resources/views/home.blade.php --}}
+<style>
+		.fakeNav{
+			background: #ed7b6f;		
+		}
+		
+</style>
+
 @extends('layouts.master')
 
 @section('title', 'Home')
 
 @section('content')
-
+	
 
 	<div id="hb-red-cust">
 	
@@ -51,7 +58,7 @@
         </div>
 		
 		<div class="col-lg-12">
-            <div class="row ">
+            <div class="row untouchable">
                 <div class="col-xs-10 col-xs-offset-1  hb-w-cont" >
 					<div class="col-lg-12" id="gridset-w">
 						<div class=" col-xs-4 hd-w-grid" >
@@ -110,19 +117,20 @@
 	<div class="container">
 		<div class="col-lg-offset-1">
 			<div class="pf-d-div" style="margin:100px 0px 0px -550px; opacity:0.4" id="pf-div-1">
-				<div  style="width:50%; height:20px; border-radius:10px; background:#677889;  margin:30px 0px 30px 50px;" ></div>
+				<div  style="width:50%; height:20px; border-radius:10px; background:#a4eee0;  margin:30px 0px 30px 50px;" ></div>
 				
-				<div  style="width:80%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
-				<div  style="width:70%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
-				<div  style="width:77%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
-				<div  style="width:60%; height:10px; border-radius:5px; background:#51677c;  margin:30px 0px 10px 50px;" ></div>
-				<div  style="width:50%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
-				<div  style="width:46%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
-				<div  style="width:56%; height:10px; border-radius:5px; background:#51677c;  margin:20px 0px 10px 50px;" ></div>
-				<div  style="width:65%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
+				<div  style="width:80%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
+				<div  style="width:70%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
+				<div  style="width:77%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
+				<div  style="width:60%; height:10px; border-radius:5px; background:#50cbb3;  margin:30px 0px 10px 50px;" ></div>
+				<div  style="width:50%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
+				<div  style="width:46%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
+				<div  style="width:56%; height:10px; border-radius:5px; background:#50cbb3;  margin:20px 0px 10px 50px;" ></div>
+				<div  style="width:65%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
 			</div>
 			
 			<div class="pf-cont"  id="pf-div-2">
+<<<<<<< HEAD
 				<div class="pf-cont-head">What is LINKON?</div>
 				<p>
 					Linkon Education is basically a platform for students. Its is a 100% advertisement free website were
@@ -135,21 +143,39 @@
 					students find all about education . The market we are looking forward isIndia only. It must be very mobile friendly
 					and more over a students friendly website too.
 				</p>
+=======
+				<div class="pf-cont-head untouchable ">What is LINKON</div>
+				<div class="pf-cont-word">
+					<p class="pf-cont-w untouchable">
+						<span>Linkon</span> <span>Education</span> <span>is</span> <span>basically</span> <span>a</span> <span>platform</span> <span>for</span> <span>students.</span> <span>Its</span> <span>is</span> <span>a</span> <span>100%</span> <span>advertisement</span> <span>free</span> <span>website</span> <span>were
+						students</span> <span>find</span> <span>all</span> <span>about</span> <span>education</span> <span>.</span> <span>The</span> <span>market</span> <span>we</span> <span>are</span> <span>looking</span> <span>forward</span> <span>is</span> <span>India</span> <span>only.</span> <span>It</span> <span>must</span> <span>be</span> <span>very</span> <span>mobile</span> <span>friendly
+						and</span> <span>more</span> <span>over</span> <span>a</span> <span>students</span> <span>friendly</span> <span>website too.</span>
+						</br>
+						<span>This</span> <span>is</span> <span>basically</span> <span>a</span> <span>platform</span> <span>for</span> <span>students.</span> <span>Its</span> <span>is</span> <span>a</span> <span>100%</span> <span>advertisement</span> <span>free</span> <span>website</span> <span>were
+						students</span> <span>find</span> <span>all</span> <span>about</span> <span>education</span> <span>.</span> <span>The</span> <span>market</span> <span>we</span> <span>are</span> <span>looking</span> <span>forward</span> <span>is</span> <span>India</span> <span>only.</span> <span>It</span> <span>must</span> <span>be</span> <span>very</span> <span>mobile</span> <span>friendly
+						and</span> <span>more</span> <span>over</span> <span>a</span> <span>students</span> <span>friendly</span> <span>website too.</span>
+						
+					</p>
+					<div class="hg3-up-btn-cust">
+						Get started
+					</div>
+				</div>
+>>>>>>> 139063094d4aff2cb8d846c9f592692290811846
 				
 				
 			</div>
 			
 			<div class="pf-d-div" style="transform:scale(0.7); margin:-400px 0px 0px 1080px; opacity:0.3"  id="pf-div-3">
-				<div  style="width:50%; height:20px; border-radius:10px; background:#677889;  margin:30px 0px 30px 50px;" ></div>
+				<div  style="width:50%; height:20px; border-radius:10px; background:#a4eee0;  margin:30px 0px 30px 50px;" ></div>
 				
-				<div  style="width:80%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
-				<div  style="width:70%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
-				<div  style="width:77%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
-				<div  style="width:60%; height:10px; border-radius:5px; background:#51677c;  margin:30px 0px 10px 50px;" ></div>
-				<div  style="width:50%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
-				<div  style="width:46%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
-				<div  style="width:56%; height:10px; border-radius:5px; background:#51677c;  margin:20px 0px 10px 50px;" ></div>
-				<div  style="width:65%; height:10px; border-radius:5px; background:#51677c;  margin:10px 0px 10px 50px;" ></div>
+				<div  style="width:80%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
+				<div  style="width:70%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
+				<div  style="width:77%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
+				<div  style="width:60%; height:10px; border-radius:5px; background:#50cbb3;  margin:30px 0px 10px 50px;" ></div>
+				<div  style="width:50%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
+				<div  style="width:46%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
+				<div  style="width:56%; height:10px; border-radius:5px; background:#50cbb3;  margin:20px 0px 10px 50px;" ></div>
+				<div  style="width:65%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
 			</div>
 		</div>
 	</div>	
