@@ -1,3 +1,365 @@
+	
+	
+	@font-face {
+		font-family: Dosis;
+		src: url('../fonts/Dosis-Bold.ttf');
+	}
+		
+	@font-face {
+		font-family: Organo;
+		src: url('../fonts/Organo.ttf');
+	}
+	
+	@font-face {
+		font-family: Station;
+		src: url('../fonts/Station.ttf');
+	}
+	@font-face {
+		font-family: AnjaEliane;
+		src: url('../fonts/AnjaEliane.ttf');
+	}
+	
+	
+	body{
+	
+	}
+	
+	.untouchable{
+		-moz-user-select: none; 
+		-khtml-user-select: none; 
+		-webkit-user-select: none; 
+		-o-user-select: none; 
+		cursor:default;
+	}
+	/* Master */
+	
+	.fakeNav{
+		height: 120px;
+	}
+		
+		.navbar-cust{
+			background: #373737;
+			height: 120px;
+			padding-top: 33px;
+			border:0px;
+			margin-bottom: 0px;
+			border-radius: 0px;
+			transition: padding-top .5s ,height 0.5s , background 0.3s; 
+		}
+		
+		.icon-cust{
+			color: rgba(255,255,255,0.8);
+			font-family: Organo;
+			font-size: 40px;
+			transition: color .2s;
+			padding-left: 55px;
+		}
+		
+		.icon-cust:hover{
+			color: #fff;
+		}
+		
+		.nav-a-cust > li > a{
+			color: rgba(255,255,255,0.6);
+			transition: color .2s, background 0.3s;
+		}
+		.nav-a-cust > li > a:hover{
+			color: rgba(255,255,255,.8);
+			background: #373737;
+		}
+		
+	/* BCZ System */	
+		.bcz-icon{
+			background:#707070;
+			color:#373f41;
+			border-radius:13px;
+			padding:7px 7px 4px 7px;
+			font-family: AnjaEliane;
+			margin-right:10px;
+		}
+			.ad-help-panel{
+				font-family:Dosis;
+				color:rgba(255,255,255,0.7);
+				width:calc( 100% - 350px);
+				height:40px;
+				padding:10px 10px 10px 15px;
+				background:#373f41;
+				border-radius:5px;
+				margin:19px 0px 0px 0px;
+			}	
+	/* Admin */
+	
+		.fakeAdminHead{
+			height:80px;
+		}
+		.cl-cust-blue:hover{
+			background:#3498db;
+		}
+		.cl-cust-green:hover{
+			background:#2ecc71;
+		}
+		.cl-cust-red:hover{
+			background:#ed7b6f;
+		}
+		
+		.ad-nav-base{
+			height:80px;
+			width:100%;
+			background:#5c6768;
+		}
+			.ad-nav-sd-btn{
+				font-family:Dosis;
+				color:rgba(255,255,255,0.7);
+				padding:10px;
+				background:#7f8c8d;
+				border-radius:5px;
+				margin:4px;
+				height:40px;
+				width:100px;
+				transition:color .3s , background .3s;
+			}
+				.ad-nav-sd-btn:hover{
+					color:rgba(255,255,255,1);
+				}
+			
+/*
+ * HOME 
+ */
+	
+	#hb-red-cust{
+		background: #ed7b6f;
+		padding: 20px 0px 10px 0px;
+		
+	}
+	
+	#gridset{
+		margin-bottom: 50px;
+	}
+		
+		.box-cust{
+			display: inline_block;
+			float: left;
+			width: 220px;
+			height: 250px;
+			margin: 10px;
+			background: rgba(255,255,255,0.5);
+			border-radius: 10px;
+			overflow: hidden;
+			opacity: 1;
+		
+			transition: opacity 0.7s, margin 0.5s , background 0.5s , transform 0.5s ,-webkit-transform 0.5s,-moz-transform 0.5s, -ms-transform 0.5s,-o-transform 0.5s;
+		}
+			.box-cust:hover{
+				margin: 10px;
+				background: rgba(255,255,255,0.89);
+				
+				
+				transform: scale(1.05);
+				-webkit-transform: scale(1.05);
+				-moz-transform: scale(1.05);
+				-ms-transform: scale(1.05);
+				-o-transform: scale(1.05);
+				
+				translate3d(0,0,0);
+			}
+			.boxpanel-cust{
+				width: 100%;
+				height: 100%;
+			}
+			.boxhead-cust{
+				width: 100%;
+				padding: 15px;
+				font-family: Dosis;
+				font-size: 22px;
+				background: #e9edef;
+				text-align: center;
+				transition: color 0.3s , background 0.3s;
+			}
+			.boxbody-cust{
+				width: 100%;
+				max-height: calc(100% - 45px);
+				overflow: hidden;
+			}
+			.boxcontent-cust{
+				display: inline;
+				float: left;
+				width: 200px;
+				padding: 10px;
+				margin: -20px 0px 0px 25px;
+				opacity: 0;
+				transition: margin-top .2s, opacity 0.5s;
+			}
+			.img-grid-cust{
+				display: inline;
+				float: left;
+				width: 90px;
+				margin: -140px 0px 10px 45px;
+				margin-left: 60px;
+				transition: margin-top .2s, opacity 0.2s;
+				z-index: 1;
+			}
+			.img-grid-cust img{
+				max-width: 100%;
+				height: auto;
+			}
+				.img-gridS-cust{
+					display: inline;
+					float: left;
+					width: 200px;
+					margin-left:10px;
+					height: 180px;
+					opacity:1;
+					background-image: url("../img/stock-img/stripes50.png");
+					background-repeat: repeat;
+					transition: margin-top .2s, opacity 0.2s;
+					z-index:0;
+				}
+				.img-gridS-cust img{
+					opacity: 0.5;
+				}
+				
+			/*MAIN GRID BOX HOVER*/
+			
+			.box-cust:hover .img-grid-cust{
+				margin-top : -200px;
+				opacity:0;	
+			}
+			.box-cust:hover .img-gridS-cust{
+				opacity : 0;
+			}	
+			.box-cust:hover .boxcontent-cust{
+				opacity : 1;
+				margin-top : -155px;
+			}	
+			.box-cust:hover .boxhead-cust{
+				background-color: #edc26d;
+				color:#505050;
+			}	
+
+
+
+
+
+				
+		.hb-w-cust{
+			padding-bottom: 60px;
+		}
+		.hb-w-head{
+			font-family: Station;
+			font-size: 38px;
+			color: rgba(0,0,0,0.7);
+			margin-top: 30px;
+			margin-bottom: 30px;
+			text-align: center;
+		}
+			.hb-w-head p{
+				margin-top: 20px;
+				font-size: 50%;
+				color: rgba(0,0,0,0.5);
+			}
+		.hb-w-cont{
+		}	
+			.hd-w-grid{
+				
+				opacity: 0;
+			
+				transform: scale(0.5);
+				-webkit-transform: scale(0.5);
+				-moz-transform: scale(0.5);
+				-ms-transform: scale(0.5);
+				-o-transform: scale(0.5);
+				
+				transition: opacity 0.7s, background 0.5s , transform 0.5s ,-webkit-transform 0.5s,-moz-transform 0.5s, -ms-transform 0.5s,-o-transform 0.5s;
+			}
+				.hb-w-grid-head{
+					width: 100%;
+				}
+					.hb-w-icon{
+						border-radius: 25%;
+						padding: 10px;
+						background: #5deba4;
+						width: 120px;
+						height: 120px;
+						margin-left: 
+					}
+				.hb-w-grid-cont{
+					text-align: center;
+					font-family: Station;
+				}	
+					.hb-w-grid-cont .h5{
+						font-size: 160%;
+						color: rgba(0,0,0,0.7);
+					}
+					.hb-w-grid-cont p{
+						font-family: Dosis;
+						margin-top: 20px;
+						font-size: 110%;
+						color: rgba(0,0,0,0.5);
+					}
+		.hb-prefooter{
+			background: rgba(60,160,133,0.1);
+			height: 500px;
+			max-width: 100%;
+			overflow: hidden;
+		}
+			.pf-d-div{
+				background: #16a085;
+				width: 400px;
+				height: 300px;
+				border-radius: 20px;
+				padding: 10px;
+				opacity: 0;
+				transition: margin 1s,opacity 1s;
+			}
+			.pf-cont{
+				background: #16a085;
+				width: 600px;
+				height: 400px;
+				border-radius: 20px;
+				margin-top: -350px;
+				margin-left: 600px;
+				padding: 10px 50px 0px 50px ;
+				color: #fff;
+				font-family: AnjaEliane;
+				text-align: center;
+				opacity: 0;
+				transition: margin 1s,opacity 1s;
+			}
+				.pf-cont-head{
+					font-size: 290%;
+					margin: 40px 0px 0px 0px;
+					
+					
+				}
+				
+				.pf-cont-word > p{
+					font-family: Dosis;
+					font-size: 123%;
+					color: rgba(255,255,255,0.55);
+				}
+			.hg3-up-btn-cust{
+				padding:10px;
+				font-size:130%;
+				width:200px;
+				margin-top:2000px;
+				margin-left:calc(50% - 100px);
+				color:rgba(255,255,255,0.8);
+				font-family:Station;
+				background:#edc26d;
+				border-radius:10px;
+				opacity:0.1;
+				transition: background .3s , color .3s , opacity 4s ;
+				overflow:hidden;
+			}	
+				.hg3-up-btn-cust:hover{
+					cursor:pointer;
+					background:#d4a955;
+					color: rgba(255,255,255,0.9);
+					border-radius:10px;
+					opacity:1;
+				}	
+
+
 /*
  * COURSES GRID
  */
@@ -23,6 +385,42 @@
 	box-shadow: 0 0 8px #2c2cfd;
 }
 
+.cors-g-box-base{
+			border:0px;
+			box-shadow:0px 0px 0px rgba(0,0,0,.4);
+			background:rgba(44,62,80,0.2);
+			transition:background .3s;
+		}
+		.cors-g-box{
+			color: #666;
+			border:0px;
+			box-shadow:0px 0px 0px rgba(0,0,0,.4);
+			border-radius:10px;
+			overflow:hidden;
+		}
+			.cors-g-box:hover{
+				box-shadow:0px 0px 0px rgba(0,0,0,.4);
+				background:rgba(44,62,80,0.1);
+				text-decoration:none;
+			}
+		.cors-g-box .cors-g-head{
+			border:0px;
+			box-shadow:0px 0px 0px rgba(0,0,0,.4);
+			background:rgba(44,62,80,0.2);
+			font-family:Station;
+			font-size:160%;
+			text-align:center;
+			padding:9px;
+		}
+		.cors-g-box .cors-g-body {
+			background:rgba(225,225,225,1);
+		}
+			.cors-g-box:hover .cors-g-head {
+				background:rgba(44,62,80,0.6);
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+			}
+			
 /*
  * MAIN FOOTER
  */
@@ -51,6 +449,30 @@
 .logospace {
 	text-align: center;
 }
+
+
+
+.footer-cust{
+		background: #2c3e50;
+		height: 200px;
+	}
+		.footer_links > li > a{
+			font-family: Dosis;
+			color:rgba(255,255,255,0.6);
+		}
+			.footer_links > li > a:hover{
+				text-decoration:none; 
+			}
+		.pf-icon-cust{
+			color: rgba(255,255,255,0.4);
+			font-family: Organo;
+			font-size: 40px;
+			margin-top:80px;
+		}	
+			.logospace{
+				color:rgba(255,255,255,0.2);
+				font-family: Station;
+			}
 
 /*
  * SAMPLE COLORS
