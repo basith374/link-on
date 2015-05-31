@@ -6,7 +6,7 @@
 
 {{---------------------------------------------------------------------------------------------------------
 
-	This section is for admin navigation bar. This this code top of every page if you need admin tools in 
+	This section is for admin navigation bar. Put this code top of every page if you need admin tools in 
 	that page. 
 
 ----------------------------------------------------------------------------------------------------------}}
@@ -14,9 +14,9 @@
 	@section('adminTools')
 		
 		<div class="ad-nav-base">
-			<div class="container">
+			<div class="container bczh-main">
 				<div class="row col-lg-offset-1" >
-					<div class="top-link pull-right">
+					<div class="top-link pull-right ad-panel-btns">
 						<a href="{{ route('courses.create') }}" class="btn ad-nav-sd-btn cl-cust-blue bcz-help --btn" >Create Course</a>
 						<a href="{{ route('subjects.create') }}" class="btn ad-nav-sd-btn cl-cust-green bcz-help  --btn" >Create Subject</a>
 						<a href="{{ route('subjects.index') }}" class="btn ad-nav-sd-btn cl-cust-red bcz-help --btn-e" extra="You can also add/delete subjects from here.">View Subjects</a>
@@ -55,13 +55,13 @@
 		<div class="">{{-- grid box width class here --}}
 			@if($courses)
 				@foreach($courses as $course)
-					<div class="col-md-4">
-						<a href="{{ route('courses.show', $course) }}" class="pawe">
-							<div class="panel panel-default paws">
-								<div class="panel-heading">
+					<div class="col-md-4 cors-g-box-base">
+						<a href="{{ route('courses.show', $course) }}" class="pawe ">
+							<div class="panel panel-default paws cors-g-box">
+								<div class=" cors-g-head">
 									<h3 class="panel-title"><span class="glyphicon glyphicon-asterisk"></span> {{ $course->title }}</h3>
 								</div>
-								<div class="panel-body">
+								<div class="panel-body ">
 									{{ $course->description }}
 									<span class="badge backt">{{ $course->acronym }}</span>
 								</div>

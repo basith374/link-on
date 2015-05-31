@@ -21,6 +21,7 @@ jQuery(document).ready(function() {
 			checkInput();
 
 			$(".bcz-help-panel-value").text(msg);
+			
 			setIconColor();
 			
 		});
@@ -70,4 +71,12 @@ jQuery(document).ready(function() {
 			} 
 			$(".bcz-icon").css({"background" : iconColor});	
 		}	
+		
+		
+		
+		/*extras*/
+		
+		var panelw = $(".bczh-main").css("width") - $(".ad-panel-btns").css("width");
+		
+		$(".ad-help-panel").css({"width":panelw });
 });
