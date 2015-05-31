@@ -66,8 +66,10 @@ jQuery(document).ready(function() {
 				iconColor = "#3498db";
 			}else if(cName.indexOf('cl-cust-green') > -1){
 				iconColor = "#2ecc71";
-			}else{
+			}else if(cName.indexOf('cl-cust-red') > -1){
 				iconColor = "#ed7b6f";
+			}else{
+				iconColor = "#2ecc71";
 			} 
 			$(".bcz-icon").css({"background" : iconColor});	
 		}	
