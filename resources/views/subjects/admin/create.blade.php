@@ -8,6 +8,14 @@
 	<div class="top-link">
 		<a href="{{ route('courses.index') }}" class="btn btn-default btn-sm">Back</a>
 	</div>
+	@if($errors->any())
+		<div class="alert alert-danger alert-dismissable">
+			<a href="#" data-dismiss="alert" class="close">&times;</a>
+			@foreach($errors->all() as $error)
+				<p>{{ $error }}</p>
+			@endforeach
+		</div>
+	@endif
 	<div>
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-primary">
@@ -30,5 +38,4 @@
 
 @section('jslinks')
 <script type="text/javascript" src="{{ asset('/js/subject-app.js') }}"></script>
-
 @endsection

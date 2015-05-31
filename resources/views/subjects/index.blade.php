@@ -18,7 +18,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-					<a href="#" class="btn btn-success" id="subjectCreate">Create</a>
+					<a href="#" class="btn btn-success disabled" id="subjectCreate">Create</a>
 				</div>
 			</div>
 		</div>
@@ -61,10 +61,10 @@
 	</div>
 	<div class="top-link">
 		<a href="{{ route('courses.index') }}" class="btn btn-default btn-sm">Back</a>
-		<a class="btn btn-success btn-sm pull-right" data-target="#create-modal" data-toggle="modal" id="subject-create-btn">Create</a>
+		<a href="#" class="btn btn-success btn-sm pull-right" data-target="#create-modal" data-toggle="modal" id="subject-create-btn">Create</a>
 	</div>
 	<div class="panel panel-default">
-		<table class="table table-striped">
+		<table class="table table-striped" id="subjects-table">
 			<tr>
 				<th>Slug</th>
 				<th>Title</th>
@@ -77,8 +77,8 @@
 					<td>
 						<input type="hidden" name="subjectId" value="{{ $subject->id }}" />
 						<span class="btn-group btn-group-xs">
-							<a class="btn btn-primary subject-edit-btn" data-target="#edit-modal" data-toggle="modal">Edit</button>
-							<a class="btn btn-danger subject-delete-btn" data-target="#delete-modal" data-toggle="modal">Delete</a>
+							<a href="#" class="btn btn-primary subject-edit-btn" data-target="#edit-modal" data-toggle="modal">Edit</button>
+							<a href="#" class="btn btn-danger subject-delete-btn" data-target="#delete-modal" data-toggle="modal">Delete</a>
 						</span>
 					</td>
 				</tr>

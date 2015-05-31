@@ -10,16 +10,12 @@ jQuery(document).ready(function() {
 	var hg3_btn = true;
 	
 	var smartHead = false;
-	var pathname = window.location.href; // Returns path only
 	
-	if(pathname.length < 2){
-		smartHead = true;		
-	}else if(pathname.indexOf('home') > -1){
+	
+	if($("#smartHead").prop('value') == "true"){
 		smartHead = true;
-	}else{
-		smartHead = false;
 	}
-	//console.log(smartHead);
+	
 	
 	/*Smart head*/
 	if(!smartHead){

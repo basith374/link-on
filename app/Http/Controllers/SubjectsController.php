@@ -7,6 +7,7 @@ use App\Subject;
 use App\Http\Requests;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SubjectRequest;
 
 use Illuminate\Http\Request;
 
@@ -52,9 +53,9 @@ class SubjectsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(SubjectRequest $request)
 	{
-		$this->validate($request, $rules);
+		// $this->validate($request, $rules);
 		// $validator = Validator::make(Input::all(), $this->rules);
 		// if($validator->fails()) {
 			// if($request->ajax()) {
@@ -67,8 +68,11 @@ class SubjectsController extends Controller {
 		// if($request->ajax()) {
 			
 		// }
-		// Subject::create(array_except($request->all(), ['_token']));
+		$subject = Subject::create(array_except($request->all(), ['_token']));
 		// var_dump(array_except($request->all(), ['_token']));
+		if($request->ajax()){
+			return $subject;
+		}
 		return redirect()->route('courses.index')->with('success-message', 'Subject created');
 		// return 'hello!';
 	}
@@ -124,7 +128,7 @@ class SubjectsController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		// Subject::find($id)->delete();
+		Subject::find($id)->delete();
 		return Redirect::route('courses.index')->with('success-message', 'Subject Deleted');
 	}
 	

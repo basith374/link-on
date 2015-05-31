@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
 
 Route::get('home', ['uses' => 'HomeController@index', 'as' => 'home']);
 

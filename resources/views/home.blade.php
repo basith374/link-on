@@ -1,14 +1,17 @@
 {{-- /resources/views/home.blade.php --}}
-<style>
-		.fakeNav{
-			background: #ed7b6f;		
-		}
-		
-</style>
 
 @extends('layouts.master')
 
 @section('title', 'Home')
+
+@section('csslinks')
+	<style>
+		.fakeNav{
+			background: #ed7b6f;		
+		}
+	</style>
+	<input type="hidden" value="true" id="smartHead">
+@endsection
 
 @section('content')
 	
@@ -23,14 +26,14 @@
 			<div class="row col-lg-offset-1" id="gridset">
 				@for($ticker=1;$ticker<=8;$ticker++)
 					<div class="box-cust" id="gbox">
-						<a href="{{ route('courses.index') }}" class="pawe">
+						<a href="{{ route('courses.index') }}" class="grid-link">
 							<div class="boxpanel-cust">
 								<div class="boxhead-cust" id="gh">
 								Courses 
 								</div>
 								<div class="boxbody-cust">
-									<img src="{{asset('/img/home/grid/stripes.png') }}" class="img-gridS-cust" id="gimgS">
-									<img src="{{asset('/img/home/grid/g'.$ticker.'.png') }}" class="img-grid-cust" id="gimg">
+									<img src="{{ asset('/img/home/grid/stripes.png') }}" class="img-gridS-cust" id="gimgS">
+									<img src="{{ asset('/img/home/grid/g'.$ticker.'.png') }}" class="img-grid-cust" id="gimg">
 									<div class="boxcontent-cust" id="gcont">
 										Panel content, there are supposed to be a ton of content in here but unfortunately this shit is under development.
 										<span class="badge backt">Awesome</span>
@@ -130,20 +133,6 @@
 			</div>
 			
 			<div class="pf-cont"  id="pf-div-2">
-<<<<<<< HEAD
-				<div class="pf-cont-head">What is LINKON?</div>
-				<p>
-					Linkon Education is basically a platform for students. Its is a 100% advertisement free website were
-					students find all about education . The market we are looking forward isIndia only. It must be very mobile friendly
-					and more over a students friendly website too.
-				</p>
-				
-				<p>
-					This is basically a platform for students. Its is a 100% advertisement free website were
-					students find all about education . The market we are looking forward isIndia only. It must be very mobile friendly
-					and more over a students friendly website too.
-				</p>
-=======
 				<div class="pf-cont-head untouchable ">What is LINKON</div>
 				<div class="pf-cont-word">
 					<p class="pf-cont-w untouchable">
@@ -160,7 +149,6 @@
 						Get started
 					</div>
 				</div>
->>>>>>> 139063094d4aff2cb8d846c9f592692290811846
 				
 				
 			</div>

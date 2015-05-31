@@ -34,8 +34,8 @@
 	/* Master */
 	
 	.fakeNav{
-			height: 120px;
-		}
+		height: 120px;
+	}
 		
 		.navbar-cust{
 			background: #373737;
@@ -146,22 +146,20 @@
 			overflow: hidden;
 			opacity: 1;
 			
-			transform: scale(1);
-			-webkit-transform: scale(1);
-			-moz-transform: scale(1);
-			-ms-transform: scale(1);
-			-o-transform: scale(1);
+		
 			
 			transition: opacity 0.7s, margin 0.5s , background 0.5s , transform 0.5s ,-webkit-transform 0.5s,-moz-transform 0.5s, -ms-transform 0.5s,-o-transform 0.5s;
 		}
 			.box-cust:hover{
 				margin: 10px;
 				background: rgba(255,255,255,0.89);
+				/*
 				transform: scale(1.1);
 				-webkit-transform: scale(1.1);
 				-moz-transform: scale(1.1);
 				-ms-transform: scale(1.1);
 				-o-transform: scale(1.1);
+				*/
 				translate3d(0,0,0);
 			}
 			.boxpanel-cust{
@@ -336,29 +334,38 @@
 		.cors-g-box-base{
 			border:0px;
 			box-shadow:0px 0px 0px rgba(0,0,0,.4);
-			border-radius:10px;
-			overflow:hidden;
-			
-		}
-		.cors-g-box{
-			border:0px;
-			box-shadow:0px 0px 0px rgba(0,0,0,.4);
 			background:rgba(44,62,80,0.2);
 			transition:background .3s;
+		}
+		.cors-g-box{
+			color: #666;
+			border:0px;
+			box-shadow:0px 0px 0px rgba(0,0,0,.4);
+			border-radius:10px;
+			overflow:hidden;
 		}
 			.cors-g-box:hover{
 				box-shadow:0px 0px 0px rgba(0,0,0,.4);
 				background:rgba(44,62,80,0.1);
+				text-decoration:none;
 			}
-		.cors-g-head{
+		.cors-g-box .cors-g-head{
 			border:0px;
 			box-shadow:0px 0px 0px rgba(0,0,0,.4);
-			background:rgba(225,225,225,1);
+			background:rgba(44,62,80,0.2);
 			font-family:Station;
 			font-size:160%;
 			text-align:center;
 			padding:9px;
-		}	
+		}
+		.cors-g-box .cors-g-body {
+			background:rgba(225,225,225,1);
+		}
+			.cors-g-box:hover .cors-g-head {
+				background:rgba(44,62,80,0.6);
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+			}
 				
 				
 	/*FOOTER*/			
