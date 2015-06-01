@@ -70,7 +70,26 @@
 					</div>
 				@endforeach
 			@endif
+			<div id="coursesGrid"><!-- gridbox width class here -->
+				@if($courses)
+					@foreach($courses as $course)
+						<div class="col-sm-6 col-md-4">
+							<a href="{{ route('courses.show', $course) }}" class="cors-g-box">
+								<div class="">
+									<div class="cors-g-head">
+										<h3 class="panel-title"><span class="glyphicon glyphicon-asterisk"></span> {{ $course->title }}</h3>
+									</div>
+									<div class="panel-body cors-g-body">
+										{{ $course->description }}
+										<span class="badge badge-cust clr-cust-dgrey">{{ $course->acronym }}</span>
+									</div>
+								</div>
+							</a>
+						</div>
+					@endforeach
+				@endif
+			</div>
 		</div>
 	</div>
-</div>
+</div>	
 @endsection

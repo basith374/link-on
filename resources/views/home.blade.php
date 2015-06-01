@@ -32,7 +32,8 @@
 								Courses 
 								</div>
 								<div class="boxbody-cust">
-									<img src="{{ asset('/img/home/grid/stripes.png') }}" class="img-gridS-cust" id="gimgS">
+									
+									<div class="img-gridS-cust" id="gimgS"></div>
 									<img src="{{ asset('/img/home/grid/g'.$ticker.'.png') }}" class="img-grid-cust" id="gimg">
 									<div class="boxcontent-cust" id="gcont">
 										Panel content, there are supposed to be a ton of content in here but unfortunately this shit is under development.

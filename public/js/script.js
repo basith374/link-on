@@ -23,25 +23,6 @@ jQuery(document).ready(function() {
 		$('.fakeNav').css({"height":"80px"});
 	}
 	
-	$("#gridset > div").mouseover(function(){
-		jQuery(this).find("#gimg").css( { marginTop : -200 });
-		jQuery(this).find("#gimg").css( { opacity : 0 });
-		jQuery(this).find("#gimgS").css( { opacity : 0 });
-		jQuery(this).find("#gcont").css( { marginTop : -155 });
-		jQuery(this).find("#gcont").css( { opacity : 1 });
-		jQuery(this).find("#gh").css({"background-color": "#edc26d","color":"#505050" });
-		jQuery(this).css( { "transform" : "scale(1.05)" });
-	});
-	
-	$("#gridset > div").mouseout(function(){
-		jQuery(this).find("#gimg").css( { marginTop : -140 });
-		jQuery(this).find("#gimg").css( { opacity : 1 });
-		jQuery(this).find("#gimgS").css( { opacity : 1 });
-		jQuery(this).find("#gcont").css( { marginTop : -50 });
-		jQuery(this).find("#gcont").css( { opacity : 0 });
-		jQuery(this).find("#gh").css({"background-color": "#e9edef","color":"#505050" });
-		jQuery(this).css( { "transform" : "scale(1)" });
-	});
 	
 	
 	/* intro transition effect */
