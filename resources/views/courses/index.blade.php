@@ -15,7 +15,7 @@
 		
 		<div class="ad-nav-base">
 			<div class="container bczh-main">
-				<div class="row col-lg-offset-1" >
+				<div class="row " >
 					<div class="top-link pull-right ad-panel-btns">
 						<a href="{{ route('courses.create') }}" class="btn ad-nav-sd-btn cl-cust-blue bcz-help --btn" >Create Course</a>
 						<a href="{{ route('subjects.create') }}" class="btn ad-nav-sd-btn cl-cust-green bcz-help  --btn" >Create Subject</a>
@@ -44,7 +44,7 @@
 
 </br>
 
-	<div class="container">
+	<div class="container row-space-top">
 		<div class="row">
 			@if(Session::has('success-message'))
 				<div class="alert alert-success alert-dismissable">
@@ -56,7 +56,37 @@
 					<a href="#" data-dismiss="alert" class="close">&times;</a>{{ Session::get('failure-message') }}
 				</div>
 			@endif
+			
+
 			<div id="coursesGrid"><!-- gridbox width class here -->
+				@if($courses)
+					@foreach($courses as $course)
+							<div id="container">
+								<div id="dummy"></div>
+								<div id="element">
+									<a href="{{ route('courses.show', $course) }}" class="">
+										<div class="cors-container">
+											<div class="cors-back ">
+												<div class="badge cors-badge">{{ $course->acronym }}</div>
+											</div>
+											<div class="cors-front">
+												<div class="cors-head">
+												{{ $course->title }}
+												</div>
+												<div class="cors-body">
+												{{ $course->description }}
+												</div>
+											</div>
+										</div>	
+									</a>
+								</div>
+							</div>
+					@endforeach
+				@endif
+			</div>
+			
+			<!--
+			<div id="coursesGrid"><!-- gridbox width class here 
 				@if($courses)
 					@foreach($courses as $course)
 						<div class="col-sm-6 col-md-4">
@@ -64,6 +94,7 @@
 								<div class="">
 									<div class="cors-g-head">
 										<h3 class="panel-title"><span class="glyphicon glyphicon-asterisk"></span> {{ $course->title }}</h3>
+										<div class="cors-g-ribbon-wrapper"><div class="cors-g-ribbon">New</div></div>
 									</div>
 									<div class="panel-body cors-g-body">
 										{{ $course->description }}
@@ -75,6 +106,7 @@
 					@endforeach
 				@endif
 			</div>
+			-->
 		</div>
 	</div>
 </div>	
