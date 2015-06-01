@@ -15,14 +15,14 @@
 		
 		<div class="ad-nav-base">
 			<div class="container bczh-main">
-				<div class="row col-lg-offset-1" >
+				<div class="row">
 					<div class="top-link pull-right ad-panel-btns">
 						<a href="{{ route('courses.create') }}" class="btn ad-nav-sd-btn cl-cust-blue bcz-help --btn" >Create Course</a>
 						<a href="{{ route('subjects.create') }}" class="btn ad-nav-sd-btn cl-cust-green bcz-help  --btn" >Create Subject</a>
 						<a href="{{ route('subjects.index') }}" class="btn ad-nav-sd-btn cl-cust-red bcz-help --btn-e" extra="You can also add/delete subjects from here.">View Subjects</a>
 					</div>
 					
-					{{-- help Panel --}}
+					{{-- Help Panel --}}
 			
 					<div class="ad-help-panel untouchable bcz-help-panel">
 						<span class="bcz-icon">BCZ</span> <span class="bcz-help-panel-value">Hi - BCZ Help system</span>
@@ -39,8 +39,7 @@
 {{--------------------------------------------------------------------------------------------------------}}
 	
 @section('content')
-</br>
-<div class="container">
+<div class="container row-space-top">
 	<div class="row">
 		@if(Session::has('success-message'))
 			<div class="alert alert-success alert-dismissable">
@@ -60,6 +59,7 @@
 							<div class="panel panel-default">
 								<div class="cors-g-head">
 									<h3 class="panel-title"><span class="glyphicon glyphicon-asterisk"></span> {{ $course->title }}</h3>
+									<div class="cors-g-ribbon-wrapper"><div class="cors-g-ribbon">New</div></div>
 								</div>
 								<div class="panel-body cors-g-body">
 									{{ $course->description }}

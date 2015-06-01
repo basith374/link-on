@@ -34,6 +34,7 @@ Route::post('subjects/subject-details/{subjects}', 'SubjectsController@subjectDe
 // Route::resource('subjects', 'SubjectsController', ['except' => ['index']]);
 Route::resource('subjects', 'SubjectsController');
 
+Route::resource('blogs', 'BlogController');
 
 Route::post('generate-slug', function(){
 	return Str::slug(Input::get('target'));

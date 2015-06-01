@@ -12,7 +12,7 @@
 					<h4 class="modal-title" id="createModalLabel"><span class="glyphicon glyphicon-new"></span> Create New Subject</h4>
 				</div>
 				<div class="modal-body">
-					{!! Form::open(['route' => ['subjects.store'], 'class' => 'form-horizontal', ]) !!}
+					{!! Form::open(['route' => ['subjects.store'], 'class' => 'form-horizontal', 'id' => 'create-subject-form']) !!}
 						@include('subjects/admin/partials/_form')
 					{!! Form::close() !!}
 				</div>
@@ -31,7 +31,7 @@
 					<h4 class="modal-title" id="editModalLabel"><span class="glyphicon glyphicon-edit"></span> Edit Subject</h4>
 				</div>
 				<div class="modal-body">
-					{!! Form::open(['method' => 'PATCH','route' => ['subjects.update', ], 'class' => 'form-horizontal', ]) !!}
+					{!! Form::open(['method' => 'PATCH','route' => ['subjects.update', ], 'class' => 'form-horizontal', 'id' => 'edit-subject-form']) !!}
 						@include('subjects/admin/partials/_form')
 				</div>
 				<div class="modal-footer">
