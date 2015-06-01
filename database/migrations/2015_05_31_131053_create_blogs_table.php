@@ -17,8 +17,9 @@ class CreateBlogsTable extends Migration {
 			$table->increments('id');
 			$table->string('slug');
 			$table->string('title', 255);
+			$table->integer('author')->unsigned();
+			$table->foreign('author')->references('id')->on('users')->onDelete('cascade');
 			$table->text('body');
-			$table->integer('author');
 			$table->timestamps();
 		});
 	}

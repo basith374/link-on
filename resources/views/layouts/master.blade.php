@@ -9,7 +9,6 @@
 
 	<link href="{{ asset('/css/app.css') }}" type="text/css" rel="stylesheet">
 	<link href="{{ asset('/css/custom.css') }}" type="text/css" rel="stylesheet"/>
-	<link href="{{ asset('/css/custom-2.css') }}" type="text/css" rel="stylesheet"/>
 	@yield('csslinks')
 
 	<!-- Fonts -->

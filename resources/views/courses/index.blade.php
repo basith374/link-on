@@ -39,7 +39,7 @@
 {{--------------------------------------------------------------------------------------------------------}}
 	
 @section('content')
-<div class="container row-space-top">
+<div class="container row-space">
 	<div class="row">
 		@if(Session::has('success-message'))
 			<div class="alert alert-success alert-dismissable">
@@ -56,14 +56,14 @@
 				@foreach($courses as $course)
 					<div class="col-sm-6 col-md-4">
 						<a href="{{ route('courses.show', $course) }}" class="cors-g-box">
-							<div class="panel panel-default">
+							<div class="">
 								<div class="cors-g-head">
 									<h3 class="panel-title"><span class="glyphicon glyphicon-asterisk"></span> {{ $course->title }}</h3>
 									<div class="cors-g-ribbon-wrapper"><div class="cors-g-ribbon">New</div></div>
 								</div>
 								<div class="panel-body cors-g-body">
 									{{ $course->description }}
-									<span class="badge backt">{{ $course->acronym }}</span>
+									<span class="badge badge-cust clr-cust-dgrey">{{ $course->acronym }}</span>
 								</div>
 							</div>
 						</a>
@@ -72,5 +72,5 @@
 			@endif
 		</div>
 	</div>
-</div>
+</div>	
 @endsection

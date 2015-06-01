@@ -362,6 +362,10 @@
 				border-top-left-radius: 3px;
 				border-top-right-radius: 3px;
 			}
+			.cors-g-box:hover .cors-g-ribbon-wrapper {
+			}
+			.cors-g-box:hover .cors-g-ribbon {
+			}
 				
 	/*FOOTER*/			
 	
@@ -389,3 +393,4 @@
 				color:rgba(255,255,255,0.2);
 				font-family: Station;
 			}
+			
