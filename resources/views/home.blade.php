@@ -7,7 +7,7 @@
 @section('csslinks')
 	<style>
 		.fakeNav{
-			background: #ed7b6f;		
+			background: #e96557;		
 		}
 	</style>
 	<input type="hidden" value="true" id="smartHead">

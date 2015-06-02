@@ -127,17 +127,21 @@
 		background-image: url("../img/stock-img/stripes50.png");
 		background-repeat: repeat;
 	}
-	.page-w-gey{
-		background:#dadada;
-		background-image: url("../img/stock-img/stripes25.png");
-		background-repeat: repeat;
+	.page-w-lgrey{
+		background:#bdc3c7;
+		
+	}
+	
+	.page-w-lblack{
+		background:#363636;
+		
 	}
 /*
  * HOME 
  */
 	
 	#hb-red-cust{
-		background: #ed7b6f;
+		background: #e96557;
 		padding: 20px 0px 10px 0px;
 		
 	}
@@ -146,17 +150,20 @@
 		margin-bottom: 50px;
 	}
 		
+	#gbox > a{
+		text-decoration:none;
+	}	
 		.box-cust{
 			display: inline_block;
 			float: left;
 			width: 220px;
 			height: 250px;
 			margin: 10px;
-			background: rgba(255,255,255,0.5);
-			border-radius: 10px;
+			background: rgba(255,255,255,0.6);
+			border-radius: 4px;
 			overflow: hidden;
 			opacity: 1;
-		
+			
 			transition: opacity 0.7s, margin 0.5s , background 0.5s , transform 0.5s ,-webkit-transform 0.5s,-moz-transform 0.5s, -ms-transform 0.5s,-o-transform 0.5s;
 		}
 			.box-cust:hover{
@@ -374,111 +381,6 @@
  * COURSES GRID
  */
 
-.grid-link {
-	color: #666;
-}
-
-.grid-link:hover {
-	text-decoration: none;
-	color: #666;
-}
-
-.grid-btn {
-	transition: box-shadow .1s;
-	-moz-transition: box-shadow .1s;
-	-webkit-transition: box-shadow .1s;
-}
-
-.grid-btn:hover {
-	-moz-box-shadow: 0 0 8px #2c2cfd;
-	-webkit-box-shadow: 0 0 8px #2c2cfd;
-	box-shadow: 0 0 8px #2c2cfd;
-}
-
-		.cors-g-box-base{
-			border:0px;
-			box-shadow:0px 0px 0px rgba(0,0,0,.4);
-			//background:rgba(44,62,80,0.2);
-			transition:background .3s;
-		}
-		.cors-g-box{
-			display:block;
-			float:left;
-			color:rgba(255,255,255,0.7 );
-			border:0px;
-			box-shadow:0px 0px 0px rgba(0,0,0,.4);
-			border-radius:3px;
-			overflow:hidden;
-			margin-bottom:10px;
-			margin-top:10px;
-				transition: opacity 0.7s, margin 0.3s , background 0.3s , transform 0.3s ,
-							-webkit-transform 0.3s,-moz-transform 0.3s,
-							-ms-transform 0.3s,-o-transform 0.3s;
-			
-		}
-			.cors-g-box:hover{
-				box-shadow:0px 0px 0px rgba(0,0,0,.4);
-				text-decoration:none;
-				
-				transform:  scale(1.04);
-				-webkit-transform:  scale(1.04);
-				-moz-transform: scale(1.04);
-				-ms-transform: scale(1.04);
-				-o-transform: scale(1.04);
-				
-			}
-		.cors-g-box .cors-g-head{
-			box-shadow:0px 0px 0px rgba(0,0,0,.4);
-			background:#afed6d;
-			
-			font-family:Station;
-			font-size:160%;
-			text-align:center;
-			padding:9px;
-			color:rgba(255,255,255,1);	
-			transition: background .3s , color .3s;
-		}
-		.cors-g-box .cors-g-body {
-			background:#afed6d;
-			font-family:Dosis;
-			color:rgba(0,0,0,0.6);
-			transition: background .3s , color .3s, background-image .3s;
-			height:120px;
-			
-		}
-			.badge-cust{
-				transition: background .3s;
-			}
-			
-			
-			
-			.cors-g-box:hover{
-				color:rgba(255,255,255,0.7 );
-			}
-			.cors-g-box:hover .cors-g-body{
-				background:#baced7;
-				background-image: url("../img/stock-img/stripes25.png");
-				background-repeat: repeat;
-				
-				color:rgba(0,0,0,0.9);
-			}
-			.cors-g-box:hover .cors-g-head {
-				background:#3498db;
-				
-			}
-			.cors-g-box:hover .badge-cust {
-				background:#2ecc71;
-				
-			}
-					
-			
-			/*override*/
-			
-			/* PLEASE DO NOT OVERRIDE, JUST EXTEND
-			.panel{
-				border:0px;
-			}
-			*/
 			
 			
 			/* NEW GRID BOX */
@@ -621,6 +523,63 @@
 				.cors-container:hover .cors-back{
 					top:-5%;
 				}	
+				
+			
+/*
+ * BLOG
+ */
+ 
+	.blog-box-cust{
+		background:#fff;
+		border-radius:5px;
+		padding:0px;
+		margin-top:20px;
+		margin-bottom:40px;
+	}
+	
+	.blog-head-wrapper{
+		background:#586067;
+		background-image: url("../img/stock-img/stripes15.png");
+		background-repeat: repeat;
+		width:100%;
+	}
+	
+	.blog-box-head{
+		font-family:Station;
+		
+		width:calc(100% - 240px);
+		border-radius:5px 5px 0px 0px;
+		color:rgba(255,255,255,1);
+		padding:10px;
+	}
+		.blod-box-date{
+			position:absolute;
+			top:-2px;
+			right:-2px;
+			font-family:Station;
+			background:#3498db;
+			width:240px;
+			border-radius:0px 5px 0px 0px;
+			color:rgba(255,255,255,1);
+			padding:6px 10px 6px 10px;
+		}
+	.blog-box-body{
+		font-family:Dosis;
+		font-size:125%;
+		width:100%;
+		color:rgba(0,0,0,0.5);	
+		padding:20px ;
+		
+	}
+	.blog-box-footer{
+		font-family:Dosis;
+		font-size:125%;
+		width:100%;
+		color:rgba(0,0,0,0.5);	
+		padding:10px 0px 10px 20px ;
+		background:#ecf0f1;
+	}
+	
 /*
  * MAIN FOOTER
  */
