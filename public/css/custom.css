@@ -20,10 +20,6 @@
 	}
 	
 	
-	body{
-	
-	}
-	
 	.untouchable{
 		-moz-user-select: none; 
 		-khtml-user-select: none; 
@@ -131,6 +127,11 @@
 		background-image: url("../img/stock-img/stripes50.png");
 		background-repeat: repeat;
 	}
+	.page-w-gey{
+		background:#dadada;
+		background-image: url("../img/stock-img/stripes25.png");
+		background-repeat: repeat;
+	}
 /*
  * HOME 
  */
@@ -218,7 +219,7 @@
 					margin-left:10px;
 					height: 180px;
 					opacity:1;
-					background-image: url("../img/stock-img/stripes50.png");
+					background-image: url("../img/stock-img/stripes25.png");
 					background-repeat: repeat;
 					transition: margin-top .2s, opacity 0.2s;
 					z-index:0;
@@ -500,20 +501,34 @@
 					right: 0;
 					overflow:hidden;
 					border:0px;
-					border-radius:8px;
+					border-radius:4px;
 				}
+					.cors-top{
+						width:100%;
+						height:30px;
+						position:absolute;
+						left:0px;
+						top:0px;
+						background: #ecf0f1;
+						z-index:99;
+						
+						text-align:left;
+						font-family:Station;
+						color:rgba(0,0,0,0.3);
+						padding:4px 0px 0px 10px;
+					}
 					.cors-back {
-					width:100%;
-					height:70%;
-					position:absolute;
-					left:0px;
-					top:0px;
-					background: #d1ed6f;
-					background-image: url("../img/stock-img/stripes25.png");
-					background-repeat: repeat;
-					
-					transition:top 0.6s ;
-				}
+						width:100%;
+						height:70%;
+						position:absolute;
+						left:0px;
+						top:0px;
+						background: #d1ed6f;
+						background-image: url("../img/stock-img/stripes25.png");
+						background-repeat: repeat;
+						
+						transition:top 0.6s ;
+					}
 					.stripes-25{
 						background-image: url("../img/stock-img/stripes25.png");
 						background-repeat: repeat;

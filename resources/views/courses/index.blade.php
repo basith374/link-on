@@ -66,6 +66,9 @@
 								<div id="element">
 									<a href="{{ route('courses.show', $course) }}" class="">
 										<div class="cors-container">
+											<div class="cors-top">
+												COST {{ $course->cost }}
+											</div>
 											<div class="cors-back ">
 												<div class="badge cors-badge">{{ $course->acronym }}</div>
 											</div>
