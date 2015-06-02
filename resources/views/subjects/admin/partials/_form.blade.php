@@ -14,7 +14,7 @@
 	</div>
 	{!! Form::label('title', 'Title', ['class' => 'control-label col-md-3']) !!}
 	<div class="col-md-7">
-		{!! Form::text('title',  isset($subject) ? $subject->title : '', ['class' => 'form-control', 'id' => 'title'  ,'required' => 'true']) !!}
+		{!! Form::text('title',  isset($subject) ? $subject->title : '', ['class' => 'form-control', 'id' => 'title' ,'required' => 'true']) !!}
 	</div>
 </div>
 <div class="form-group">

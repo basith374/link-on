@@ -474,9 +474,11 @@
 			
 			/*override*/
 			
+			/* PLEASE DO NOT OVERRIDE, JUST EXTEND
 			.panel{
-			border:0px;
+				border:0px;
 			}
+			*/
 			
 			
 			/* NEW GRID BOX */
@@ -491,7 +493,7 @@
 					margin: 2%;
 				}
 				#dummy {
-					padding-top: 100%; /* 4:3 aspect ratio */
+					padding-top: 100%; /* 1:1 aspect ratio */
 				}
 				#element {
 					position: absolute;
@@ -510,7 +512,7 @@
 						left:0px;
 						top:0px;
 						background: #ecf0f1;
-						z-index:99;
+						z-index:98;
 						
 						text-align:left;
 						font-family:Station;
@@ -625,7 +627,6 @@
  
 .only_footer {
 	/*background: #2f2f2f;*/
-	background: #222;
 	color: #666;
 	border-top: 1px solid #000;
 	padding: 17px 0 18px 0;
@@ -770,51 +771,56 @@
 	margin-top: 10px; /* so put an approximate value */
 }
 
- 
- 			/* NICE HUH? */
- 			.cors-g-ribbon-wrapper {
- 				width: 60px;
- 				height: 50px;
- 				overflow: hidden;
- 				position: absolute;
- 				top: -1px;
- 				right: 14px;
- 			}
- 			.cors-g-ribbon {
- 				font: bold 11px Station;
- 				color: #333;
- 				text-align: center;
- 				text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
- 				-webkit-transform: rotate(45deg);
- 				-moz-transform: rotate(45deg);
- 				-ms-transform: rotate(45deg);
- 				-o-transform: rotate(45deg);
- 				position: relative;
- 				padding: 1px 0;
- 				left: -15px;
- 				top: 9.5px;
- 				width: 120px;
- 				background-color: #BFDC7A;
- 				background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45);
- 				background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
- 				background-image: -moz-linear-gradient(top, #BFDC7A, #8EBF45);
- 				background-image: -ms-linear-gradient(top, #BFDC7A, #8EBF45);
- 				background-image: -o-linear-gradient(top, #BFDC7A, #8EBF45);
- 				-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
- 				-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
- 				box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
- 			}
- 			.cors-g-ribbon:before, .cors-g-ribbon:after {
- 				content: " ";
- 				border-top: 3px solid #6e8900;
- 				border-left: 3px solid transparent;
- 				border-right: 3px solid transparent;
- 				position: absolute;
- 				bottom: -3px;
- 			}
- 			.cors-g-ribbon:before {
- 				left: 0;
- 			}
- 			.cors-g-ribbon:after {
- 				right: 0;
- 			} 
+
+			/* NICE HUH? */
+			.cors-g-ribbon-wrapper {
+				width: 50px;
+				height: 50px;
+				overflow: hidden;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				transition: all 1s;
+				
+				z-index:99;
+			}
+			.cors-g-ribbon {
+				font: bold 11px Station;
+				color: #333;
+				text-align: center;
+				text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				position: relative;
+				padding: 1px 0;
+				left: -25px;
+				top: 9.5px;
+				width: 120px;
+				background-color: #BFDC7A;
+				background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45);
+				background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+				background-image: -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+				background-image: -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+				background-image: -o-linear-gradient(top, #BFDC7A, #8EBF45);
+				-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+				-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+				box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+				transition: all 1s;
+				
+			}
+			.cors-g-ribbon:before, .cors-g-ribbon:after {
+				content: " ";
+				border-top: 3px solid #6e8900;
+				border-left: 3px solid transparent;
+				border-right: 3px solid transparent;
+				position: absolute;
+				bottom: -3px;
+			}
+			.cors-g-ribbon:before {
+				left: 0;
+			}
+			.cors-g-ribbon:after {
+				right: 0;
+			}

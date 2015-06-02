@@ -15,14 +15,14 @@
 		
 		<div class="ad-nav-base">
 			<div class="container bczh-main">
-				<div class="row " >
+				<div class="row">
 					<div class="top-link pull-right ad-panel-btns">
 						<a href="{{ route('courses.create') }}" class="btn ad-nav-sd-btn cl-cust-blue bcz-help --btn" >Create Course</a>
 						<a href="{{ route('subjects.create') }}" class="btn ad-nav-sd-btn cl-cust-green bcz-help  --btn" >Create Subject</a>
 						<a href="{{ route('subjects.index') }}" class="btn ad-nav-sd-btn cl-cust-red bcz-help --btn-e" extra="You can also add/delete subjects from here.">View Subjects</a>
 					</div>
 					
-					{{-- help Panel --}}
+					{{-- Help Panel --}}
 			
 					<div class="ad-help-panel untouchable bcz-help-panel">
 						<span class="bcz-icon">BCZ</span> <span class="bcz-help-panel-value">Hi - BCZ Help system</span>
@@ -66,11 +66,15 @@
 								<div id="element">
 									<a href="{{ route('courses.show', $course) }}" class="">
 										<div class="cors-container">
+											<div class="cors-g-ribbon-wrapper"><div class="cors-g-ribbon">New</div></div>
+
 											<div class="cors-top">
 												COST {{ $course->cost }}
+												
 											</div>
 											<div class="cors-back ">
 												<div class="badge cors-badge">{{ $course->acronym }}</div>
+												
 											</div>
 											<div class="cors-front">
 												<div class="cors-head">
@@ -87,29 +91,6 @@
 					@endforeach
 				@endif
 			</div>
-			
-			<!--
-			<div id="coursesGrid"><!-- gridbox width class here 
-				@if($courses)
-					@foreach($courses as $course)
-						<div class="col-sm-6 col-md-4">
-							<a href="{{ route('courses.show', $course) }}" class="cors-g-box">
-								<div class="">
-									<div class="cors-g-head">
-										<h3 class="panel-title"><span class="glyphicon glyphicon-asterisk"></span> {{ $course->title }}</h3>
-										<div class="cors-g-ribbon-wrapper"><div class="cors-g-ribbon">New</div></div>
-									</div>
-									<div class="panel-body cors-g-body">
-										{{ $course->description }}
-										<span class="badge badge-cust clr-cust-dgrey">{{ $course->acronym }}</span>
-									</div>
-								</div>
-							</a>
-						</div>
-					@endforeach
-				@endif
-			</div>
-			-->
 		</div>
 	</div>
 </div>	

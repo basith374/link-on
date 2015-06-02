@@ -111,12 +111,14 @@ class SubjectsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request, $id)
 	{
-		var_dump(Input::all());
+		// var_dump(Input::all());
 		$input = array_only(Input::all(), ['slug', 'title', 'acronym', 'cost', 'timeperiod', 'description']);
 		Subject::find($id)->update($input);
-		
+		if($request->ajax()) {
+			return $input;
+		}
 		return Redirect::route('subjects.index')->with('success-message', 'Changes saved.');
 	}
 
