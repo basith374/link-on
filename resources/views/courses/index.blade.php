@@ -39,37 +39,58 @@
 {{--------------------------------------------------------------------------------------------------------}}
 	
 @section('content')
-<div class="container row-space">
-	<div class="row">
-		@if(Session::has('success-message'))
-			<div class="alert alert-success alert-dismissable">
-				<a href="#" data-dismiss="alert" class="close">&times;</a>{{ Session::get('success-message') }}
-			</div>
-		@endif
-		@if(Session::has('failure-message'))
-			<div class="alert alert-danger alert-dismissable">
-				<a href="#" data-dismiss="alert" class="close">&times;</a>{{ Session::get('failure-message') }}
-			</div>
-		@endif
-		<div id="coursesGrid"><!-- gridbox width class here -->
-			@if($courses)
-				@foreach($courses as $course)
-					<div class="col-sm-6 col-md-4">
-						<a href="{{ route('courses.show', $course) }}" class="cors-g-box">
-							<div class="">
-								<div class="cors-g-head">
-									<h3 class="panel-title"><span class="glyphicon glyphicon-asterisk"></span> {{ $course->title }}</h3>
-									<div class="cors-g-ribbon-wrapper"><div class="cors-g-ribbon">New</div></div>
-								</div>
-								<div class="panel-body cors-g-body">
-									{{ $course->description }}
-									<span class="badge badge-cust clr-cust-dgrey">{{ $course->acronym }}</span>
+
+<div class="">
+
+</br>
+
+	<div class="container row-space-top">
+		<div class="row">
+			@if(Session::has('success-message'))
+				<div class="alert alert-success alert-dismissable">
+					<a href="#" data-dismiss="alert" class="close">&times;</a>{{ Session::get('success-message') }}
+				</div>
+			@endif
+			@if(Session::has('failure-message'))
+				<div class="alert alert-danger alert-dismissable">
+					<a href="#" data-dismiss="alert" class="close">&times;</a>{{ Session::get('failure-message') }}
+				</div>
+			@endif
+			
+
+			<div id="coursesGrid"><!-- gridbox width class here -->
+				@if($courses)
+					@foreach($courses as $course)
+							<div id="container">
+								<div id="dummy"></div>
+								<div id="element">
+									<a href="{{ route('courses.show', $course) }}" class="">
+										<div class="cors-container">
+											<div class="cors-g-ribbon-wrapper"><div class="cors-g-ribbon">New</div></div>
+
+											<div class="cors-top">
+												COST {{ $course->cost }}
+												
+											</div>
+											<div class="cors-back ">
+												<div class="badge cors-badge">{{ $course->acronym }}</div>
+												
+											</div>
+											<div class="cors-front">
+												<div class="cors-head">
+												{{ $course->title }}
+												</div>
+												<div class="cors-body">
+												{{ $course->description }}
+												</div>
+											</div>
+										</div>	
+									</a>
 								</div>
 							</div>
-						</a>
-					</div>
-				@endforeach
-			@endif
+					@endforeach
+				@endif
+			</div>
 		</div>
 	</div>
 </div>	

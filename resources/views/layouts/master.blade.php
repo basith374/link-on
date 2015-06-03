@@ -9,6 +9,7 @@
 
 	<link href="{{ asset('/css/app.css') }}" type="text/css" rel="stylesheet">
 	<link href="{{ asset('/css/custom.css') }}" type="text/css" rel="stylesheet"/>
+	<link href="{{ asset('/css/responsive.css') }}" type="text/css" rel="stylesheet"/>
 	@yield('csslinks')
 
 	<!-- Fonts -->
@@ -37,10 +38,12 @@
 					</div>
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav nav-a-cust">
-							<li><a href="{{ asset('home') }}">Home</a></li>
-							<li><a href="{{ route('blogs.index') }}">Blog</a></li>
-						</ul>
+						<div class="container">
+							<ul class="nav navbar-nav nav-a-cust navbar-right">
+								<li><a href="{{ asset('home') }}">Home</a></li>
+								<li><a href="{{ route('blogs.index') }}">Blog</a></li>
+							</ul>
+						</div>
 		<!--
 						<ul class="nav navbar-nav navbar-right">
 							@if (Auth::guest())

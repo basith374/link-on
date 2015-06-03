@@ -57,23 +57,21 @@ $(document).ready(function(){
 	 * FUNCTIONS
 	 *
 	 */
-	function fetchSubjects() {
-		return $.ajax({
-			url : '/subjects/all-subjects',
-			type : 'POST',
-			// dataType : 'JSON',
-			success : function(data) {
-				json = data;
-				// loop through the json and populate the <select> with <option>
-				$(json).each(function(index){
-					$('<option>' + this.title + '</option>').prop('value', this.id).appendTo($select);
-				});
-			}
-		});
-	}
+	$.ajax({
+		url : '/subjects/all-subjects',
+		type : 'POST',
+		// dataType : 'JSON',
+		success : function(data) {
+			json = data;
+			// loop through the json and populate the <select> with <option>
+			$(json).each(function(index) {
+				$('<option>' + this.title + '</option>').prop('value', this.id).appendTo($select);
+			});
+		}
+	});
 	
 	function fetchCourseSubjects() {
-		return $.ajax({
+		$.ajax({
 			url : url,
 			type : 'POST',
 			success : function(data) {
@@ -117,14 +115,7 @@ $(document).ready(function(){
 	$("#courseCreate").click(function(){
 		$.get('/courses/create-ex', function(response) {
 			$("#formContainer").html(response);
-			if(json == undefined) {
-				$request = fetchSubjects();
-				$request.success(function() {
-					$('#subjectAdd').removeClass('disabled').click(addAction);
-				});
-			} else {
-				$('#subjectAdd').removeClass('disabled').click(addAction);
-			}
+			$('#subjectAdd').removeClass('disabled').click(addAction);
 		});
 	});
 	
@@ -133,37 +124,8 @@ $(document).ready(function(){
 		var url = '/courses/' + $("#courseId").prop('value') + '/edit-ex';
 		$.get(url , function(response) {
 			$("#formContainer").html(response);
-			if(json == undefined) {
-				console.log('case 1');
-				$request = fetchSubjects();
-				$request.success(function() {
-					if($subjectsLi == undefined) {
-						console.log('case 1:1');
-						$srequest = fetchCourseSubjects();
-						$srequest.success(function() {	
-							$('#subjectAdd').removeClass('disabled').click(addAction);
-						});
-					} else {
-						// this case can never happen
-						console.log('case 1:2');
-						$('#subjectAdd').removeClass('disabled').click(addAction);
-					}
-				});
-			} else {
-				console.log('case 2');
-				// redundant
-				if($subjectsLi == undefined) {
-					console.log('case 2:1');
-					$srequest = fetchCourseSubjects();
-					$srequest.success(function() {	
-						$('#subjectAdd').removeClass('disabled').click(addAction);
-					});
-				} else {
-					console.log('case 2:2');
-					$("#subjectList li:last").before($subjectsLi); // append <li> to <ul> before the last element(ie. the ADD button DUH!)
-					$('#subjectAdd').removeClass('disabled').click(addAction);
-				}
-			}
+			fetchCourseSubjects();
+			$('#subjectAdd').removeClass('disabled').click(addAction);
 		});
 	});
 	
