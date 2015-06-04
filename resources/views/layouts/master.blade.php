@@ -23,6 +23,16 @@
 	<![endif]-->
 </head>
 <body>
+
+	{{-- Help Panel --}}
+
+	<div class="ad-help-panel  untouchable bcz-help-panel">
+		<div class="bcz-icon">BCZ</div> <div class="bcz-help-panel-value">Hi - BCZ Help system</div>
+		<div class="bcz-console">
+		</div>
+	</div>
+
+	
 	<div id="head-section">
 		<nav class="navbar  navbar-fixed-top">
 			<div class="navbar-cust">

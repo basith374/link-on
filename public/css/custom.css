@@ -28,7 +28,7 @@
 		cursor:default;
 	}
 	/* Master */
-	
+	.faveLink:hover{ cursor:pointer; }
 	.fakeNav{
 		height: 120px;
 	}
@@ -72,30 +72,25 @@
 			color: rgba(255,255,255,.8);
 		}
 		
-	/* BCZ System */	
-		.bcz-icon{
-			background:#707070;
-			color:#373f41;
-			border-radius:13px;
-			padding:7px 7px 4px 7px;
-			font-family: AnjaEliane;
-			margin-right:10px;
-		}
-			.ad-help-panel{
-				font-family:Dosis;
-				color:rgba(255,255,255,0.7);
-				width:calc( 100% - 350px);
-				height:40px;
-				padding:10px 10px 10px 15px;
-				background:#373f41;
-				border-radius:5px;
-				margin:19px 0px 0px 0px;
-			}	
-	/* Admin */
 	
-		.fakeAdminHead{
-			height:80px;
+	/*
+	 * COLORS
+	 */
+ 
+		.clr-cust-blue{
+			background:#3498db;
 		}
+		.clr-cust-green{
+			background:#2ecc71;
+		}
+		.clr-cust-red{
+			background:#ed7b6f;
+		}
+		.clr-cust-dgrey{
+			background:#586067;
+		}
+		
+		
 		.cl-cust-blue:hover{
 			background:#3498db;
 		}
@@ -104,6 +99,73 @@
 		}
 		.cl-cust-red:hover{
 			background:#ed7b6f;
+		}
+		
+		
+		.clr-color-blue{
+			color:#3498db;
+		}
+		.clr-color-green{
+			color:#2ecc71;
+		}
+		.clr-color-red{
+			color:#ed7b6f;
+		}
+		.clr-color-dgrey{
+			color:#586067;
+		}
+		
+		
+		.cl-color-blue:hover{
+			color:#3498db;
+		}
+		.cl-color-green:hover{
+			color:#2ecc71;
+		}
+		.cl-color-red:hover{
+			color:#ed7b6f;
+		}
+		
+		
+	/* BCZ System */	
+		.bcz-icon{
+			display:inline;
+			float:left;
+			background:#707070;
+			color:#373f41;
+			border-radius:13px;
+			padding:7px 7px 4px 7px;
+			font-family: AnjaEliane;
+			margin-right:10px;
+		}
+			.ad-help-panel{
+				position:fixed;
+				font-family:Dosis;
+				color:rgba(255,255,255,0.7);
+				padding:10px 10px 10px 10px;
+				margin:19px 0px 0px 0px;
+				z-index:999;
+				bottom:30px;
+				left:-2000px;
+				opacity:0;
+				border:6px solid rgba(255,255,255,0.8);
+				
+				border-radius:25px 8px 8px 25px;
+				overflow:hidde;
+				
+				background:#373f41;
+				
+				transition:opacity .8s;
+			}	
+			.bcz-help-panel-value{
+				display:inline;
+				float:left;
+				max-width:400px;
+			}
+	/* Admin */
+	
+		.fakeAdminHead{
+			height:80px;
 		}
 		
 		.ad-nav-base{
@@ -703,22 +765,6 @@
 	margin-bottom: 15px;
 }
 
-/*
- * COURSE PANEL
- */
- 
-		.clr-cust-blue{
-			background:#3498db;
-		}
-		.clr-cust-green{
-			background:#2ecc71;
-		}
-		.clr-cust-red{
-			background:#ed7b6f;
-		}
-		.clr-cust-dgrey{
-			background:#586067;
-		}
 
 /* USE WITH SM SIZE BUTTONS */
 .top-link {

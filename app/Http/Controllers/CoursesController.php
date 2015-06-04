@@ -68,10 +68,10 @@ class CoursesController extends Controller {
 	 */
 	public function show($id)
 	{
-		$course = Course::find($id);
-		$subjects = $course->subjects;		
-		$data = ['course' => $course, 'subjects' => $subjects];
-		return view('courses.show', $data);
+		// $course = Course::find($id); // old
+		// $subjects = $course->subjects; // old
+		$course = Course::with('subjects')->whereId($id)->first(); // new [eager loading mechanism]
+		return view('courses.show', compact('course'));
 	}
 	
 	public function showPartial($id)

@@ -20,14 +20,8 @@
 						<a href="{{ route('courses.create') }}" class="btn ad-nav-sd-btn cl-cust-blue bcz-help --btn" >Create Course</a>
 						<a href="{{ route('subjects.create') }}" class="btn ad-nav-sd-btn cl-cust-green bcz-help  --btn" >Create Subject</a>
 						<a href="{{ route('subjects.index') }}" class="btn ad-nav-sd-btn cl-cust-red bcz-help --btn-e" extra="You can also add/delete subjects from here.">View Subjects</a>
+						<a class="fakeLink btn ad-nav-sd-btn cl-cust-blue bcz-help " id="bcz-cons" tip="Click console and type quick commands">Console</a>
 					</div>
-					
-					{{-- Help Panel --}}
-			
-					<div class="ad-help-panel untouchable bcz-help-panel">
-						<span class="bcz-icon">BCZ</span> <span class="bcz-help-panel-value">Hi - BCZ Help system</span>
-					</div>
-					
 				</div>	
 			</div>
 		</div>		
@@ -69,7 +63,7 @@
 											<div class="cors-g-ribbon-wrapper"><div class="cors-g-ribbon">New</div></div>
 
 											<div class="cors-top">
-												COST {{ $course->cost }}
+												COST : {{ $course->cost() }} Rs
 												
 											</div>
 											<div class="cors-back ">
@@ -81,7 +75,7 @@
 												{{ $course->title }}
 												</div>
 												<div class="cors-body">
-												{{ $course->description }}
+												{{ str_limit($course->description, 150) }}<span class="faveLink cl-color-green clr-color-blue"> continue reading</span>
 												</div>
 											</div>
 										</div>	

@@ -20,13 +20,6 @@
 						<a href="{{ route('subjects.create') }}" class="btn ad-nav-sd-btn cl-cust-green bcz-help  --btn" >Create Subject</a>
 						<a href="{{ route('subjects.index') }}" class="btn ad-nav-sd-btn cl-cust-red bcz-help --btn-e" extra="You can also add/delete subjects from here.">View Subjects</a>
 					</div>
-					
-					{{-- Help Panel --}}
-			
-					<div class="ad-help-panel untouchable bcz-help-panel">
-						<span class="bcz-icon">BCZ</span> <span class="bcz-help-panel-value">Hi - BCZ Help system</span>
-					</div>
-					
 				</div>	
 			</div>
 		</div>		
@@ -88,6 +81,9 @@
 	@endif
 	
 	<div class="row" id="formContainer">
+		<div class="top-link">
+			<a href="{{ route('blogs.index') }}" class="btn btn-default btn-sm">Back</a>
+		</div>
 		@include('courses/partials/_details')
 	</div>
 </div>

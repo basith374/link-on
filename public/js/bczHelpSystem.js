@@ -10,33 +10,35 @@ jQuery(document).ready(function() {
 		var preMCount = 1;
 		
 		var iconColor = "";
+		var TimeId = setTimeout(function(){}, 0);
 		
 		$(".bcz-help").mouseover(function(){
-			
 			Val = $(this).text().toLowerCase();
 			tip = $(this).attr("tip");
 			extra = $(this).attr("extra");
 			cName = $(this).attr("class");
-			
+			makeMyTrip();
 			checkInput();
-
 			$(".bcz-help-panel-value").text(msg);
-			
 			setIconColor();
-			
 		});
 		
 		$(".bcz-help").mouseout(function(){
-			
 			$(".bcz-help-panel-value").text("Hi ~ BCZ help System");
 			$(".bcz-icon").css({"background" : "#707070" });
+			takeMeHome();
 		});
 
-
-		
+		function makeMyTrip(){
+			clearTimeout(TimeId);
+			$(".bcz-help-panel").css({"left" : "20px" , "opacity" : "1"})
+		}
+		function takeMeHome(){
+			TimeId = setTimeout(function(){ $(".bcz-help-panel").css({"left" : "-4000px"}); }, 800);
+			$(".bcz-help-panel").css({"opacity" : "0"})
+		}
 		function checkInput(){
 			findPreWords();
-			
 			if(cName.indexOf('--btn-e') > -1){
 				msg = preMsg + Val +". "+ extra;	
 			}else
