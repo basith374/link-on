@@ -10,11 +10,13 @@ jQuery(document).ready(function() {
 	var hg3_btn = true;
 	
 	var smartHead = false;
+	var striped = false;
 	
+	if($("#smartHead").prop('value') == "home") smartHead = true;
+		
 	
-	if($("#smartHead").prop('value') == "true"){
-		smartHead = true;
-	}
+	if($("#smartHead").prop('value') == "striped") striped = true;
+		
 	
 	
 	/*Smart head*/
@@ -133,15 +135,15 @@ jQuery(document).ready(function() {
 				  $(this).css({"color": "rgba(52,73,94,0.7)"});
 				});
 				
-				$(".nav-a-cust > li > a").css({"background":"#fff" ,"color": "rgba(52,73,94,0.6)"});
+				$(".nav-a-cust > li > a").css({"color": "rgba(52,73,94,0.6)"});
 				
 				
 				$(".nav-a-cust > li > a").mouseover(function() {
-				  $(this).css({"background":"#fff" ,"color": "rgba(52,73,94,0.8)"});
+				  $(this).css({"color": "rgba(52,73,94,0.8)"});
 				});
 				
 				$(".nav-a-cust > li > a").mouseout(function() {
-				  $(this).css({"background":"#fff" ,"color": "rgba(52,73,94,0.6)"});
+				  $(this).css({"color": "rgba(52,73,94,0.6)"});
 				});
 				
 			}else{
@@ -157,18 +159,50 @@ jQuery(document).ready(function() {
 				});
 				
 				
-				$(".nav-a-cust > li > a").css({"background":"#373737" ,"color": "rgba(255,255,255,0.6)"});
+				$(".nav-a-cust > li > a").css({"color": "rgba(255,255,255,0.6)"});
 				
 				$(".nav-a-cust > li > a").mouseover(function() {
-				  $(this).css({"background":"#373737" ,"color": "rgba(255,255,255,0.8)"});
+				  $(this).css({"color": "rgba(255,255,255,0.8)"});
 				});
 				
 				$(".nav-a-cust > li > a").mouseout(function() {
-				  $(this).css({"background":"#373737" ,"color": "rgba(255,255,255,0.6)"});
+				  $(this).css({"color": "rgba(255,255,255,0.6)"});
 				});
 			}
 		}
 		
+		
+		if(striped){
+			if (window.pageYOffset >= 10){
+				$('.navbar-cust').css({"box-shadow": "0px 0px 2px rgba(0,0,0,.4)" });
+				$('.navbar-cust').css({"background-image":"url('../img/stock-img/stripes15.png')" });
+				$('.navbar-cust').css({"background-repeat":"repeat" });
+				
+				
+			}else{
+				$('.navbar-cust').css({"background":"#373737" , "box-shadow": "0px 0px 0px rgba(0,0,0,.4)"})
+				$('.icon-cust').css({"color": "rgba(255,255,255,0.8)"});
+				
+				$(".icon-cust ").mouseover(function() {
+				  $(this).css({"color": "rgba(255,255,255,1)"});
+				});
+				
+				$(".icon-cust ").mouseout(function() {
+				  $(this).css({"color": "rgba(255,255,255,0.8)"});
+				});
+				
+				
+				$(".nav-a-cust > li > a").css({"color": "rgba(255,255,255,0.6)"});
+				
+				$(".nav-a-cust > li > a").mouseover(function() {
+				  $(this).css({"color": "rgba(255,255,255,0.8)"});
+				});
+				
+				$(".nav-a-cust > li > a").mouseout(function() {
+				  $(this).css({"color": "rgba(255,255,255,0.6)"});
+				});
+			}
+		}
 		/*hb-w-grid*/
 			
 		if (window.pageYOffset >= 340){

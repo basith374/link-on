@@ -10,7 +10,7 @@
 			background: #e96557;		
 		}
 	</style>
-	<input type="hidden" value="true" id="smartHead">
+	<input type="hidden" value="home" id="smartHead">
 @endsection
 
 @section('content')
