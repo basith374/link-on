@@ -5,7 +5,10 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "5.0.*"
+		"laravel/framework": "5.0.*",
+		"laravel/html": "5.0.*",
+		"cviebrock/eloquent-sluggable": ">=3.0.0-alpha",
+		"laravel/socialite": "~2.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

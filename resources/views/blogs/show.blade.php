@@ -64,7 +64,7 @@
 		</div>
 		<div class="col-lg-8 col-lg-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading"><h1>{{ $blog->title }}</h1></div>
+				<div class="panel-heading"><h1>{{ $blog->title }}<small>{{ $blog->slug }}</small></h1></div>
 				<div class="panel-body">{{ $blog->body }}</div>
 				<div class="panel-footer">by {{ $blog->user->name }}<span class="badge pull-right">Posted {{ $blog->updated_at }}</span></div>
 			</div>

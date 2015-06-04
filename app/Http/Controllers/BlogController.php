@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use Input;
 use App\Blog;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -8,12 +9,11 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller {
 
-	protected $rules = [
-		'blog_title' => ['required', 'min:3'],
-		'slug' => ['required'],
+	protected $rules = array(
+		'title' => ['required', 'min:3'],
 		'body' => ['required'],
 		'author' => ['required']
-	];
+	);
 
 	/**
 	 * Display a listing of the resource.
@@ -46,9 +46,10 @@ class BlogController extends Controller {
 	{
 		$this->validate($request, $this->rules);
 		$input = array_except(Input::all(), ['_method', '_token']);
+		// print_r($input);
+		// echo 'ok';
 		Blog::create($input);
-		echo 'ok';
-		// return redirect()->back()->with('success-message', 'Successfully created.');
+		return redirect()->back()->with('success-message', 'Successfully created.');
 	}
 
 	/**

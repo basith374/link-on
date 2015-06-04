@@ -29,6 +29,7 @@
 		<div class="row">
 			<div class="col-lg-10">
 				{!! Form::open(['route' => 'blogs.store', 'class' => 'form-horizontal']) !!}
+					{!! Form::hidden('author', '1') !!}
 					@include('/blogs/partials/_form')
 					<div class="col-lg-offset-3 col-lg-4">
 						{!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}

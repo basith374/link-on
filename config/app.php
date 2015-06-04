@@ -136,6 +136,8 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
+		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+		'Laravel\Socialite\SocialiteServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -195,6 +197,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'HTML'		=> 'Illuminate\Html\HtmlFacade',
 		'Form'		=> 'Illuminate\Html\FormFacade',
+		'Socialize' => 'Laravel\Socialite\Facades\Socialite',
 
 	],
 

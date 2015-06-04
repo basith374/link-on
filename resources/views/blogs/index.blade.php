@@ -7,6 +7,23 @@
 @endsection
 
 @section('content')
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-trash"></span> Confirm Delete</h4>
+			</div>
+			<div class="modal-body">
+				Are you sure you want to delete this blog? You cannot undo this action.
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				<a href="#" class="btn btn-danger" id="blogDelete">Delete</a>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="page-w-lblack">
 	<div class="container">
 		<div id="blog-container">
@@ -54,10 +71,8 @@
 								<span>0 : Tags</span> |
 								<span>0 : Categories</span>
 								<div class="pull-right" style="margin-right:5px;">
-									{!! Form::open(['method' => 'DELETE', 'route' => 'blogs.destroy', 'class' => 'form-inline']) !!}
-										<a href="{{ route('blogs.edit', $blog) }}" class="btn btn-primary btn-sm">Edit</a>
-										{!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
-									{!! Form::close() !!}
+									<a href="{{ route('blogs.edit', $blog) }}" class="btn btn-primary btn-sm">Edit</a>
+									{!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm', 'data-toggle' => 'modal', 'data-target' => '#delete-modal']) !!}
 								</div>
 							</div>
 						</div>
