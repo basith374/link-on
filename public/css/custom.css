@@ -35,8 +35,8 @@
 		
 		.navbar-cust{
 			background: #373737;
-			height: 120px;
-			padding-top: 33px;
+			height: 80px;
+			padding-top: 13px;
 			border:0px;
 			margin-bottom: 0px;
 			border-radius: 0px;
@@ -541,11 +541,11 @@
  */
  
 	.blog-box-cust{
-		background:#fff;
-		border-radius:5px;
+		border-radius:10px;
 		padding:0px;
 		margin-top:20px;
 		margin-bottom:40px;
+		overflow:hidden;
 	}
 	
 	.blog-head-wrapper{
@@ -557,18 +557,16 @@
 	
 	.blog-box-head{
 		font-family:Station;
-		
 		width:calc(100% - 240px);
-		border-radius:5px 5px 0px 0px;
 		color:rgba(255,255,255,1);
-		padding:10px;
+		padding:20px;
 	}
 		.blod-box-date{
 			position:absolute;
 			top:-2px;
 			right:-2px;
 			font-family:Station;
-			background:#3498db;
+			background:#454a4f;
 			width:240px;
 			border-radius:0px 5px 0px 0px;
 			color:rgba(255,255,255,1);
@@ -580,7 +578,7 @@
 		width:100%;
 		color:rgba(0,0,0,0.5);	
 		padding:20px ;
-		
+		background:#fff;
 	}
 	.blog-box-footer{
 		font-family:Dosis;

@@ -3,6 +3,41 @@
 
 @section('title', "$course->title")
 
+{{---------------------------------------------------------------------------------------------------------
+
+	This section is for admin navigation bar. Put this code top of every page if you need admin tools in 
+	that page. 
+
+----------------------------------------------------------------------------------------------------------}}
+
+	@section('adminTools')
+		
+		<div class="ad-nav-base">
+			<div class="container bczh-main">
+				<div class="row">
+					<div class="top-link pull-right ad-panel-btns">
+						<a href="{{ route('courses.create') }}" class="btn ad-nav-sd-btn cl-cust-blue bcz-help --btn" >Create Course</a>
+						<a href="{{ route('subjects.create') }}" class="btn ad-nav-sd-btn cl-cust-green bcz-help  --btn" >Create Subject</a>
+						<a href="{{ route('subjects.index') }}" class="btn ad-nav-sd-btn cl-cust-red bcz-help --btn-e" extra="You can also add/delete subjects from here.">View Subjects</a>
+					</div>
+					
+					{{-- Help Panel --}}
+			
+					<div class="ad-help-panel untouchable bcz-help-panel">
+						<span class="bcz-icon">BCZ</span> <span class="bcz-help-panel-value">Hi - BCZ Help system</span>
+					</div>
+					
+				</div>	
+			</div>
+		</div>		
+	@endsection
+	@section('fakeAdminHead')
+		<div class="fakeAdminHead"> </div>
+	@endsection
+
+{{--------------------------------------------------------------------------------------------------------}}
+	
+@section('content')
 @section('content')	
 <div class="container">
 	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

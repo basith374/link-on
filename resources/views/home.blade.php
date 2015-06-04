@@ -9,6 +9,10 @@
 		.fakeNav{
 			background: #e96557;		
 		}
+		.navbar-cust{
+			height: 120px;
+			padding-top: 33px;
+		}	
 	</style>
 	<input type="hidden" value="home" id="smartHead">
 @endsection

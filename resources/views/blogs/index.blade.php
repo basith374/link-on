@@ -37,7 +37,7 @@
 							<div class="col-lg-8 blog-post blog-box-cust">
 								<div class="blog-head-wrapper">
 									<div class="blog-post-head blog-box-head">
-										<span class="h1 ">{{ $blog->title }} </span>
+										<span class="h3">{{ $blog->title }} </span>
 										<span class="blod-box-date pull-right">Posted {{ $blog->updated_at }}</span>
 									</div>
 								</div>
