@@ -59,8 +59,8 @@ class BlogController extends Controller {
 	 */
 	public function show($id)
 	{
-		$blog = Blog::find($id);
-		return view('blogs.show', compact('$blog'));
+		$blog = Blog::with('user')->whereId($id)->first();
+		return view('blogs.show', compact('blog'));
 	}
 
 	/**
