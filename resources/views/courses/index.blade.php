@@ -20,7 +20,7 @@
 						<a href="{{ route('courses.create') }}" class="btn ad-nav-sd-btn cl-cust-blue bcz-help --btn" >Create Course</a>
 						<a href="{{ route('subjects.create') }}" class="btn ad-nav-sd-btn cl-cust-green bcz-help  --btn" >Create Subject</a>
 						<a href="{{ route('subjects.index') }}" class="btn ad-nav-sd-btn cl-cust-red bcz-help --btn-e" extra="You can also add/delete subjects from here.">View Subjects</a>
-						<a class="fakeLink btn ad-nav-sd-btn cl-cust-blue bcz-help " id="bcz-cons" tip="Click console and type quick commands">Console</a>
+						<a class="fakeLink btn ad-nav-sd-btn cl-cust-blue bcz-help " id="bcz-cons-btn" tip="Click console and type quick commands">Console</a>
 					</div>
 				</div>	
 			</div>

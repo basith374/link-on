@@ -153,8 +153,7 @@
 				border-radius:25px 8px 8px 25px;
 				overflow:hidde;
 				
-				background:#373f41;
-				
+				background:#474e52;
 				transition:opacity .8s;
 			}	
 			.bcz-help-panel-value{
@@ -162,6 +161,32 @@
 				float:left;
 				max-width:400px;
 			}
+			.bcz-cons{
+				display:block;
+				width:400px;
+				height:0px;
+				width:0px;
+				overflow:hidden;
+				transition:height 0.4s , width .4s;
+				margin-top:10px;
+			}
+			#bcz-cons{
+				resize: none;
+				display:block;
+				margin-top:5%;
+				width:100%;
+				height:90%;
+				background:#0b0c0c;
+				color:#2fc1ff;
+				padding:10px 10px 10px 10px;
+				border:none;
+				border-radius:0px 0px 0px 20px;
+			}
+				#bcz-cons:focus{
+					outline:none;
+				}
+			
+			
 	/* Admin */
 	
 		.fakeAdminHead{
