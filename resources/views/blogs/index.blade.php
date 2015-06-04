@@ -2,12 +2,18 @@
 
 @section('title', 'Blogs')
 
+@section('csslinks')
+	<input type="hidden" value="striped" id="smartHead">
+@endsection
+
 @section('content')
 <div class="page-w-lblack">
 	<div class="container">
 		<div id="blog-container">
-			<div class="top-link">
-				<a href="{{ route('blogs.create') }}" class="btn btn-success">New Post</a>
+			<div class="row">
+				<div class="top-link">
+					<a href="{{ route('blogs.create') }}" class="btn btn-success">New Post</a>
+				</div>
 			</div>
 			<div class="row">
 				@if(Session::has('success-message'))
@@ -29,20 +35,20 @@
 					</div>
 				@endif
 			</div>
-			<div id="blog-view" class="row-space clearfix">
-				<div class="row">
+			<div class="row">
+				<div id="blog-view" class="row-space clearfix">
 					@foreach($blogs as $blog)
 						<div class="col-lg-10 col-lg-offset-1 blog-post blog-box-cust">
 							<div class="blog-head-wrapper">
 								<div class="blog-post-head blog-box-head">
-									<span class="h1 ">{{ $blog->title }} </span>
-									<small">by {{ $blog->user->name }} </small>
+									<span class="h1 ">{{ $blog->title }}</span>
+									<small">by {{ $blog->user->name }}</small>
 									<span class="blod-box-date pull-right">Posted {{ $blog->updated_at }}</span>
 								</div>
 							</div>
 							<div class="blog-post-body blog-box-body">
 								<p>{{ str_limit($blog->body, 350) }}<a href="{{ route('blogs.show', $blog) }}">continue reading</a></p>
-								</div>
+							</div>
 							<div class="blog-post-foot blog-box-footer">
 								<span>0 : Likes</span> |
 								<span>0 : Tags</span> |
@@ -57,10 +63,8 @@
 						</div>
 					@endforeach
 				</div>
-				<div class="row">
-					<div class="col-lg-3 col-lg-offset-5">
-						{!! $blogs->render() !!}
-					</div>
+				<div class="col-lg-4 col-lg-offset-5">
+					{!! $blogs->render() !!}
 				</div>
 			</div>
 		</div>

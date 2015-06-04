@@ -40,7 +40,8 @@
 			border:0px;
 			margin-bottom: 0px;
 			border-radius: 0px;
-			transition: padding-top .5s ,height 0.5s , background 0.3s; 
+			transition: padding-top .5s ,height 0.5s , background 0.3s, background-image 1s; 
+			
 		}
 		
 		.icon-cust{
@@ -54,14 +55,21 @@
 		.icon-cust:hover{
 			color: #fff;
 		}
+		.nav-a-cust{
+			margin-top:15px;
+		}
 		
+		.nav-a-cust > li {
+			padding:20px;
+			display:inline;
+		}
 		.nav-a-cust > li > a{
 			color: rgba(255,255,255,0.6);
 			transition: color .2s, background 0.3s;
+			text-decoration:none;
 		}
 		.nav-a-cust > li > a:hover{
 			color: rgba(255,255,255,.8);
-			background: #373737;
 		}
 		
 	/* BCZ System */	
@@ -164,6 +172,7 @@
 			overflow: hidden;
 			opacity: 1;
 			
+			font-family:Dosis;
 			transition: opacity 0.7s, margin 0.5s , background 0.5s , transform 0.5s ,-webkit-transform 0.5s,-moz-transform 0.5s, -ms-transform 0.5s,-o-transform 0.5s;
 		}
 			.box-cust:hover{
@@ -201,10 +210,12 @@
 				display: inline;
 				float: left;
 				width: 200px;
-				padding: 10px;
-				margin: -20px 0px 0px 25px;
+				padding: 20px;
+				margin: -20px 0px 0px 0px;
 				opacity: 0;
 				transition: margin-top .2s, opacity 0.5s;
+				text-align:center;
+				width:100%;
 			}
 			.img-grid-cust{
 				display: inline;
