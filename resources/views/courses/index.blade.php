@@ -69,7 +69,7 @@
 											<div class="cors-g-ribbon-wrapper"><div class="cors-g-ribbon">New</div></div>
 
 											<div class="cors-top">
-												COST {{ $course->cost }}
+												COST {{ $course->cost() }}
 												
 											</div>
 											<div class="cors-back ">

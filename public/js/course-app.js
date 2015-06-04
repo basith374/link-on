@@ -67,6 +67,8 @@ $(document).ready(function(){
 			$(json).each(function(index) {
 				$('<option>' + this.title + '</option>').prop('value', this.id).appendTo($select);
 			});
+			$('#subjectAdd').removeClass('disabled').click(addAction); // for static pages(create)
+			fetchCourseSubjects(); // for static pages(edit)
 		}
 	});
 	

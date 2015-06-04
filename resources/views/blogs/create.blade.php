@@ -5,6 +5,9 @@
 @section('content')
 <div class="container">
 	<div class="row">
+		<div class="top-link">
+			<a href="{{ route('blogs.index') }}" class="btn btn-default btn-sm">Back</a>
+		</div
 		@if(Session::has('success-message'))
 			<div class="alert alert-success alert-dismissable">
 				<a href="#" data-dismiss="alert" class="close">&times;</a>{{ Session::get('success-message') }}
@@ -23,6 +26,16 @@
 				@endforeach
 			</div>
 		@endif
+		<div class="row">
+			<div class="col-lg-10">
+				{!! Form::open(['route' => 'blogs.store', 'class' => 'form-horizontal']) !!}
+					@include('/blogs/partials/_form')
+					<div class="col-lg-offset-3 col-lg-4">
+						{!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
+					</div>
+				{!! Form::close() !!}
+			</div>
+		</div>
 	</div>
 </div>
 @endsection

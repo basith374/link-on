@@ -47,7 +47,8 @@ class BlogController extends Controller {
 		$this->validate($request, $this->rules);
 		$input = array_except(Input::all(), ['_method', '_token']);
 		Blog::create($input);
-		return redirect()->back()->with('success-message', 'Successfully created.');
+		echo 'ok';
+		// return redirect()->back()->with('success-message', 'Successfully created.');
 	}
 
 	/**
