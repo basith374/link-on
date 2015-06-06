@@ -41,7 +41,9 @@ Route::post('generate-slug', function(){
 	
 });
 
-Route::get('admin/dashboard', 'DashboardController@index');
-Route::get('admin/dashboard/users', 'DashboardController@users');
-Route::get('admin/dashboard/stats', 'DashboardController@stats');
+Route::get('admin/dashboard', 'DashboardController@dashboard');
+Route::get('admin/users', 'DashboardController@users');
+Route::get('admin/stats', 'DashboardController@stats');
+Route::get('admin/console', 'DashboardController@console');
+Route::get('admin/services', 'DashboardController@services');
 Route::get('admin/runonce', 'DashboardController@runonce');

@@ -1,7 +1,5 @@
-@extends('layouts.master')
+@extends('admin.layout')
 
-@section('title', 'Example')
-
-@section('content')
+@section('admin')
 
 @endsection

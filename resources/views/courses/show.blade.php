@@ -16,9 +16,12 @@
 			<div class="container bczh-main">
 				<div class="row">
 					<div class="top-link pull-right ad-panel-btns">
-						<a href="{{ route('courses.create') }}" class="btn ad-nav-sd-btn cl-cust-blue bcz-help --btn" >Create Course</a>
-						<a href="{{ route('subjects.create') }}" class="btn ad-nav-sd-btn cl-cust-green bcz-help  --btn" >Create Subject</a>
-						<a href="{{ route('subjects.index') }}" class="btn ad-nav-sd-btn cl-cust-red bcz-help --btn-e" extra="You can also add/delete subjects from here.">View Subjects</a>
+						<input type="hidden" id="courseId" value="{{ $course->id }}" />
+						<a href="#" id="courseDetails" class="btn ad-nav-sd-btn cl-cust-blue bcz-help --btn">Details</a>
+						<a href="#" id="courseCreate" class="btn ad-nav-sd-btn cl-cust-green bcz-help --btn">Create</a>
+						<a href="#" id="courseEdit" class="btn ad-nav-sd-btn cl-cust-blue bcz-help --btn">Edit</a>
+						<a href="#" data-toggle="modal" data-target="#delete-modal" class="btn ad-nav-sd-btn cl-cust-red bcz-help --btn">Delete</a>
+						<a class="fakeLink btn ad-nav-sd-btn cl-cust-blue bcz-help " id="bcz-cons-btn" tip="Click console and type quick commands">Console</a>
 					</div>
 				</div>	
 			</div>
@@ -52,29 +55,10 @@
 			</div>
 		</div>
 	</div>
-	<!--
 	<div class="top-link">
 		<a href="{{ route('courses.index') }}" class="btn btn-default btn-sm">Back</a>
-		<div class="pull-right btn-group">
-			<a class="btn btn-primary btn-sm" id="courseEdit">Edit</a>
-			<a class="btn btn-success btn-sm" id="courseCreate">Create</a>
-			<a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-modal">Delete</a>
-		</div>-->
-	<div class="row-space">
-		<ul class="nav nav-tabs" id="navtabs">
-			<li class="active"><a href="#" id="courseDetails">Details</a></li>
-			<li><a href="#" id="courseCreate">Create</a></li>
-			<li><a href="#" id="courseEdit">Edit</a></li>
-			<li><a href="#" data-toggle="modal" data-target="#delete-modal">Delete</a></li>
-			<li><a href="{{ route('courses.index') }}">Back</a></li>
-		</ul>
-		<input type="hidden" id="courseId" value="{{ $course->id }}"/>
 	</div>
-	<!--
-	</div>
-	-->
-	@if(Session::has('success-message'))
-		
+	@if(Session::has('success-message'))	
 		<div class="alert alert-success alert-dismissable" id="mass-error">
 			<a href="#" data-dismiss="alert" class="close">&times;</a>{{Session::get('success-message')}}
 		</div>

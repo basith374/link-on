@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Lava;
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -13,9 +14,9 @@ class DashboardController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function dashboard()
 	{
-		return view('admin.index');
+		return view('admin.dashboard');
 	}
 	
 	public function users()
@@ -26,7 +27,17 @@ class DashboardController extends Controller {
 	
 	public function stats()
 	{
-		return 'no view found!';
+		return view('admin.stats');
+	}
+	
+	public function console()
+	{
+		return view('admin.console');
+	}
+	
+	public function services()
+	{
+		return view('admin.services');
 	}
 	
 	public function runonce()
@@ -53,7 +64,7 @@ class DashboardController extends Controller {
 		$chart->datatable($stocksTable);
 		// echo Lava::render('LineChart', 'myFancyChart', 'myStocks', array('height' => 500, 'width' => 500));
 		// echo $chart->render('myStocks');
-		return view('admin.charts', compact('chart'));
+		return view('admin.test.charts', compact('chart'));
 	}
 	
 }

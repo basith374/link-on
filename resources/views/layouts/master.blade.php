@@ -26,7 +26,7 @@
 
 	{{-- Help Panel --}}
 
-	<div class="ad-help-panel  untouchable bcz-help-panel">
+	<div class="ad-help-panel untouchable bcz-help-panel">
 		<div style="">
 			<div class="bcz-icon">BCZ</div> 
 			<div class="bcz-help-panel-value">Hi - BCZ Help system</div>
@@ -39,7 +39,7 @@
 
 	
 	<div id="head-section">
-		<nav class="navbar  navbar-fixed-top">
+		<nav class="navbar navbar-fixed-top">
 			<div class="navbar-cust">
 				<div class="container-fluid">
 					<div class="navbar-header">
@@ -57,6 +57,7 @@
 							<ul class="nav-a-cust navbar-right">
 								<li><a href="{{ asset('home') }}">Home</a></li>
 								<li><a href="{{ route('blogs.index') }}">Blog</a></li>
+								<li><a href="{{ url('/admin/dashboard') }}">Admin Console</a></li>
 							</ul>
 						</div>				
 					</div>
