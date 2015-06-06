@@ -81,9 +81,6 @@
 	@endif
 	
 	<div class="row" id="formContainer">
-		<div class="top-link">
-			<a href="{{ route('blogs.index') }}" class="btn btn-default btn-sm">Back</a>
-		</div>
 		@include('courses/partials/_details')
 	</div>
 </div>

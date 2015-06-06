@@ -40,3 +40,8 @@ Route::post('generate-slug', function(){
 	return Str::slug(Input::get('target'));
 	
 });
+
+Route::get('admin/dashboard', 'DashboardController@index');
+Route::get('admin/dashboard/users', 'DashboardController@users');
+Route::get('admin/dashboard/stats', 'DashboardController@stats');
+Route::get('admin/runonce', 'DashboardController@runonce');

@@ -138,6 +138,7 @@ return [
 		'Illuminate\Html\HtmlServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 		'Laravel\Socialite\SocialiteServiceProvider',
+		'Khill\Lavacharts\Laravel\LavachartsServiceProvider',
 
 		/*
 		 * Application Service Providers...
