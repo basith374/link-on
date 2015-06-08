@@ -1,5 +1,6 @@
 <?php
 
+use App\Online;
 use Illuminate\Support\Str;
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +48,8 @@ Route::get('admin/stats', 'DashboardController@stats');
 Route::get('admin/console', 'DashboardController@console');
 Route::get('admin/services', 'DashboardController@services');
 Route::get('admin/runonce', 'DashboardController@runonce');
+
+// Online::updateCurrent();
+Route::post('user-status', function() {
+	Online::updateCurrent();
+});

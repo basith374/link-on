@@ -19,6 +19,7 @@ class CoursesSubjects extends Migration {
 			$table->string('title');
 			$table->string('acronym');
 			$table->text('description');
+			$table->softDeletes();
 			$table->timestamps();
 		});
 		
@@ -31,6 +32,7 @@ class CoursesSubjects extends Migration {
 			$table->text('description');
 			$table->integer('cost');
 			$table->integer('timeperiod');
+			$table->softDeletes();
 			$table->timestamps();
 		});
 		

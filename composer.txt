@@ -1,0 +1,5 @@
+
+		"illuminate/html": "5.0.*",
+		"cviebrock/eloquent-sluggable": ">=3.0.0-alpha",
+		"laravel/socialite": "~2.0",
+		"khill/lavacharts" : "2.5.*"

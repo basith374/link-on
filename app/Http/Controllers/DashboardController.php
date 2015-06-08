@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Online;
+use Illuminate\Support\Facades\DB;
 use Lava;
 use App\User;
 use App\Http\Requests;
@@ -9,35 +11,59 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller {
 
+	protected $_partials = array('dashboard', 'stats', 'users', 'console', 'services');
+
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function dashboard()
+	public function dashboard(Request $request)
 	{
-		return view('admin.dashboard');
+		$showpage = 'dashboard';
+		if($request->ajax()) {
+			return view('admin.dashboard.dashboard');
+		}
+		return view('admin.dashboard', ['pages' => $this->_partials, 'showpage' => $showpage]);
 	}
 	
-	public function users()
+	public function users(Request $request)
 	{
-		$users = User::all();
-		return view('admin.users', compact('users'));
+		$showpage = 'users';
+		$users = User::with('sessions')->withTrashed()->get();
+		if($request->ajax()) {
+			return view('admin.dashboard.users', compact('users'));
+		}
+		return view('admin.dashboard', ['users' => $users, 'pages' => $this->_partials, 'showpage' => $showpage]);
 	}
 	
-	public function stats()
+	public function stats(Request $request)
 	{
-		return view('admin.stats');
+		$showpage = 'stats';
+		$online = Online::registered()->count();
+		$active = User::all()->count();
+		if($request->ajax()) {
+			return view('admin.dashboard.stats', ['online' => $online, 'active' => $active]);
+		}
+		return view('admin.dashboard', ['pages' => $this->_partials, 'showpage' => $showpage, 'online' => $online, 'active' => $active]);
 	}
 	
-	public function console()
+	public function console(Request $request)
 	{
-		return view('admin.console');
+		$showpage = 'console';
+		if($request->ajax()) {
+			return view('admin.dashboard.console');
+		}
+		return view('admin.dashboard', ['pages' => $this->_partials, 'showpage' => $showpage]);
 	}
 	
-	public function services()
+	public function services(Request $request)
 	{
-		return view('admin.services');
+		$showpage = 'services';
+		if($request->ajax()) {
+			return view('admin.dashboard.services');
+		}
+		return view('admin.dashboard', ['pages' => $this->_partials, 'showpage' => $showpage]);
 	}
 	
 	public function runonce()

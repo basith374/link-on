@@ -20,6 +20,7 @@ class CreateBlogsTable extends Migration {
 			$table->integer('author')->unsigned();
 			$table->foreign('author')->references('id')->on('users')->onDelete('cascade');
 			$table->text('body');
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}

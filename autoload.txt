@@ -1,0 +1,5 @@
+
+	'Cviebrock\\EloquentSluggable\\' => array($vendorDir . '/eloquent-sluggable-master/src'),
+	'Khill\\Lavacharts\\' => array($vendorDir . '/lavacharts-master/src'),
+	'Laravel\\Socialite\\' => array($vendorDir . '/socialite-2.0/src'),
+	'PragmaRX\\Tracker\\' => array($vendorDir . '/tracker-master/src'),
