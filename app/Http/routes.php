@@ -53,7 +53,9 @@ Route::get('admin/routes', 'DashboardController@routes');
 Route::get('admin/sessions', 'DashboardController@sessions');
 Route::get('admin/runonce', 'DashboardController@runonce');
 Route::get('test', function() {
-	return Carbon::now()->subMinutes(2)->diffInMinutes();
+	// return __FUNCTION__; // the function name
+	// CarbonInterval::setLocale('en');
+	return Carbon::now()->timestamp(1000000)->diffForHumans();
 });
 
 // Online::updateCurrent();
