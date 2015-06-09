@@ -1,39 +1,37 @@
 $(document).ready(function() {
-
-	var ctx = [];
 	
-	$(window).bind('popstate', function() {
-		$.ajax({url : location.pathname, success : function(data) {
-			// console.log(location.pathname);
-			var page = location.pathname.substr(location.pathname.lastIndexOf('/') + 1);
-			var tab = '#' + page + 'Tab';
-			// $("#myTab li").each(function(index) {
-				// console.log(this);
-				// $(this).removeClass('active');
-			// });
-			// $('#myTab a[href="' + tab + '"]').tab('show').parent().addClass('active');
-			$('#myTab a[href="' + tab + '"]').tab('show');
-			$(tab).html(data);
-			if(page == 'stats') {
-				// setTimeout(function() {
-					drawCharts();
-				// }, 20);
-			}
-		}});
+	// $(window).bind('popstate', function() {
+		// $.ajax({url : location.pathname, success : function(data) {
+			// var page = location.pathname.substr(location.pathname.lastIndexOf('/') + 1);
+			// var tab = '#' + page + 'Tab';
+			// $('#myTab a[href="' + tab + '"]').tab('show');
+		// }});
+	// });
+	
+	window.addEventListener("popstate", function(e) {
+		var page = location.pathname.substr(location.pathname.lastIndexOf('/') + 1);
+		var divid = '#' + page + 'Tab';
+		var activeTab = $('#myTab a[href="' + divid + '"]');
+		if(activeTab.length) {
+			activeTab.tab('show');
+		} else {
+			$('.nav-tabs a:first').tab('show');
+		}
 	});
 	
 	// load tab contents via ajax
-	$("#myTab a").click(function(e) {
+	$(document).on('show.bs.tab', '#myTab a[data-toggle="tab"]', function(e) {
 		var tab = e.target;
 		
 		// extract (substring) url from div id. eg. dashboard from #dashboardTab
-		var href = $(tab).attr('href');
+		// var href = $(tab).attr('href');
+		var href = $(this).attr('href');
 		var divid = href.substr(1, href.indexOf('Tab')-1);
 		var url = '/admin/' + divid;
 		
-		$.get(url).success(function(data) {
+		$request = $.get(url).success(function(data) {
 			$("#" + divid + "Tab").html(data);
-					
+			$('[data-toggle="popover"]').popover();
 			// add 'user' page specific settings
 			if(divid == 'users') {
 				$("[data-toggle='tooltip']").tooltip();
@@ -48,23 +46,26 @@ $(document).ready(function() {
 	});
 	
 	// tab change handler, (currently no use)
-	$('#myTab a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+	$(document).on('shown.bs.tab', '#myTab a[data-toggle="tab"]', function(e) {
 		var target = $(this).attr('href');
 		var divid = target.substr(1, target.indexOf('Tab')-1);
 		var url = '/admin/' + divid;
 
 		// draw charts for 'stats' page
-		if(divid == 'stats') {
-			drawCharts();
-		}
+		$request.success(function() {
+			// console.log('request completed');
+			if(divid == 'stats') {
+				drawCharts();
+			}
+		});
 	});
 	
 	// add active marker according to page url
 	var currentTab = location.pathname.substr(location.pathname.lastIndexOf('/') + 1);
 	$('#myTab a[href="#' + currentTab + 'Tab"]').tab('show');
-	if(currentTab == 'stats') {
-		drawCharts();
-	}
+	// if(currentTab == 'stats') {
+		// drawCharts();
+	// }
 	
 	// console.log(location.pathname.substr(location.pathname.lastIndexOf('/') + 1)); // important, get tab name by url
 	
@@ -173,11 +174,11 @@ $(document).ready(function() {
 			}
 		];
 		
-		var ctx = {};
+		$ctx = {};
 		
 		$(".stats-chart").each(function(index) {
 			// console.log('chart index : ' + index);
-			ctx[index] = this.getContext("2d");
+			$ctx[index] = this.getContext("2d");
 		});
 		// console.log('no.of charts : ' + $(ctx).size());
 		// console.log(ctx);
@@ -186,18 +187,18 @@ $(document).ready(function() {
 			var options = { animationEasing : "easeOutBounce", animateRotate : true };
 			
 			// For a pie chart
-			var myPieChart = new Chart(ctx[0]).Pie(data, options);
+			var myPieChart = new Chart($ctx[0]).Pie(data, options);
 
 			// And for a doughnut chart
-			var myDoughnutChart = new Chart(ctx[1]).Doughnut(data, options);
+			var myDoughnutChart = new Chart($ctx[1]).Doughnut(data, options);
 			
-			var myPolarChart = new Chart(ctx[2]).PolarArea(data3);
+			var myPolarChart = new Chart($ctx[2]).PolarArea(data3);
 			
-			var myRadarChart = new Chart(ctx[3]).Radar(data2);
+			var myRadarChart = new Chart($ctx[3]).Radar(data2);
 			
-			var myLineChart = new Chart(ctx[4]).Line(data1);
+			var myLineChart = new Chart($ctx[4]).Line(data1);
 			
-			var myBarChart = new Chart(ctx[5]).Bar(data1);
+			var myBarChart = new Chart($ctx[5]).Bar(data1);
 		// }, 500);
 		// for(var i=0;i<2;i++) {
 			// console.log(ctx[i]);

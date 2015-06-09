@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Route;
 use App\Online;
 use Illuminate\Support\Facades\DB;
 use Lava;
@@ -11,7 +12,7 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller {
 
-	protected $_partials = array('dashboard', 'stats', 'users', 'console', 'services');
+	protected $_partials = array('dashboard', 'stats', 'users', 'console', 'services', 'routes', 'sessions');
 
 	/**
 	 * Display a listing of the resource.
@@ -64,6 +65,26 @@ class DashboardController extends Controller {
 			return view('admin.dashboard.services');
 		}
 		return view('admin.dashboard', ['pages' => $this->_partials, 'showpage' => $showpage]);
+	}
+	
+	public function routes(Request $request)
+	{
+		$showpage = 'routes';
+		$routes = Route::getRoutes();
+		if($request->ajax()) {
+			return view('admin.dashboard.routes', compact('routes'));
+		}
+		return view('admin.dashboard', ['pages' => $this->_partials, 'showpage' => $showpage, 'routes' => $routes]);
+	}
+	
+	public function sessions(Request $request)
+	{
+		$showpage = __FUNCTION__;
+		$sessions = Online::all();
+		if($request->ajax()) {
+			return view('admin.dashboard.sessions', compact('sessions'));
+		}
+		return view('admin.dashboard', ['pages' => $this->_partials, 'showpage' => $showpage, 'sessions' => $sessions]);
 	}
 	
 	public function runonce()
