@@ -24,20 +24,32 @@
 			<h3 class="h3">Daily peak records</h3>
 		</div>
 		<div class="panel-body">
-			<div>
-				<h2 class="h2">Online users</h2>
-				<canvas class="stats-chart" width="300" height="300"></canvas>
-				<canvas class="stats-chart" width="300" height="300"></canvas>
-				<canvas class="stats-chart" width="300" height="300"></canvas>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="h2">Online users</h2>
+				</div>
+				<div class="panel-body">
+					<canvas class="stats-chart" width="290" height="290"></canvas>
+					<canvas class="stats-chart" width="290" height="290"></canvas>
+					<canvas class="stats-chart" width="290" height="290"></canvas>
+				</div>
 			</div>
-			<div>
-				<h2 class="h2">Active members</h2>
-				<canvas class="stats-chart" width="300" height="300"></canvas>
-				<canvas class="stats-chart" width="600" height="300"></canvas>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="h2">Active members</h2>
+				</div>
+				<div class="panel-body">
+					<canvas class="stats-chart" width="290" height="290"></canvas>
+					<canvas class="stats-chart" width="580" height="290"></canvas>
+				</div>
 			</div>
-			<div>
-				<h2 class="h2">Site visits</h2>
-				<canvas class="stats-chart" width="900" height="400"></canvas>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="h2">Site visits</h2>					
+				</div>
+				<div class="panel-body">
+					<canvas class="stats-chart" width="870" height="300"></canvas>
+				</div>
 			</div>
 		</div>
 	</div>

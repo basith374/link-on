@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+use Carbon\CarbonInterval;
 use App\Online;
 use Illuminate\Support\Str;
 /*
@@ -47,7 +49,12 @@ Route::get('admin/users', 'DashboardController@users');
 Route::get('admin/stats', 'DashboardController@stats');
 Route::get('admin/console', 'DashboardController@console');
 Route::get('admin/services', 'DashboardController@services');
+Route::get('admin/routes', 'DashboardController@routes');
+Route::get('admin/sessions', 'DashboardController@sessions');
 Route::get('admin/runonce', 'DashboardController@runonce');
+Route::get('test', function() {
+	return Carbon::now()->subMinutes(2)->diffInMinutes();
+});
 
 // Online::updateCurrent();
 Route::post('user-status', function() {

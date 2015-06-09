@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Session;
 // use Sentry;
 use Illuminate\Support\Facades\Auth;
@@ -60,6 +61,15 @@ class Online extends Model {
 	{
 		// return $this->belongsTo('Cartalyst\Sentry\Users\EloquentUser');
 		return $this->belongsTo('App\User');
+	}
+	
+	/*
+	 * Return human friendly time in difference (eg. 3 minutes ago)
+	 *
+	 */
+	public function lastseen()
+	{
+		return Carbon::now()->timestamp($this->last_activity)->diffForHumans();
 	}
 
 }
