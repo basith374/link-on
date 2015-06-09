@@ -1,4 +1,4 @@
-<table class="table table-condensed table-bordered" id="routes-table">
+<table class="table table-condensed table-bordered table-responsive" id="routes-table">
 	<tr>
 		<th>Method</th>
 		<th>Name</th>

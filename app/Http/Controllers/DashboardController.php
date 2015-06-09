@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use Input;
 use Illuminate\Support\Facades\Route;
 use App\Online;
 use Illuminate\Support\Facades\DB;
@@ -36,6 +37,63 @@ class DashboardController extends Controller {
 			return view('admin.dashboard.users', compact('users'));
 		}
 		return view('admin.dashboard', ['users' => $users, 'pages' => $this->_partials, 'showpage' => $showpage]);
+	}
+	
+	
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroyuser(Request $request, $id)
+	{
+		// User::find($id)->delete();
+		if($request->ajax()) {
+			return $id . ' deleted ok';
+		}
+		return redirect()->back()->with('success-message', 'Successfully deleted.');
+	}
+	
+	
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function updateuser(Request $request, $id)
+	{
+		// $this->validate($request, $this->rules);
+		$registrar = new \App\Services\Registrar;
+		$validator = $registrar->validator($request->all());
+		if($validator->fails()) {
+			$this->throwValidationException(
+				$request, $validator
+			);
+		}
+		$roles = $request->get('roles');
+		
+		$already = DB::table('user_role')->where('user_id', $id)->lists('role_id');
+		
+		$toadd = array_diff($roles, $already); // delete the second array from the first array
+		$torem = array_diff($already, $roles);
+		
+		// if(count($toadd)>0) {
+			// User::find($id)->roles()->attach(array_unique($toadd));
+		// }
+		// if(count($torem)>0) {
+			// User::find($id)->roles()->detach(array_unique($torem));
+		// }
+		return 'ok';
+		// return redirect()->route('courses.show',$id)->with('success-message','Course updated');
+	}
+	
+	public function userdetails($id) {
+		// $data = User::find($id);
+		 $data = User::with('roles')->where('id',$id)->first();
+		
+		return response()->json($data);
 	}
 	
 	public function stats(Request $request)
@@ -81,6 +139,7 @@ class DashboardController extends Controller {
 	{
 		$showpage = __FUNCTION__;
 		$sessions = Online::all();
+		// print_r(Online::all()->first()->user()->id);
 		if($request->ajax()) {
 			return view('admin.dashboard.sessions', compact('sessions'));
 		}

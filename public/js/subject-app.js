@@ -30,7 +30,7 @@ $(document).ready(function() {
 	 */
 	$delAction = function(e) {
 		e.preventDefault();
-		var id = $(this).parent().parent().find("input").prop('value');
+		var id = $(this).parent().parent().find('input[type="hidden"]').prop('value');
 		subjectId = id;
 		$tr = $(this).parent().parent().parent();
 	}

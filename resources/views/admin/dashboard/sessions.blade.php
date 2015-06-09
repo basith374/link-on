@@ -9,7 +9,7 @@
 	<tr>
 		<td>{{ $session->id }}</td>
 		<td><span data-toggle="popover" data-placement="bottom" data-container="body" data-content="{{ $session->payload }}">{{ str_limit($session->payload, 50) }}</span></td>
-		<td>{{ $session->user_id }}</td>
+		<td>{{ $session->user->email or 'null' }}</td>
 		<td>{{ $session->lastseen() }}</td>
 	</tr>
 	@empty
