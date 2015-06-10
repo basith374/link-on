@@ -21,11 +21,6 @@
 	
 
 	<div id="hb-red-cust">
-	
-	@if(Auth::user())
-		<div class="alert alert-info">You're user</div>
-	@endif
-	
 		<div class="container">
 			<div class="row col-lg-offset-1" id="gridset">
 				@for($ticker=1;$ticker<=8;$ticker++)

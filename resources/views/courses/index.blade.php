@@ -10,7 +10,7 @@
 	that page. 
 
 ----------------------------------------------------------------------------------------------------------}}
-
+@if(Auth::user())
 	@section('adminTools')
 		
 		<div class="ad-nav-base">
@@ -29,15 +29,12 @@
 	@section('fakeAdminHead')
 		<div class="fakeAdminHead"> </div>
 	@endsection
-
+@endif
 {{--------------------------------------------------------------------------------------------------------}}
 	
 @section('content')
 
 <div class="">
-
-</br>
-
 	<div class="container row-space-top">
 		<div class="row">
 			@if(Session::has('success-message'))
@@ -75,7 +72,7 @@
 												{{ $course->title }}
 												</div>
 												<div class="cors-body">
-												{{ str_limit($course->description, 150) }}<span class="faveLink cl-color-green clr-color-blue"> continue reading</span>
+												{{ str_limit($course->description, 150) }} <?php if(strlen($course->description) > 150 ){ ?> <span class="faveLink cl-color-green clr-color-blue"> continue reading</span><?php } ?>
 												</div>
 											</div>
 										</div>	
