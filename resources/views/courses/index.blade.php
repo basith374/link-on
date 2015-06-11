@@ -52,7 +52,7 @@
 			<div id="coursesGrid"><!-- gridbox width class here -->
 				@if($courses)
 					@foreach($courses as $course)
-							<div id="container">
+							<div id="cors-container">
 								<div id="dummy"></div>
 								<div id="element">
 									<a href="{{ route('courses.show', $course) }}" class="">
@@ -72,7 +72,7 @@
 												{{ $course->title }}
 												</div>
 												<div class="cors-body">
-												{{ str_limit($course->description, 150) }} <?php if(strlen($course->description) > 150 ){ ?> <span class="faveLink cl-color-green clr-color-blue"> continue reading</span><?php } ?>
+												{{ str_limit($course->description, 100) }} <?php if(strlen($course->description) > 100 ){ ?> <span class="faveLink cl-color-green clr-color-blue"> continue reading</span><?php } ?>
 												</div>
 											</div>
 										</div>	

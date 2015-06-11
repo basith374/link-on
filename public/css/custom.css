@@ -127,7 +127,13 @@
 		}
 		
 		
+		
+		.active-cust{
+			background:#2885ac;
+		}
+		
 	/* BCZ System */	
+	
 		.bcz-icon{
 			display:inline;
 			float:left;
@@ -486,7 +492,7 @@
 				#coursesGrid{
 				}
 				
-				#container {
+				#cors-container {
 					display: inline-block;
 					position: relative;
 					width: 29%;
@@ -582,7 +588,7 @@
 						font-family:Station;
 						text-align:center;
 						width:90%;
-						font-size:150%;
+						font-size:120%;
 						color:rgba(255,255,255,0.8);
 						margin:5% 5% 0% 5%;
 						height:35%;
@@ -593,7 +599,7 @@
 						text-align:center;
 						width:100%;
 						color:rgba(255,255,255,0.6);
-						padding:5% 3% 3% 3%;
+						padding:2% 3% 3% 3%;
 						height:55%;
 						background:#40464b;
 						background-image: url("../img/stock-img/stripes10.png");
