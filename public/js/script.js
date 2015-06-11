@@ -25,8 +25,25 @@ jQuery(document).ready(function() {
 		$('.fakeNav').css({"height":"80px"});
 	}
 	
+	/*sticking footer to the bottom*/
 	
+	midHeightSetter();
 	
+	function midHeightSetter(){
+		$header =$("#head-section").outerHeight(true);
+		$footer =$("#foot-section").outerHeight(true);
+		$mid = $("#mid-section").outerHeight(true);
+	
+		if( $mid < ( $(window).height() - ( $header + $footer ))){
+			
+			$mid_h = ( $(window).height() - ( $header + $footer ));
+			$("#mid-section").css({"min-height" : $mid_h });
+			$("#foot-section").css({"opacity" : "1"});
+			
+		}else{
+			$("#foot-section").css({"opacity" : "1"});
+		}
+	}
 	/* intro transition effect */
 	/*
 	/* make scale of the div 0.9 and opacity 0
@@ -123,7 +140,7 @@ jQuery(document).ready(function() {
 				$('.navbar-cust').css({"height":"120px" , "paddingTop" : "33px"});
 			}
 			
-			if (window.pageYOffset >= 655){
+			if ($("#hb-red-cust ").isOnScreen(-80) == false ){
 				$('.navbar-cust').css({"background":"#fff" , "box-shadow": "0px 0px 2px rgba(0,0,0,.4)" });
 				$('.icon-cust').css({"color": "rgba(52,73,94,0.7)"});
 				
@@ -205,7 +222,7 @@ jQuery(document).ready(function() {
 		}
 		/*hb-w-grid*/
 			
-		if (window.pageYOffset >= 340){
+		if( $(".hd-w-grid").isOnScreen(0) == true ){
 			if(hg2_start){
 				homeGridTwo();
 				interval = setInterval(setGridBox,200);
@@ -213,13 +230,44 @@ jQuery(document).ready(function() {
 			}
 		}
 		
-		if (window.pageYOffset >= 780){
+		if ( $("#pf-onscreen").isOnScreen(0) == true ){
 			if(hg3_start){
 				hg3_start = false;
 				homeGridThree();
 			}
 		}
+		
+		
+		
+		
 	}
+	
+	$.fn.isOnScreen = function($offset){
+
+		var win = $(window);
+
+		var viewport = {
+			top : win.scrollTop(),
+			left : win.scrollLeft()
+		};
+		viewport.right = viewport.left + win.width();
+		viewport.bottom = viewport.top + win.height();
+
+		var bounds = this.offset();
+		bounds.right = bounds.left + this.outerWidth();
+		bounds.bottom = bounds.top + this.outerHeight() + $offset;
+
+		return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+
+	};
+	
+	
+	
+	// codes that run while window is being resized
+	
+	$( window ).resize(function() {
+		midHeightSetter();
+	});
 });
 
 

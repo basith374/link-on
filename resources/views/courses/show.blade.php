@@ -18,14 +18,15 @@
 				<div class="row">
 					<div class="top-link pull-right ad-panel-btns">
 						<input type="hidden" id="courseId" value="{{ $course->id }}" />
-						<a href="#" id="courseDetails" class="btn ad-nav-sd-btn cl-cust-blue bcz-help --btn">Details</a>
-						<a href="#" id="courseCreate" class="btn ad-nav-sd-btn cl-cust-green bcz-help --btn">Create</a>
-						<a href="#" id="courseEdit" class="btn ad-nav-sd-btn cl-cust-blue bcz-help --btn">Edit</a>
-						<a href="#" data-toggle="modal" data-target="#delete-modal" class="btn ad-nav-sd-btn cl-cust-red bcz-help --btn">Delete</a>
-						<a class="fakeLink btn ad-nav-sd-btn cl-cust-blue bcz-help " id="bcz-cons-btn" tip="Click console and type quick commands">Console</a>
+						<a href="#" id="courseDetails" class=" btn ad-nav-sd-btn clr-cust-grey cl-cust-blue bcz-help --btn ">Details</a>
+						<a href="#" id="courseCreate" class="btn ad-nav-sd-btn clr-cust-grey cl-cust-green bcz-help --btn">Create</a>
+						<a href="#" id="courseEdit" class="btn ad-nav-sd-btn clr-cust-grey cl-cust-yellow bcz-help --btn">Edit</a>
+						<a href="#" tab="false" data-toggle="modal" data-target="#delete-modal" class="btn ad-nav-sd-btn clr-cust-grey cl-cust-red bcz-help --btn">Delete</a>
+						<a tab="false" class="fakeLink btn ad-nav-sd-btn clr-cust-grey cl-cust-blue bcz-help " id="bcz-cons-btn" tip="Click console and type quick commands">Console</a>
 					</div>
 				</div>	
 			</div>
+			<div class="tab-line-cust"></div>
 		</div>		
 	@endsection
 	@section('fakeAdminHead')

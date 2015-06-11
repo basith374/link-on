@@ -77,19 +77,25 @@
 	 * COLORS
 	 */
  
-		.clr-cust-blue{
-			background:#3498db;
-		}
-		.clr-cust-green{
-			background:#2ecc71;
-		}
 		.clr-cust-red{
 			background:#ed7b6f;
 		}
 		.clr-cust-dgrey{
 			background:#586067;
 		}
-		
+		.clr-cust-grey{
+			background:#7f8c8d;
+		}
+		.clr-cust-yellow{
+			background:#ebba5d;
+		}
+		.clr-cust-blue{
+			background:#3498db;
+		}
+		.clr-cust-green{
+			background:#2ecc71;
+		}
+				
 		
 		.cl-cust-blue:hover{
 			background:#3498db;
@@ -99,6 +105,9 @@
 		}
 		.cl-cust-red:hover{
 			background:#ed7b6f;
+		}
+		.cl-cust-yellow:hover{
+			background:#ebba5d;
 		}
 		
 		
@@ -128,8 +137,10 @@
 		
 		
 		
+		
 		.active-cust{
-			background:#2885ac;
+			background:#586067;
+			color:#fff;
 		}
 		
 	/* BCZ System */	
@@ -192,6 +203,15 @@
 					outline:none;
 				}
 			
+			/*Tab*/
+			
+			.tab-line-cust{
+				width:100%;
+				height:15px;
+				margin-top:-12px;
+				
+				transition:background 1s;
+			}
 			
 	/* Admin */
 	
@@ -208,7 +228,6 @@
 				font-family:Dosis;
 				color:rgba(255,255,255,0.7);
 				padding:10px;
-				background:#7f8c8d;
 				border-radius:5px;
 				margin:4px;
 				height:40px;
@@ -218,8 +237,17 @@
 				.ad-nav-sd-btn:hover{
 					color:rgba(255,255,255,1);
 				}
+				.ad-nav-sd-btn:visited{
+					color:rgba(255,255,255,1);
+					background:red;
+				}
 			
-			
+			.connection-line{
+				background:red;
+				width:10px;
+				height:30px;
+				margin-left:33px;
+			}
 /*
  * pages- color
  */ 
@@ -733,6 +761,11 @@
 				color:rgba(255,255,255,0.2);
 				font-family: Station;
 			}
+			
+	#foot-section{
+		opacity:0;
+		transition: opacity .6s;
+	}		
 
 /*
  * SAMPLE COLORS
