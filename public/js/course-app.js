@@ -140,11 +140,11 @@ $(document).ready(function(){
 	});
 	
 	// add active class to clicked tab button
-	$("#navtabs li a").click(function(e){
+	$(".ad-panel-btns > a").click(function(e){
 		// e.preventDefault();
-		var li=$(this).parent();
-		$("#navtabs li").removeClass('active');
-		li.addClass('active');
+		var parent=$(this).parent();
+		$(".ad-panel-btns a").removeClass('active-cust');
+		parent.addClass('active-cust');
 	});
 		
 });

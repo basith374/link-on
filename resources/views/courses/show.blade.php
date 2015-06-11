@@ -3,13 +3,14 @@
 
 @section('title', "$course->title")
 
+
 {{---------------------------------------------------------------------------------------------------------
 
 	This section is for admin navigation bar. Put this code top of every page if you need admin tools in 
 	that page. 
 
 ----------------------------------------------------------------------------------------------------------}}
-
+@if(Auth::user())
 	@section('adminTools')
 		
 		<div class="ad-nav-base">
@@ -30,10 +31,9 @@
 	@section('fakeAdminHead')
 		<div class="fakeAdminHead"> </div>
 	@endsection
-
+@endif
 {{--------------------------------------------------------------------------------------------------------}}
 	
-@section('content')
 @section('content')	
 <div class="container">
 	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

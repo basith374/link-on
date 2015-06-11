@@ -64,16 +64,18 @@
 								</div>
 							</div>
 							<div class="blog-post-body blog-box-body">
-								<p>{{ str_limit($blog->body, 350) }}<a href="{{ route('blogs.show', $blog) }}">continue reading</a></p>
+								<p>{{ str_limit($blog->body, 350) }}<?php if(strlen($blog->body) > 350 ){ ?><a href="{{ route('blogs.show', $blog) }}">continue reading</a></p><?php } ?>
 							</div>
 							<div class="blog-post-foot blog-box-footer">
 								<span>0 : Likes</span> |
 								<span>0 : Tags</span> |
 								<span>0 : Categories</span>
-								<div class="pull-right" style="margin-right:5px;">
-									<a href="{{ route('blogs.edit', $blog) }}" class="btn btn-primary btn-sm">Edit</a>
-									{!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm', 'data-toggle' => 'modal', 'data-target' => '#delete-modal']) !!}
-								</div>
+								@if(Auth::user())
+									<div class="pull-right" style="margin-right:5px;">
+										<a href="{{ route('blogs.edit', $blog) }}" class="btn btn-primary btn-sm">Edit</a>
+										{!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm', 'data-toggle' => 'modal', 'data-target' => '#delete-modal']) !!}
+									</div>
+								@endif
 							</div>
 						</div>
 					@endforeach

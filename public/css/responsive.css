@@ -1,20 +1,61 @@
 
+	/*wide screen*/
+	
+	@media only screen and (min-width : 1200px) {
+		
+		#cors-container {
+			width: 17.5%;
+			margin: 1%;
+		}
+		
+	}
+	
 	/*Standerd screen*/
 	
-	@media only screen and (max-width : 991px) {
+	@media only screen and (max-width : 1200px) and (min-width : 992px) {
 		
-		body{
-			
+		#cors-container {
+			width: 22.5%;
+			margin: 1%;
 		}
+		
+		.cors-body{
+			padding:2% 3% 3% 3%;
+		}
+	}
 	
+	/*medium screen*/
+	
+	@media only screen and (max-width : 991px) and (min-width : 768px) {
+		
 	}
 	
 	/* Tab */
 	
-	@media only screen and (max-width : 768px) {
+	@media only screen and (max-width : 768px) and (min-width : 480px) {
+				
+		#cors-container {
+			width: 42%;
+			margin: 3.5%;
+		}
 		
-		body{
+		.cors-head{
+			font-size:160%;
+			margin:2% 5% 2% 5%;
+		}
+		.cors-body{
+			font-size:120%;
+			padding:2% 3% 3% 3%;
+		}
 		
+		
+		@media only screen and (max-width : 608px){
+			
+			.cors-head{
+				font-size:130%;
+				margin:2% 5% 2% 5%;
+			}
+			
 		}
 	
 	}
@@ -23,8 +64,18 @@
 	
 	@media only screen and (max-width : 480px) {
 		
-		body{
-		
+		#cors-container {
+			width: 42%;
+			margin: 3.5%;
+		}
+	
+		.cors-head{
+			font-size:110%;
+			margin:2% 5% 2% 5%;
+		}
+		.cors-body{
+			font-size:100%;
+			padding:2% 3% 3% 3%;
 		}
 	
 	}

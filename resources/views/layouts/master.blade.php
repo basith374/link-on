@@ -49,7 +49,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand icon-cust" href="#">LinkOn</a>
+						<a class="navbar-brand icon-cust"  href="{{ asset('home') }}">LinkOn</a>
 					</div>
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -57,7 +57,7 @@
 							<ul class="nav-a-cust navbar-right">
 								<li><a href="{{ asset('home') }}">Home</a></li>
 								<li><a href="{{ route('blogs.index') }}">Blog</a></li>
-								<li><a href="{{ url('/admin/dashboard') }}">Admin Console</a></li>
+								@if(Auth::user())<li><a href="{{ url('/admin/dashboard') }}">Admin Console</a></li>@endif
 							</ul>
 						</div>				
 					</div>
