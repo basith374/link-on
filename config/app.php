@@ -139,6 +139,7 @@ return [
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 		'Laravel\Socialite\SocialiteServiceProvider',
 		'Khill\Lavacharts\Laravel\LavachartsServiceProvider',
+        'PragmaRX\Tracker\Vendor\Laravel\ServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -198,7 +199,8 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'HTML'		=> 'Illuminate\Html\HtmlFacade',
 		'Form'		=> 'Illuminate\Html\FormFacade',
-		'Socialize' => 'Laravel\Socialite\Facades\Socialite',
+		'Socialite' => 'Laravel\Socialite\Facades\Socialite',
+        'Tracker' => 'PragmaRX\Tracker\Vendor\Laravel\Facade',
 
 	],
 

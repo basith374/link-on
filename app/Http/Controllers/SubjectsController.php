@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Validator;
 class SubjectsController extends Controller {
 	
 	protected $rules = [
-		'slug' => 'required',
+//		'slug' => 'required',
 		'title' => 'required',
 		'acronym' => 'required',
 		'cost' => 'required',

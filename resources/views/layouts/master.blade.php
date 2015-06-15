@@ -57,8 +57,19 @@
 							<ul class="nav-a-cust navbar-right">
 								<li><a href="{{ asset('home') }}">Home</a></li>
 								<li><a href="{{ route('blogs.index') }}">Blog</a></li>
-								@if(Auth::user())<li><a href="{{ url('/admin/dashboard') }}">Admin Console</a></li>@endif
-							</ul>
+								@if(Auth::user())
+
+                                    <li class="dropdown">
+                                        <a data-toggle="dropdown" href="{{ url('/admin/dashboard') }}">Admin Console <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{{ url('/admin/dashboard') }}">Admin Console</a></li>
+                                            <li><a href="{{ url('/admin/profile/' . Auth::user()->id) }}">Profile</a></li>
+                                            <li><a href="{{ url('/admin/logout') }}">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                @endif
+                            </ul>
+
 						</div>				
 					</div>
 				</div>

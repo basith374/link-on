@@ -30,7 +30,7 @@ $(document).ready(function() {
 	 */
 	$delAction = function(e) {
 		e.preventDefault();
-		var id = $(this).parent().parent().find("input").prop('value');
+		var id = $(this).parent().parent().find('input[type="hidden"]').prop('value');
 		subjectId = id;
 		$tr = $(this).parent().parent().parent();
 	}
@@ -110,6 +110,7 @@ $(document).ready(function() {
 			div.delay(5000).fadeOut();
 		});
 		request.fail(function(response) {
+            console.log(response.responseText);
 			if(response.status == 422) {
 				$errors = $.parseJSON(response.responseText);
 				$(".form-group .text").each(function(index) {

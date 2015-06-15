@@ -1,15 +1,6 @@
 {{-- /resources/views/subjects/admin/partials/_form.blade.php --}}
 <div class="form-group">
 	<div class="col-md-7 col-md-offset-3">
-		<div id="slug-info" class="text text-danger"></div>
-	</div>
-	{!! Form::label('slug', 'Slug', ['class' => 'text-danger control-label col-md-3']) !!}
-	<div class="col-md-7">
-		{!! Form::text('slug', isset($subject) ? $subject->slug : null, ['class' => 'form-control', 'id' => 'slug', 'disabled' => '', 'required' => 'true']) !!}
-	</div>
-</div>
-<div class="form-group">
-	<div class="col-md-7 col-md-offset-3">
 		<div id="title-info" class="text text-danger"></div>
 	</div>
 	{!! Form::label('title', 'Title', ['class' => 'control-label col-md-3']) !!}
