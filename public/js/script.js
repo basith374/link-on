@@ -27,6 +27,7 @@ jQuery(document).ready(function() {
 	
 	/*sticking footer to the bottom*/
 	
+	
 	midHeightSetter();
 	
 	function midHeightSetter(){
@@ -48,7 +49,7 @@ jQuery(document).ready(function() {
 	/*
 	/* make scale of the div 0.9 and opacity 0
 	
-	interval = setInterval(setGridBox,100);
+	
 	
 	function setGridBox(){
 			$("#gridset :nth-child(" + gridVar + ")").css( { "transform" : "scale(1)" });
