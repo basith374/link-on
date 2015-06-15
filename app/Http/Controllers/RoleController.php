@@ -15,7 +15,8 @@ class RoleController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$roles = Role::with('users')->get();
+		print_r($roles);
 	}
 
 	/**

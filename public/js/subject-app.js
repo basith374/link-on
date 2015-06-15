@@ -110,6 +110,7 @@ $(document).ready(function() {
 			div.delay(5000).fadeOut();
 		});
 		request.fail(function(response) {
+            console.log(response.responseText);
 			if(response.status == 422) {
 				$errors = $.parseJSON(response.responseText);
 				$(".form-group .text").each(function(index) {

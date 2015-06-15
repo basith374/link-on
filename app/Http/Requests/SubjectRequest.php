@@ -22,7 +22,7 @@ class SubjectRequest extends Request {
 	public function rules()
 	{
 		return [
-			'slug' => 'required',
+//			'slug' => 'unique:subjects',
 			'title' => 'required',
 			'acronym' => 'required',
 			'cost' => 'required',

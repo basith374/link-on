@@ -1,5 +1,6 @@
 <?php
 
+use App\Role;
 use Carbon\Carbon;
 use Carbon\CarbonInterval;
 use App\Online;
@@ -19,10 +20,14 @@ Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
 
 Route::get('home', ['uses' => 'HomeController@index', 'as' => 'home']);
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+//Route::controllers([
+//	'admin' => 'Auth\AuthController',
+//	'password' => 'Auth\PasswordController',
+//]);
+
+Route::get('/admin/login', 'DashboardController@getLogin');
+Route::post('/admin/login', 'DashboardController@postLogin');
+Route::get('/admin/logout', 'DashboardController@getLogout');
 
 Route::get('courses/{id}/details','CoursesController@showPartial');
 Route::get('courses/create-ex','CoursesController@createPartial');
@@ -39,13 +44,16 @@ Route::resource('subjects', 'SubjectsController');
 
 Route::resource('blogs', 'BlogController');
 
-Route::post('generate-slug', function(){
+Route::post('generate-slug', function() {
 	return Str::slug(Input::get('target'));
-	
 });
 
+/**
+ * Dashboard
+ */
 Route::get('admin/dashboard', 'DashboardController@dashboard');
 Route::get('admin/users', 'DashboardController@users');
+//Route::get('admin/users/{id}', ['uses' => 'DashboardController@showuser', 'as' => 'users.show']);
 Route::delete('admin/users/{id}', ['uses' => 'DashboardController@destroyuser', 'as' => 'users.destroy']);
 Route::patch('admin/users/{id}', ['uses' => 'DashboardController@updateuser', 'as' => 'users.update']);
 Route::post('admin/users/{id}/user-details', 'DashboardController@userdetails');
@@ -54,11 +62,13 @@ Route::get('admin/console', 'DashboardController@console');
 Route::get('admin/services', 'DashboardController@services');
 Route::get('admin/routes', 'DashboardController@routes');
 Route::get('admin/sessions', 'DashboardController@sessions');
+Route::get('admin/roles', 'DashboardController@roles');
 Route::get('admin/runonce', 'DashboardController@runonce');
 Route::get('test', function() {
 	// return __FUNCTION__; // the function name
 	// CarbonInterval::setLocale('en');
-	return Carbon::now()->timestamp(1000000)->diffForHumans();
+//	return Carbon::now()->timestamp(1000000)->diffForHumans();
+    return Role::find(1)->userlinks();
 });
 
 // Online::updateCurrent();
@@ -66,6 +76,18 @@ Route::post('user-status', function() {
 	Online::updateCurrent();
 });
 
-
 Route::post('roles/all-roles', 'RoleController@allroles');
 Route::resource('roles', 'RoleController');
+
+Route::get('admin/profile/{id}', 'DashboardController@profile');
+
+/**
+ * Implicit
+ */
+//Route::controller('admin/tracker', '\PragmaRX\Tracker\Vendor\Laravel\Controllers\Stats',
+//    array(
+//        'anyLogin' => 'user.login',
+//    )
+//);
+
+Route::get('tracker', '\PragmaRX\Tracker\Vendor\Laravel\Controllers\Stats@index');

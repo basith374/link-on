@@ -56,7 +56,7 @@
 	@forelse($users as $user)
 	<tr>
 		<td>{{ $user->email }}</td>
-		<td>@foreach($user->roles as $role) {{ $role->title . ',' }} @endforeach</td>
+		<td><span data-toggle="tooltip" title="{{ implode(', ', $user->roles->lists('title')) }}">{{ str_limit(implode(', ', $user->roles->lists('title')), 50) }}</span></td>
 		<td>{{ $user->online() }}</td>
 		<td>{{ $user->active() }}</td>
 		<td>

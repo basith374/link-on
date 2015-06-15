@@ -85,7 +85,6 @@ $(document).ready(function() {
 	
 	/**
 	 * EDIT MODAL EDIT BUTTON
-	 *
 	 */
 	var editModalAction = function(e) {
 		e.preventDefault();
@@ -132,7 +131,10 @@ $(document).ready(function() {
 			// $('#myTab a[href="' + tab + '"]').tab('show');
 		// }});
 	// });
-	
+
+    /**
+     * Go back action
+     */
 	window.addEventListener("popstate", function(e) {
 		var page = location.pathname.substr(location.pathname.lastIndexOf('/') + 1);
 		var divid = '#' + page + 'Tab';
@@ -143,11 +145,13 @@ $(document).ready(function() {
 			$('.nav-tabs a:first').tab('show');
 		}
 	});
-	
-	// load tab contents via ajax
+
+    /**
+     * Load tab contents via ajax
+     */
 	$(document).on('show.bs.tab', '#myTab a[data-toggle="tab"]', function(e) {
 		var tab = e.target;
-		
+
 		// extract (substring) url from div id. eg. dashboard from #dashboardTab
 		// var href = $(tab).attr('href');
 		var href = $(this).attr('href');
@@ -155,7 +159,8 @@ $(document).ready(function() {
 		var url = '/admin/' + divid;
 		
 		$request = $.get(url).success(function(data) {
-			$("#" + divid + "Tab").html(data);
+            //console.log($(data).find("#" + divid + "Tab").html());
+			$("#" + divid + "Tab").html($(data).find("#" + divid + "Tab").html());
 			$('[data-toggle="popover"]').popover();
 			$("[data-toggle='tooltip']").tooltip();
 			// add 'user' page specific settings
@@ -169,8 +174,10 @@ $(document).ready(function() {
 			window.history.pushState({path : url}, '', url);
 		}
 	});
-	
-	// tab change handler, (currently no use)
+
+    /**
+     * Tab change handler
+     */
 	$(document).on('shown.bs.tab', '#myTab a[data-toggle="tab"]', function(e) {
 		var target = $(this).attr('href');
 		var divid = target.substr(1, target.indexOf('Tab')-1);
@@ -190,7 +197,9 @@ $(document).ready(function() {
 				$('#roleAdd').removeClass('disabled').click(roleAddAction); // for static pages(create)
 				// fetchCourseSubjects(); // for static pages(edit)
 			}
-		});
+		}).fail(function(response) {
+            //$("#" + divid + "Tab").html(response.responseText); // debug
+        });
 	});
 	
 	// add active marker according to page url

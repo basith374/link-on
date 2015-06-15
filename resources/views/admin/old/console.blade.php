@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.master')
 
 @section('admin')
 	<nav class="navbar navbar-default">
