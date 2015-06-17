@@ -4,7 +4,17 @@
 	@media only screen and (min-width : 1200px) {
 		
 		#cors-container {
+			width: 22.5%;
+			margin: 1%;
+		}
 		
+		.cors-head{
+			font-size:160%;
+			margin:2% 5% 2% 5%;
+		}
+		.cors-body{
+			font-size:120%;
+			padding:2% 3% 3% 3%;
 		}
 		
 	}
@@ -13,14 +23,7 @@
 	
 	@media only screen and (max-width : 1200px) and (min-width : 992px) {
 		
-		#cors-container {
-			width: 22.5%;
-			margin: 1%;
-		}
 		
-		.cors-body{
-			padding:2% 3% 3% 3%;
-		}
 	}
 	
 	/*medium screen*/
