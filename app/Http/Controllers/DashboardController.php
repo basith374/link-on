@@ -232,6 +232,26 @@ class DashboardController extends Controller {
         return view('admin.profile', compact('user'));
     }
 
+    public function appRoutes()
+    {
+        $routes = Route::getRoutes();
+//        print_r((array)$routes);
+
+        $new = array();
+
+        foreach ($routes as $key => $value) {
+            $new[$key] = $value->getName();
+        }
+
+        $_routes = (array)$routes;
+
+        return response()->json($new);
+//        return response()->json(array($routes));
+//        return response()->json($_routes);
+
+//        return 'ok';
+    }
+
     /**
      * @return \Illuminate\View\View
      */

@@ -91,3 +91,8 @@ Route::get('admin/profile/{id}', 'DashboardController@profile');
 //);
 
 Route::get('tracker', '\PragmaRX\Tracker\Vendor\Laravel\Controllers\Stats@index');
+Route::get('get-routes', 'DashboardController@appRoutes');
+Route::get('routes', function () {
+    \Artisan::call('route:list');
+    return \Artisan::output();
+});
