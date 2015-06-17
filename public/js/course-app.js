@@ -11,6 +11,11 @@ $(document).ready(function(){
 	var id = $("#courseId").prop('value');
 	var url = "/courses/" + id + "/subjects";
 	
+	var parent=$("#courseDetails");
+	var cName = $("#courseDetails").attr("class");
+	var Color = "";
+	
+	
 	$subjectsLi = undefined;
 	
 	
@@ -140,11 +145,44 @@ $(document).ready(function(){
 	});
 	
 	// add active class to clicked tab button
+	
+	setTab();
+	
 	$(".ad-panel-btns > a").click(function(e){
-		// e.preventDefault();
-		var parent=$(this).parent();
-		$(".ad-panel-btns a").removeClass('active-cust');
-		parent.addClass('active-cust');
+		if(!($(this).attr("tab") == "false")){
+		e.preventDefault();
+		parent=$(this);
+		cName = $(this).attr("class");
+		
+		setTab();
+		}
 	});
 		
+	function setTab(){
+		resetColor();
+		$(".ad-panel-btns a").removeClass('active-cust');
+		parent.addClass('active-cust');
+		findColor();
+	}	
+	function findColor(){
+		if(cName.indexOf('cl-cust-blue') > -1){
+			Color = "#3498db";
+		}else if(cName.indexOf('cl-cust-green') > -1){
+			Color = "#2ecc71";
+		}else if(cName.indexOf('cl-cust-red') > -1){
+			Color = "#ed7b6f";
+		}else if(cName.indexOf('cl-cust-yellow') > -1){
+			Color = "#ebba5d";
+		}else{
+			Color = "#2ecc71";
+		} 
+		$(".active-cust").css({"background" : Color});	
+		$(".tab-line-cust").css({"background" : Color});	
+	}	
+	
+	
+	function resetColor(){
+			Color = "#7f8c8d";
+		$(".active-cust").css({"background" : Color});	
+	}	
 });

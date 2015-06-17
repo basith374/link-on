@@ -131,7 +131,7 @@
 				<div  style="width:56%; height:10px; border-radius:5px; background:#50cbb3;  margin:20px 0px 10px 50px;" ></div>
 				<div  style="width:65%; height:10px; border-radius:5px; background:#50cbb3;  margin:10px 0px 10px 50px;" ></div>
 			</div>
-			
+			<div id="pf-onscreen" style="margin-top:-200px;" ></div>
 			<div class="pf-cont"  id="pf-div-2">
 				<div class="pf-cont-head untouchable ">What is LINKON</div>
 				<div class="pf-cont-word">
