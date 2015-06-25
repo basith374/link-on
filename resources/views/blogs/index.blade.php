@@ -2,10 +2,6 @@
 
 @section('title', 'Blogs')
 
-@section('csslinks')
-	<input type="hidden" value="striped" id="smartHead">
-@endsection
-
 @section('content')
 <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">

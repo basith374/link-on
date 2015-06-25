@@ -30,13 +30,15 @@
 	/* Master */
 	.faveLink:hover{ cursor:pointer; }
 	.fakeNav{
-		height: 120px;
+		height: 80px;
 	}
 		
 		.navbar-cust{
-			background: #373737;
-			height: 80px;
-			padding-top: 13px;
+			display:block;
+			float:left;
+			width:100%;
+			background: #3399fe;
+			height: 60px;
 			border:0px;
 			margin-bottom: 0px;
 			border-radius: 0px;
@@ -56,12 +58,19 @@
 			color: #fff;
 		}
 		.nav-a-cust{
-			margin-top:15px;
+			display:block;
+			float:left;
+			height:100%;
+		}
+		.nav-active{
+			background:#0066cb;
 		}
 		
 		.nav-a-cust > li {
 			padding:20px;
 			display:inline;
+			float:left;
+			height:100%;
 		}
 		.nav-a-cust > li > a{
 			color: rgba(255,255,255,0.6);
@@ -269,10 +278,12 @@
  */
 	
 	#hb-red-cust{
-		background: #e96557;
+		background: #0066cb;
 		padding: 20px 0px 10px 0px;
-		
+		height:500px;
 	}
+	
+	
 	
 	#gridset{
 		margin-bottom: 50px;

@@ -21,8 +21,9 @@ jQuery(document).ready(function() {
 	
 	/*Smart head*/
 	if(!smartHead){
-		$('.navbar-cust').css({"height":"80px" , "paddingTop" : "13px"});
-		$('.fakeNav').css({"height":"80px"});
+		$('.navbar-cust').addClass('navbar-fixed-top');
+	}else{
+		$('.navbar-cust').removeClass('navbar-fixed-top');
 	}
 	
 	/*sticking footer to the bottom*/
@@ -135,92 +136,26 @@ jQuery(document).ready(function() {
 		/*- header */
 			
 		if(smartHead){
-			if (window.pageYOffset >= 10){
-				$('.navbar-cust').css({"height":"80px" , "paddingTop" : "13px"});
-			}else{
-				$('.navbar-cust').css({"height":"120px" , "paddingTop" : "33px"});
-			}
 			
-			if ($("#hb-red-cust ").isOnScreen(-80) == false ){
-				$('.navbar-cust').css({"background":"#fff" , "box-shadow": "0px 0px 2px rgba(0,0,0,.4)" });
+			if ($("#hb-red-cust ").isOnScreen(0) == false ){
+				
+				$('.fakeNav').css({"height":"60px"});
+				$('.navbar-cust').addClass('navbar-fixed-top');
 				$('.icon-cust').css({"color": "rgba(52,73,94,0.7)"});
+				$('.navbar-cust').css({"marginTop": "0px"});
 				
-				$(".icon-cust ").mouseover(function() {
-				  $(this).css({"color": "rgba(52,73,94,1)"});
-				});
-				
-				$(".icon-cust ").mouseout(function() {
-				  $(this).css({"color": "rgba(52,73,94,0.7)"});
-				});
-				
-				$(".nav-a-cust > li > a").css({"color": "rgba(52,73,94,0.6)"});
-				
-				
-				$(".nav-a-cust > li > a").mouseover(function() {
-				  $(this).css({"color": "rgba(52,73,94,0.8)"});
-				});
-				
-				$(".nav-a-cust > li > a").mouseout(function() {
-				  $(this).css({"color": "rgba(52,73,94,0.6)"});
-				});
 				
 			}else{
-				$('.navbar-cust').css({"background":"#373737" , "box-shadow": "0px 0px 0px rgba(0,0,0,.4)"})
+				
+				$('.fakeNav').css({"height":"0px"});
 				$('.icon-cust').css({"color": "rgba(255,255,255,0.8)"});
+				$('.navbar-cust').removeClass('navbar-fixed-top');
+				$('.navbar-cust').css({"marginTop": "0px"});
 				
-				$(".icon-cust ").mouseover(function() {
-				  $(this).css({"color": "rgba(255,255,255,1)"});
-				});
-				
-				$(".icon-cust ").mouseout(function() {
-				  $(this).css({"color": "rgba(255,255,255,0.8)"});
-				});
-				
-				
-				$(".nav-a-cust > li > a").css({"color": "rgba(255,255,255,0.6)"});
-				
-				$(".nav-a-cust > li > a").mouseover(function() {
-				  $(this).css({"color": "rgba(255,255,255,0.8)"});
-				});
-				
-				$(".nav-a-cust > li > a").mouseout(function() {
-				  $(this).css({"color": "rgba(255,255,255,0.6)"});
-				});
 			}
 		}
 		
 		
-		if(striped){
-			if (window.pageYOffset >= 10){
-				$('.navbar-cust').css({"box-shadow": "0px 0px 2px rgba(0,0,0,.4)" });
-				$('.navbar-cust').css({"background-image":"url('../img/stock-img/stripes15.png')" });
-				$('.navbar-cust').css({"background-repeat":"repeat" });
-				
-				
-			}else{
-				$('.navbar-cust').css({"background":"#373737" , "box-shadow": "0px 0px 0px rgba(0,0,0,.4)"})
-				$('.icon-cust').css({"color": "rgba(255,255,255,0.8)"});
-				
-				$(".icon-cust ").mouseover(function() {
-				  $(this).css({"color": "rgba(255,255,255,1)"});
-				});
-				
-				$(".icon-cust ").mouseout(function() {
-				  $(this).css({"color": "rgba(255,255,255,0.8)"});
-				});
-				
-				
-				$(".nav-a-cust > li > a").css({"color": "rgba(255,255,255,0.6)"});
-				
-				$(".nav-a-cust > li > a").mouseover(function() {
-				  $(this).css({"color": "rgba(255,255,255,0.8)"});
-				});
-				
-				$(".nav-a-cust > li > a").mouseout(function() {
-				  $(this).css({"color": "rgba(255,255,255,0.6)"});
-				});
-			}
-		}
 		/*hb-w-grid*/
 			
 		if( $(".hd-w-grid").isOnScreen(0) == true ){

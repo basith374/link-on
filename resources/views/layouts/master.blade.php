@@ -37,45 +37,39 @@
 		</div>
 	</div>
 
+	@yield('pre-header')
 	
 	<div id="head-section">
-		<nav class="navbar navbar-fixed-top">
+		<div class="main-nav">
 			<div class="navbar-cust">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle Navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand icon-cust"  href="{{ asset('home') }}">LinkOn</a>
-					</div>
+				<div class="container-fluid"style="height:100%;">
+					<div class="container" style="height:100%;  ">
+						<div class="col-md-12" style="height:100%; ">
+							<div class="col-md-6 col-md-offset-3" style="height:100%; ">
+								<ul class="nav-a-cust " >
+									<li class="nav-active"><a  href="{{ asset('home') }}">H</a></li>
+									<li><a href="">EXAMS</a></li>
+									<li><a href="{{ route('courses.index') }}">COURSES</a></li>
+									<li><a href="{{ route('blogs.index') }}">FUNZONE</a></li>
+									@if(Auth::user())
 
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<div class="container">
-							<ul class="nav-a-cust navbar-right">
-								<li><a href="{{ asset('home') }}">Home</a></li>
-								<li><a href="{{ route('blogs.index') }}">Blog</a></li>
-								@if(Auth::user())
-
-                                    <li class="dropdown">
-                                        <a data-toggle="dropdown" href="{{ url('/admin/dashboard') }}">Admin Console <span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="{{ url('/admin/dashboard') }}">Admin Console</a></li>
-                                            <li><a href="{{ url('/admin/profile/' . Auth::user()->id) }}">Profile</a></li>
-                                            <li><a href="{{ url('/admin/logout') }}">Logout</a></li>
-                                        </ul>
-                                    </li>
-                                @endif
-                            </ul>
-
-						</div>				
-					</div>
+										<li class="dropdown">
+											<a data-toggle="dropdown" href="{{ url('/admin/dashboard') }}">Admin Console <span class="caret"></span></a>
+											<ul class="dropdown-menu">
+												<li><a href="{{ url('/admin/dashboard') }}">Admin Console</a></li>
+												<li><a href="{{ url('/admin/profile/' . Auth::user()->id) }}">Profile</a></li>
+												<li><a href="{{ url('/admin/logout') }}">Logout</a></li>
+											</ul>
+										</li>
+									@endif
+								</ul>
+							</div>	
+						</div>	
+					</div>	
 				</div>
 			</div>
 			@yield('adminTools')
-		</nav>
+		</div>
 		
 			
 			
