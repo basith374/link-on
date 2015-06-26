@@ -45,7 +45,17 @@
 				<div class="container-fluid"style="height:100%;">
 					<div class="container" style="height:100%;  ">
 						<div class="col-md-12" style="height:100%; ">
-							<div class="col-md-6 col-md-offset-3" style="height:100%; ">
+						
+							<div class="col-md-6 col-md-offset-3" id="searchBar">
+								<div class="searchSet">
+									<input type="text" class="searchBar" placeholder="Search Your Course Now"></input>
+									<div class="searchBtn">
+										<span class="searchIcon"></span>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-md-6 col-md-offset-3 nav-buttons" style="height:100%; ">
 								<ul class="nav-a-cust " >
 									<li class="nav-active"><a  href="{{ asset('home') }}">H</a></li>
 									<li><a href="">EXAMS</a></li>
@@ -64,6 +74,7 @@
 									@endif
 								</ul>
 							</div>	
+							
 						</div>	
 					</div>	
 				</div>

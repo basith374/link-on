@@ -7,7 +7,7 @@
 @section('csslinks')
 	<style>
 		.fakeNav{
-			height: 0px;		
+			height: 60px;		
 		}
 		.navbar-cust{
 			margin-top:0px;
@@ -31,9 +31,9 @@
 @section('content')	
 <div class="container">
 	<div class="row vertical-center-row hb-w-cust">
-        <div class="col-lg-12">
-            <div class="row ">
-                <div class="col-xs-8 col-xs-offset-2 hb-w-head" >
+        <div class="col-lg-12" >
+            <div class="row " >
+                <div class="col-xs-8 col-xs-offset-2 hb-w-head  sec-2" >
 				How to use the website?
 				<p>
 				Given below are various topics. just click on the article to know more. Thats it Simple and Easy! 
@@ -42,27 +42,43 @@
             </div>
         </div>
 		
-		<div class="row col-lg-offset-1" id="gridset">
-			@for($ticker=1;$ticker<=8;$ticker++)
-				<div class="box-cust" id="gbox">
-					<a href="{{ route('courses.index') }}" class="grid-link">
-						<div class="boxpanel-cust">
-							<div class="boxhead-cust" id="gh">
-							Courses 
-							</div>
-							<div class="boxbody-cust">
-								
-								<div class="img-gridS-cust" id="gimgS"></div>
-								<img src="{{ asset('/img/home/grid/g'.$ticker.'.png') }}" class="img-grid-cust" id="gimg">
-								<div class="boxcontent-cust" id="gcont">
-									Panel content, there are supposed to be a ton of content in here but unfortunately this shit is under development.
-									<span class="badge backt">Awesome</span>
-								</div>
-							</div>
-						</div>
-					</a>
+		<div class="row col-md-12 col-lg-offset-1" id="gridset">
+			<div class="col-md-8 " >
+			@for($ticker=1;$ticker<=6;$ticker++)
+				<div class="home-box col-md-6 " >
+					<div class="hIcon">
+					
+					</div>
+					<div class="hbody">
+						<div class="hTitle"> COURSE</div>
+						<div class="hCont"> This is a damn damn course , Given below are various topics. just click on the article to know more. Thats it Simple and Easy! </div>
+					</div>
 				</div>
 			@endfor
+			</div>
+			
+			<!-- HardCoded Things | Static -->
+			<div class="col-md-4" >
+				<div class="home-box col-md-12 " >
+					<div class="hIcon">
+					
+					</div>
+					<div class="hbody">
+						<div class="hTitle"> COURSE</div>
+						<div class="hCont"> This is a damn damn course , Given below are various topics. just click on the article to know more. Thats it Simple and Easy! </div>
+					</div>
+				</div>
+				
+				<div class="home-box2 col-md-12 " >
+					<div class="hIcon">
+					
+					</div>
+					<div class="hbody">
+						<div class="hTitle"> COURSE</div>
+						<div class="hCont"> This is a damn damn course , Given below are various topics. just click on the article to know more. Thats it Simple and Easy! </div>
+					</div>
+				</div>
+			</div>
 		</div>
     </div>
 </div>

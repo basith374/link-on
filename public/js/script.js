@@ -153,6 +153,17 @@ jQuery(document).ready(function() {
 				$('.navbar-cust').css({"marginTop": "0px"});
 				
 			}
+			
+			if ($(".sec-2 ").isOnScreen(-60) == false ){
+				$('.navbar-cust').css({"background": "#80a7ae"});
+				$('#searchBar').css({"margin-top":"-60px" });
+				
+			}else{
+				$('.navbar-cust').css({"background": "#66cbff"});
+				$('#searchBar').css({"margin-top":"0px"});
+			}
+			
+			
 		}
 		
 		

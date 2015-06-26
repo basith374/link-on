@@ -37,13 +37,76 @@
 			display:block;
 			float:left;
 			width:100%;
-			background: #3399fe;
+			background: #66cbff;
 			height: 60px;
 			border:0px;
 			margin-bottom: 0px;
 			border-radius: 0px;
-			transition: padding-top .5s ,height 0.5s , background 0.3s, background-image 1s; 
+			transition: background 1s; 
+			overflow:hidden;
+		}
+		.nav-buttons{
 			
+		}
+		
+		#searchBar{
+			margin-top:0px;
+			transition:margin-top 1s;
+			height:60px;
+		}
+		.searchSet{
+			width:100%;
+			margin-top:10px;
+			height:40px;
+		}
+		.searchBar{
+			display:inline_block;
+			float:left;
+			width:70%;
+			height:40px;
+			background:#fff;
+			border:none;
+			padding-left:20px;
+			font-size:150%;
+		}
+			.searchBar:focus{
+				outline:none;
+			}
+			
+		.searchBtn{
+			display:inline_block;
+			float:left;
+			width:30%;
+			height:40px;
+			background:#63514f;
+		}	
+		.searchBtn:hover{
+			cursor:pointer;
+			background:#73605d;
+		}
+		
+		.searchIcon{
+			float:left;
+			border-radius:50%;
+			width:22px;
+			height:22px;
+			border:#67cbfd solid 3px; 
+			
+			margin-left:49px;
+			margin-top:5px;
+		}
+		.searchIcon:after{
+			display:block;
+			content:"";
+			float:left;
+			position:absolute;
+			margin-left:18px;
+			margin-top:13px;
+			border-radius:10px;
+			width:6px;
+			height:14px;
+			background:#67cbfd;
+			transform:rotate(-45deg);
 		}
 		
 		.icon-cust{
@@ -63,7 +126,7 @@
 			height:100%;
 		}
 		.nav-active{
-			background:#0066cb;
+			background:#648a91;
 		}
 		
 		.nav-a-cust > li {
@@ -278,12 +341,40 @@
  */
 	
 	#hb-red-cust{
-		background: #0066cb;
+		background: #66cbff;
 		padding: 20px 0px 10px 0px;
-		height:500px;
+		height:450px;
 	}
 	
 	
+	.home-box{
+		padding:30px;
+		margin-bottom:10px;
+		text-align:center;
+		height:275px;
+	}
+	
+	.home-box2{
+		background:#fd604d;
+		padding:30px;
+		margin-bottom:10px;
+		text-align:center;
+		height:560px;
+	}
+	
+	.home-box > .hIcon{
+		width:120px;
+		height:120px;
+		background:#63514f;
+		margin: 0 auto;
+	}
+	
+	.home-box2 > .hIcon{
+		width:100px;
+		height:100px;
+		background:#fedcac;
+		margin: 0 auto;
+	}
 	
 	#gridset{
 		margin-bottom: 50px;
@@ -751,7 +842,7 @@
 
 
 .footer-cust{
-		background: #2c3e50;
+		background: #63514f;
 		height: 200px;
 	}
 		.footer_links > li > a{
