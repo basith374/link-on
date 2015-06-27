@@ -9,6 +9,7 @@
 
 	<link href="{{ asset('/css/app.css') }}" type="text/css" rel="stylesheet">
 	<link href="{{ asset('/css/custom.css') }}" type="text/css" rel="stylesheet"/>
+	<link href="{{ asset('/css/customNew.css') }}" type="text/css" rel="stylesheet"/>
 	<link href="{{ asset('/css/responsive.css') }}" type="text/css" rel="stylesheet"/>
 	@yield('csslinks')
 

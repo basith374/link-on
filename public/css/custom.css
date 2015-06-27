@@ -19,6 +19,39 @@
 		src: url('../fonts/AnjaEliane.ttf');
 	}
 	
+	@font-face {
+		font-family: GOTHIC;
+		src: url('../fonts/GOTHIC.TTF');
+	}
+	
+	@font-face {
+		font-family: GOTHICB;
+		src: url('../fonts/GOTHICB.TTF');
+	}
+	
+	@font-face {
+		font-family: Lanehum;
+		src: url('../fonts/Lanehum.ttf');
+	}
+	@font-face {
+		font-family: Chocolate;
+		src: url('../fonts/Chocolate.ttf');
+	}
+	
+	@font-face {
+		font-family: ChocolateBOLD;
+		src: url('../fonts/ChocolateBOLD.TTF');
+	}
+	
+	@font-face {
+		font-family: ChocolateHallow;
+		src: url('../fonts/ChocolateHallow.TTF');
+	}
+	
+	body{
+	font-family:GOTHIC;
+	}
+	
 	
 	.untouchable{
 		-moz-user-select: none; 
@@ -85,33 +118,11 @@
 			background:#73605d;
 		}
 		
-		.searchIcon{
-			float:left;
-			border-radius:50%;
-			width:22px;
-			height:22px;
-			border:#67cbfd solid 3px; 
-			
-			margin-left:49px;
-			margin-top:5px;
-		}
-		.searchIcon:after{
-			display:block;
-			content:"";
-			float:left;
-			position:absolute;
-			margin-left:18px;
-			margin-top:13px;
-			border-radius:10px;
-			width:6px;
-			height:14px;
-			background:#67cbfd;
-			transform:rotate(-45deg);
-		}
+		
 		
 		.icon-cust{
 			color: rgba(255,255,255,0.8);
-			font-family: Organo;
+			font-family: GOTHICB;
 			font-size: 40px;
 			transition: color .2s;
 			padding-left: 55px;
@@ -142,6 +153,39 @@
 		}
 		.nav-a-cust > li > a:hover{
 			color: rgba(255,255,255,.8);
+		}
+		
+		.linkOnIcon{
+			display:inline_block;
+			float:left;
+			margin:150px 5%;
+			width:40%;
+		}
+		.linkOnIcon img{
+			max-width:100%;
+			height:auto;
+		}
+		.linkOnMotto{
+			display:inline_block;
+			line-height:40px;
+			float:left;
+			margin-top:120px;
+			margin-left:4%;
+			width:40%;
+			color:#fff;
+			max-height:300px;
+			overflow:hidden;
+		}
+		.linkOnMotto > .p1{
+		
+			font-family: Chocolate;
+			font-size:350%;
+		}
+		
+		.linkOnMotto > .p2{
+		
+			font-family: Lanehum;
+			font-size:250%;
 		}
 		
 	
@@ -229,7 +273,7 @@
 		}
 			.ad-help-panel{
 				position:fixed;
-				font-family:Dosis;
+				font-family:GOTHICB;
 				color:rgba(255,255,255,0.7);
 				padding:10px 10px 10px 10px;
 				margin:19px 0px 0px 0px;
@@ -297,7 +341,7 @@
 			background:#5c6768;
 		}
 			.ad-nav-sd-btn{
-				font-family:Dosis;
+				font-family:GOTHICB;
 				color:rgba(255,255,255,0.7);
 				padding:10px;
 				border-radius:5px;
@@ -351,30 +395,56 @@
 		padding:30px;
 		margin-bottom:10px;
 		text-align:center;
-		height:275px;
+		height:310px;
+	}
+	
+	.home-box:hover{
+		background:rgba(0,0,0,0.02);
+		box-shadow:0px 0px 3px rgba(0,0,0,0.2);
+		cursor:pointer;
 	}
 	
 	.home-box2{
-		background:#fd604d;
 		padding:30px;
 		margin-bottom:10px;
 		text-align:center;
-		height:560px;
+		color:#fedcac;
+		height:640px;
+	}
+	
+	.hTitle{
+		font-family:GOTHICB;
+		font-size:140%;
+	}
+	
+	.hCont{
+		font-family:GOTHIC;
+		font-size:120%;
 	}
 	
 	.home-box > .hIcon{
 		width:120px;
 		height:120px;
-		background:#63514f;
 		margin: 0 auto;
 	}
 	
+	.home-box > .hIcon img{
+		max-width:100%;
+		height:0 auto;
+	}
+	
 	.home-box2 > .hIcon{
-		width:100px;
-		height:100px;
-		background:#fedcac;
+		color:#fedcac;
+		font-size:200px;
+		font-family: Chocolate;
 		margin: 0 auto;
 	}
+	
+	.home-box2  > .hbody > img{
+		max-width:100%;
+		height:auto;
+	}
+	
 	
 	#gridset{
 		margin-bottom: 50px;
@@ -394,7 +464,7 @@
 			overflow: hidden;
 			opacity: 1;
 			
-			font-family:Dosis;
+			font-family:GOTHICB;
 			transition: opacity 0.7s, margin 0.5s , background 0.5s , transform 0.5s ,-webkit-transform 0.5s,-moz-transform 0.5s, -ms-transform 0.5s,-o-transform 0.5s;
 		}
 			.box-cust:hover{
@@ -417,7 +487,7 @@
 			.boxhead-cust{
 				width: 100%;
 				padding: 15px;
-				font-family: Dosis;
+				font-family: GOTHICB;
 				font-size: 22px;
 				background: #e9edef;
 				text-align: center;
@@ -495,9 +565,9 @@
 			padding-bottom: 60px;
 		}
 		.hb-w-head{
-			font-family: Station;
+			font-family: GOTHICB;
 			font-size: 38px;
-			color: rgba(0,0,0,0.7);
+			color: #66ccff;
 			margin-top: 30px;
 			margin-bottom: 30px;
 			text-align: center;
@@ -534,14 +604,14 @@
 					}
 				.hb-w-grid-cont{
 					text-align: center;
-					font-family: Station;
+					font-family: GOTHIC;
 				}	
 					.hb-w-grid-cont .h5{
 						font-size: 160%;
 						color: rgba(0,0,0,0.7);
 					}
 					.hb-w-grid-cont p{
-						font-family: Dosis;
+						font-family: GOTHIC;
 						margin-top: 20px;
 						font-size: 110%;
 						color: rgba(0,0,0,0.5);
@@ -583,7 +653,7 @@
 				}
 				
 				.pf-cont-word > p{
-					font-family: Dosis;
+					font-family: GOTHIC;
 					font-size: 123%;
 					color: rgba(255,255,255,0.55);
 				}
@@ -594,7 +664,7 @@
 				margin-top:2000px;
 				margin-left:calc(50% - 100px);
 				color:rgba(255,255,255,0.8);
-				font-family:Station;
+				font-family:GOTHICB;
 				background:#edc26d;
 				border-radius:10px;
 				opacity:0.1;
@@ -650,7 +720,7 @@
 						z-index:98;
 						
 						text-align:left;
-						font-family:Station;
+						font-family:GOTHICB;
 						color:rgba(0,0,0,0.3);
 						padding:4px 0px 0px 10px;
 					}
@@ -714,7 +784,7 @@
 					
 				}
 					.cors-head{
-						font-family:Station;
+						font-family:GOTHICB;
 						text-align:center;
 						width:90%;
 						font-size:120%;
@@ -724,7 +794,7 @@
 						
 					}
 					.cors-body{
-						font-family:Dosis;
+						font-family:GOTHIC;
 						text-align:center;
 						width:100%;
 						color:rgba(255,255,255,0.6);
@@ -778,7 +848,7 @@
 	}
 	
 	.blog-box-head{
-		font-family:Station;
+		font-family:GOTHICB;
 		width:calc(100% - 240px);
 		color:rgba(255,255,255,1);
 		padding:20px;
@@ -787,7 +857,7 @@
 			position:absolute;
 			top:-2px;
 			right:-2px;
-			font-family:Station;
+			font-family:GOTHIC;
 			background:#454a4f;
 			width:240px;
 			border-radius:0px 5px 0px 0px;
@@ -795,7 +865,7 @@
 			padding:6px 10px 6px 10px;
 		}
 	.blog-box-body{
-		font-family:Dosis;
+		font-family:GOTHIC;
 		font-size:125%;
 		width:100%;
 		color:rgba(0,0,0,0.5);	
@@ -803,7 +873,7 @@
 		background:#fff;
 	}
 	.blog-box-footer{
-		font-family:Dosis;
+		font-family:GOTHICB;
 		font-size:125%;
 		width:100%;
 		color:rgba(0,0,0,0.5);	
@@ -846,7 +916,7 @@
 		height: 200px;
 	}
 		.footer_links > li > a{
-			font-family: Dosis;
+			font-family: GOTHIC;
 			color:rgba(255,255,255,0.6);
 		}
 			.footer_links > li > a:hover{
@@ -854,7 +924,7 @@
 			}
 		.pf-icon-cust{
 			color: rgba(255,255,255,0.4);
-			font-family: Organo;
+			font-family: GOTHICB;
 			font-size: 40px;
 			margin-top:80px;
 		}	

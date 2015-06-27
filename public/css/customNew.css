@@ -1,0 +1,23 @@
+.searchIcon{
+	float:left;
+	border-radius:50%;
+	width:22px;
+	height:22px;
+	border:#67cbfd solid 3px; 
+	
+	margin-left:40%;
+	margin-top:5px;
+}
+.searchIcon:after{
+	display:block;
+	content:"";
+	float:left;
+	position:absolute;
+	margin-left:18px;
+	margin-top:13px;
+	border-radius:10px;
+	width:6px;
+	height:14px;
+	background:#67cbfd;
+	transform:rotate(-45deg);
+}
