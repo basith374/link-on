@@ -154,7 +154,7 @@ jQuery(document).ready(function() {
 				
 			}
 			
-			if ($(".sec-2 ").isOnScreen(-60) == false ){
+			if ($(".sec-2 ").isOnScreen(-120) == false ){
 				$('.navbar-cust').css({"background": "#80a7ae"});
 				$('#searchBar').css({"margin-top":"-60px" });
 				

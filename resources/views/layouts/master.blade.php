@@ -58,7 +58,7 @@
 							
 							<div class="col-md-6 col-md-offset-3 nav-buttons" style="height:100%; ">
 								<ul class="nav-a-cust " >
-									<li class="nav-active"><a  href="{{ asset('home') }}">H</a></li>
+									<li class="nav-active"><a  href="{{ asset('home') }}"><img src="img/logohalf.png"  style="width:50px; height:auto;"></a></li>
 									<li><a href="">EXAMS</a></li>
 									<li><a href="{{ route('courses.index') }}">COURSES</a></li>
 									<li><a href="{{ route('blogs.index') }}">FUNZONE</a></li>
